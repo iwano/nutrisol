@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-bootstrap
 //= require angular-cookies
 //= require angular-loader
 //= require angular-mocks
