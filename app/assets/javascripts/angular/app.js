@@ -2,15 +2,17 @@
 
 /* App Modules */
 
-var nutrisolControllers = angular.module('nutrisolControllers', []);
-var nutrisolDirectives  = angular.module('nutrisolDirectives', []);
-var nutrisolServices    = angular.module('nutrisolServices', []);
+var nutrisolControllers = angular.module('controllers', []);
+var nutrisolDirectives  = angular.module('directives', []);
+var nutrisolServices    = angular.module('services', []);
+var nutrisolTemplates   = angular.module('templates', []);
 
 var nutrisol = angular.module('nutrisol', [
   'ngRoute',
 
-  'nutrisolControllers',
-  'nutrisolDirectives',
-  'nutrisolServices'
+  'controllers',
+  'directives',
+  'services',
+  'templates'
 ]);
 

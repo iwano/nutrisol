@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.3'
 
+gem 'angular-rails-templates'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 gem 'jbuilder', '~> 1.2'
