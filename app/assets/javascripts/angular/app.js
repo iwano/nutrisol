@@ -13,6 +13,7 @@ var nutrisol = angular.module('nutrisol', [
   'controllers',
   'directives',
   'services',
-  'templates'
+  'templates',
+  'ui.bootstrap'
 ]);
 
