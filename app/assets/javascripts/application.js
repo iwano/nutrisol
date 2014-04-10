@@ -21,5 +21,6 @@
 //= require angular-sanitize
 //= require angular-scenario
 //= require angular-touch
-//= require_tree .
+
+//= require angular/app
 
