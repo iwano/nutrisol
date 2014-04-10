@@ -9,7 +9,7 @@ var nutrisolServices    = angular.module('nutrisolServices', []);
 var nutrisol = angular.module('nutrisol', [
   'ngRoute',
 
-  'nutrisolController',
+  'nutrisolControllers',
   'nutrisolDirectives',
   'nutrisolServices'
 ]);

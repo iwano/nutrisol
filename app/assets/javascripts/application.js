@@ -23,4 +23,3 @@
 //= require angular-touch
 
 //= require angular/app
-
