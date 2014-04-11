@@ -30,6 +30,7 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'jasmine-rails'
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'rspec-rails'

@@ -20,7 +20,6 @@
 //= require angular-resource
 //= require angular-route
 //= require angular-sanitize
-//= require angular-scenario
 //= require angular-touch
 
 //= require angular/app

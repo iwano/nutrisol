@@ -2,9 +2,11 @@
 
   'use strict';
 
-  angular.module('controllers').controller('IndexController', ['$scope', indexController]);
+  angular.module('controllers')
+      .controller('IndexController', ['$scope', controller]);
 
-  function indexController($scope) {
+  function controller($scope) {
+    $scope.title = 'such nutriments';
 
   }
 })();
