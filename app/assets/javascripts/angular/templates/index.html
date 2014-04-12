@@ -26,7 +26,7 @@
     <div class='col-md-9'>
       <form name="tmb_form" role="form">
         <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
-          <label for="height">Height</label>
+          <label class="control-label" for="height">Height</label>
           <input type='number' name='height' ng-model='person.height' placeholder='Enter height' class='form-control' ng-pattern='/^\d+$/' required/>
           <div class='error' ng-show="tmb_form.height.$dirty && tmb_form.height.$invalid">
             Must be a number
@@ -34,21 +34,23 @@
         </div>
 
         <div class="form-group" ng-class="{ 'has-error': tmb_form.weight.$invalid }">
-          <label for="weight">Weight</label>
+          <label class="control-label" for="weight">Weight</label>
           <input type='number' name='weight' ng-model='person.weight' placeholder='Enter weight' class='form-control' ng-pattern='/^\d+$/' required />
           <div class='error' ng-show="tmb_form.weight.$dirty && tmb_form.weight.$invalid">
             Must be a number
           </div>
         </div>
         <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
-          <label for="age">Age</label>
-          <input type='number' name='age' ng-model='person.age' placeholder='Enter age' class='form-control' ng-pattern='/^\d+$/' required/>
+          <label class="control-label" for="age">Age</label>
+          <input type='number' name='age' ng-model='person.age' placeholder='Enter age' class='form-control' ng-pattern='/^[0-9]+$/' required/>
           <div class='error' ng-show="tmb_form.age.$dirty && tmb_form.age.$invalid">
             Must be a number
           </div>
         </div>
         <div class="form-group">
-          {{result}}
+          <h1>
+            <code>{{result}}</code>
+          </h1>
         </div>
       </div>
     </div>
