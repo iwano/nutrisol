@@ -18,7 +18,7 @@
 //= require angular-loader
 //= require angular-mocks
 //= require angular-resource
-//= require angular-route
+//= require angular-ui-router
 //= require angular-sanitize
 //= require angular-touch
 

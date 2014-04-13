@@ -108,14 +108,14 @@ GEM
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-resource (1.2.16)
       rails-assets-angular (= 1.2.16)
-    rails-assets-angular-route (1.2.16)
-      rails-assets-angular (= 1.2.16)
     rails-assets-angular-sanitize (1.2.16)
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-scenario (1.2.16)
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-touch (1.2.16)
       rails-assets-angular (= 1.2.16)
+    rails-assets-angular-ui-router (0.2.10)
+      rails-assets-angular (>= 1.0.8)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -193,10 +193,10 @@ DEPENDENCIES
   rails-assets-angular-loader
   rails-assets-angular-mocks
   rails-assets-angular-resource
-  rails-assets-angular-route
   rails-assets-angular-sanitize
   rails-assets-angular-scenario
   rails-assets-angular-touch
+  rails-assets-angular-ui-router
   rails_12factor
   rspec-rails
   sass-rails (~> 4.0.0)

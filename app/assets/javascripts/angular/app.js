@@ -8,12 +8,11 @@ var nutrisolServices    = angular.module('services', []);
 var nutrisolTemplates   = angular.module('templates', []);
 
 var nutrisol = angular.module('nutrisol', [
-  'ngRoute',
-
   'controllers',
   'directives',
   'services',
   'templates',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.router'
 ]);
 
