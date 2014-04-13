@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module('services').service('hemodialisisFormulas', function() {
+  angular.module('services').service('hemodialysisFormulas', function() {
     return {
     };
 

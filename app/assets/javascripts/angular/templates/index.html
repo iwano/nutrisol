@@ -3,7 +3,7 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" ng-href="/">Nutrisol <3</a>
+          <a class="navbar-brand" ui-sref="root">Nutrisol <3</a>
         </div>
         <div class='navbar-right'>
           <a class='btn btn-info' ng-click='openAboutModal()'>
@@ -19,8 +19,18 @@
   <div class='row'>
     <div class='col-md-3'>
       <div class="form-group">
-        <ul class="nav nav-pills">
-          <li><a ng-href="/#/adulto">Adulto</a></li>
+        <ul class="nav nav-pills nav-stacked">
+          <li ui-sref-active="active"><a ui-sref="root.teenager">Adolescente</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.adult">Adulto</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.elderly">Adulto mayor</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.dialysis">Diálisis</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.pregnant">Embarazo</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.scholar">Escolar</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.hemodialysis">Hemodiálisis</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.infant">Lactante</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.predialytic">Prediálitico</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.preschool">Preescolar</a></li>
+          <li ui-sref-active="active"><a ui-sref="root.newborn">Recién nacido</a></li>
         </ul>
       </div>
     </div>
