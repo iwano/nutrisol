@@ -17,63 +17,14 @@
 
 <div class='container'>
   <div class='row'>
-    <form name="tmb_form" role="form">
-      <div class='col-md-3'>
-        <div class="form-group">
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'hombres'">Hombres</button>
-            <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'mujeres'">Mujeres</button>
-          </div>
-        </div>
-        <div ng-show="genderFilter == 'mujeres'">
-          <div class="form-group">
-            <label>
-              Is she pregnant?
-              <input type="checkbox" ng-model="isPregnant">
-              <div ng-show="isPregnant">
-                <div class="form-group">
-                  <label class="control-label" for="weight_before_pregnancy">Weight before pregnancy</label>
-                  <input type='number' name='weight_before_pregnancy' ng-model='person.weightBeforePregnancy' placeholder='Enter weight before pregnancy' class='form-control' ng-pattern='/^\d+$/' required/>
-                  <label class="control-label" for="number_of_weeks">Weeks of pregnancy</label>
-                  <input type='number' name='number_of_weeks' ng-model='person.numberOfWeeks' placeholder='Enter number of weeks' class='form-control' ng-pattern='/^\d+$/' required/>
-                </div>
-              </div>
-            </label>
-          </div>
-        </div>
+    <div class='col-md-3'>
+      <div class="form-group">
+        <ul class="nav nav-pills">
+          <li><a ng-href="/#/adulto">Adulto</a></li>
+        </ul>
       </div>
-      <div class='col-md-9'>
-        <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
-          <label class="control-label" for="height">Height</label>
-          <input type='number' name='height' ng-model='person.height' placeholder='Enter height' class='form-control' ng-pattern='/^\d+$/' required/>
-          <div class='error' ng-show="tmb_form.height.$dirty && tmb_form.height.$invalid">
-            Must be a number
-          </div>
-        </div>
-
-        <div class="form-group" ng-class="{ 'has-error': tmb_form.weight.$invalid }">
-          <label class="control-label" for="weight">Weight</label>
-          <input type='number' name='weight' ng-model='person.weight' placeholder='Enter weight' class='form-control' ng-pattern='/^\d+$/' required />
-          <div class='error' ng-show="tmb_form.weight.$dirty && tmb_form.weight.$invalid">
-            Must be a number
-          </div>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
-          <label class="control-label" for="age">Age</label>
-          <input type='number' name='age' ng-model='person.age' placeholder='Enter age' class='form-control' ng-pattern='/^[0-9]+$/' required/>
-          <div class='error' ng-show="tmb_form.age.$dirty && tmb_form.age.$invalid">
-            Must be a number
-          </div>
-        </div>
-        <div class="form-group">
-          <h2>
-            BMI: <code>{{person.bmi}}</code>
-          </h2>
-          <h1>
-            Result: <code>{{result}}</code>
-          </h1>
-        </div>
-      </div>
-    </form>
+    </div>
+    <div class='col-md-9'>
+      <div ui-view></div>
   </div>
 </div>
