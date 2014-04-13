@@ -17,14 +17,32 @@
 
 <div class='container'>
   <div class='row'>
-    <div class='col-md-3'>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'hombres'">Hombres</button>
-        <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'mujeres'">Mujeres</button>
+    <form name="tmb_form" role="form">
+      <div class='col-md-3'>
+        <div class="form-group">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'hombres'">Hombres</button>
+            <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'mujeres'">Mujeres</button>
+          </div>
+        </div>
+        <div ng-show="genderFilter == 'mujeres'">
+          <div class="form-group">
+            <label>
+              Is she pregnant?
+              <input type="checkbox" ng-model="isPregnant">
+              <div ng-show="isPregnant">
+                <div class="form-group">
+                  <label class="control-label" for="weight_before_pregnancy">Weight before pregnancy</label>
+                  <input type='number' name='weight_before_pregnancy' ng-model='person.weightBeforePregnancy' placeholder='Enter weight before pregnancy' class='form-control' ng-pattern='/^\d+$/' required/>
+                  <label class="control-label" for="number_of_weeks">Weeks of pregnancy</label>
+                  <input type='number' name='number_of_weeks' ng-model='person.numberOfWeeks' placeholder='Enter number of weeks' class='form-control' ng-pattern='/^\d+$/' required/>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class='col-md-9'>
-      <form name="tmb_form" role="form">
+      <div class='col-md-9'>
         <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
           <label class="control-label" for="height">Height</label>
           <input type='number' name='height' ng-model='person.height' placeholder='Enter height' class='form-control' ng-pattern='/^\d+$/' required/>
@@ -48,11 +66,14 @@
           </div>
         </div>
         <div class="form-group">
+          <h2>
+            BMI: <code>{{person.bmi}}</code>
+          </h2>
           <h1>
-            <code>{{result}}</code>
+            Result: <code>{{result}}</code>
           </h1>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
