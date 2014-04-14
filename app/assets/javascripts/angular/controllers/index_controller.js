@@ -6,9 +6,6 @@
       .controller('IndexController', ['$modal', '$scope', 'Formulas', controller]);
 
   function controller($modal, $scope, Formulas) {
-    $scope.title = 'such nutriments';
-
-    $scope.genderFilter = 'hombres';
 
     $scope.person = {
       age: 0,

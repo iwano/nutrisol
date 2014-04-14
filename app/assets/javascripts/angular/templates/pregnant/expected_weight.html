@@ -1,0 +1,47 @@
+<h1>Peso Esperado</h1>
+<form name='imc_form' role='form'>
+  <div class="form-group" ng-class="{ 'has-error': imc_form.height.$invalid }">
+    <label class="control-label" for="height">Altura</label>
+    <input type='number' name='height' ng-model='person.height' placeholder='Ingresa altura' class='form-control' ng-pattern='/^\d+$/' required/>
+    <div class='error' ng-show="imc_form.height.$dirty && imc_form.height.$invalid">
+      * Requerido: numérico
+    </div>
+  </div>
+
+  <div class="form-group" ng-class="{ 'has-error': imc_form.weight.$invalid }">
+    <label class="control-label" for="weight">Peso</label>
+    <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' ng-pattern='/^\d+$/' required />
+    <div class='error' ng-show="imc_form.weight.$dirty && imc_form.weight.$invalid">
+      * Requerido: numérico
+    </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error': imc_form.age.$invalid }">
+    <label class="control-label" for="age">Edad</label>
+    <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+    <div class='error' ng-show="imc_form.age.$dirty && imc_form.age.$invalid">
+      * Requerido: numérico
+    </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error': imc_form.age.$invalid }">
+    <label class="control-label" for="weight_before_pregnancy">Peso previo a la gestación</label>
+    <input type='number' name='weight_before_pregnancy' ng-model='person.weightBeforePregnancy' placeholder='Ingresa peso previo a la gestación' class='form-control' ng-pattern='/^\d+$/' required/>
+    <div class='error' ng-show="imc_form.age.$dirty && imc_form.age.$invalid">
+      * Requerido: numérico
+    </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error': imc_form.age.$invalid }">
+    <label class="control-label" for="number_of_weeks">Semanas de gestación</label>
+    <input type='number' name='number_of_weeks' ng-model='person.numberOfWeeks' placeholder='Ingresa número de semanas' class='form-control' ng-pattern='/^\d+$/' required/>
+    <div class='error' ng-show="imc_form.age.$dirty && imc_form.age.$invalid">
+      * Requerido: numérico
+    </div>
+  </div>
+  <div class="form-group">
+    <h2>
+      BMI: <code>{{person.bmi}}</code>
+    </h2>
+    <h1>
+      Result: <code>{{result}}</code>
+    </h1>
+  </div>
+</form>

@@ -5,15 +5,21 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
 
     $stateProvider.
       state('root', {
-        url: '',
+        url: '/',
         templateUrl: 'angular/templates/index.html',
         controller: 'IndexController'
       })
       .state('root.pregnant', {
-        url: '/embarazo',
+        url: 'embarazo',
         templateUrl: 'angular/templates/pregnant/index.html',
         controller: 'PregnantController'
       })
+      .state('root.pregnant.expected_weight', {
+        url: '/peso_esperado',
+        templateUrl: 'angular/templates/pregnant/expected_weight.html',
+        controller: 'PregnantExpectedWeightController'
+      })
+
       .state('root.newborn', {
         url: '/recien_nacido',
         templateUrl: 'angular/templates/newborn/index.html',
