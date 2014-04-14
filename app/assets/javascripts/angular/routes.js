@@ -15,58 +15,58 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         controller: 'PregnantController'
       })
       .state('root.pregnant.expected_weight', {
-        url: '/peso_esperado',
+        url: 'peso_esperado',
         templateUrl: 'angular/templates/pregnant/expected_weight.html',
         controller: 'PregnantExpectedWeightController'
       })
 
       .state('root.newborn', {
-        url: '/recien_nacido',
+        url: 'recien_nacido',
         templateUrl: 'angular/templates/newborn/index.html',
         controller: 'NewbornController'
       })
       .state('root.infant', {
-        url: '/lactante',
+        url: 'lactante',
         templateUrl: 'angular/templates/infant/index.html',
         controller: 'InfantController'
       })
       .state('root.preschool', {
-        url: '/preescolar',
+        url: 'preescolar',
         templateUrl: 'angular/templates/preschool/index.html',
         controller: 'PreschoolController'
       })
       .state('root.scholar', {
-        url: '/escolar',
+        url: 'escolar',
         templateUrl: 'angular/templates/scholar/index.html',
         controller: 'ScholarController'
       })
       .state('root.teenager', {
-        url: '/adolescente',
+        url: 'adolescente',
         templateUrl: 'angular/templates/teenager/index.html',
         controller: 'TeenagerController'
       })
       .state('root.adult', {
-        url: '/adulto',
+        url: 'adulto',
         templateUrl: 'angular/templates/adult/index.html',
         controller: 'AdultController'
       })
       .state('root.elderly', {
-        url: '/adulto_mayor',
+        url: 'adulto_mayor',
         templateUrl: 'angular/templates/elderly/index.html',
         controller: 'ElderlyController'
       })
       .state('root.predialytic', {
-        url: '/predialitico',
+        url: 'predialitico',
         templateUrl: 'angular/templates/predialytic/index.html',
         controller: 'PredialyticController'
       })
       .state('root.dialysis', {
-        url: '/dialisis',
+        url: 'dialisis',
         templateUrl: 'angular/templates/dialysis/index.html',
         controller: 'DialysisController'
       })
       .state('root.hemodialysis', {
-        url: '/hemodialisis',
+        url: 'hemodialisis',
         templateUrl: 'angular/templates/hemodialysis/index.html',
         controller: 'HemodialysisController'
       });
