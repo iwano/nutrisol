@@ -15,7 +15,7 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         controller: 'PregnantController'
       })
       .state('root.pregnant.expected_weight', {
-        url: 'peso_esperado',
+        url: '/peso_esperado',
         templateUrl: 'angular/templates/pregnant/expected_weight.html',
         controller: 'PregnantExpectedWeightController'
       })
