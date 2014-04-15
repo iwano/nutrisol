@@ -11,6 +11,7 @@
       },
 
       PeIMCpgEg: function(bmi, numberOfWeeks, weightBeforePregnancy) {
+        //formula depends on bmi before pregnancy
         //where bmi is in kg/m2 & weightbeforepregnancy is in kg
 
         if (bmi < 18.5) {
