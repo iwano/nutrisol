@@ -16,11 +16,11 @@
 
         if (bmi < 18.5) {
           return weightBeforePregnancy + (0.322 * numberOfWeeks);
-        } else if (bmi >= 18.5 && bmi <= 24) {
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
           return weightBeforePregnancy + (0.267 * numberOfWeeks);
-        } else if (bmi > 24 && bmi <= 29.9) {
+        } else if (bmi > 24.9 && bmi < 30) {
           return weightBeforePregnancy + (0.237 * numberOfWeeks);
-        } else if (bmi > 29.9) {
+        } else if (bmi >= 30) {
           return weightBeforePregnancy + (0.138 * numberOfWeeks);
         } else {
           return 0;
