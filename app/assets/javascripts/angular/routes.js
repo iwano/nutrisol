@@ -71,3 +71,11 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         controller: 'HemodialysisController'
       });
   }]);
+
+
+nutrisol.run(['$rootScope', '$state', function($rootScope, $state) {
+  $rootScope.$on('$stateChangeSuccess',
+    function(event, toState, toParams, fromState, fromParams){
+      $rootScope.currentSection = $state.current.name;
+    });
+}]);
