@@ -100,6 +100,9 @@ GEM
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-bootstrap (0.10.0)
       rails-assets-angular (>= 1)
+    rails-assets-angular-breadcrumb (0.1.0)
+      rails-assets-angular (>= 1.0.8)
+      rails-assets-angular-ui-router (>= 0.2.0)
     rails-assets-angular-cookies (1.2.16)
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-loader (1.2.16)
@@ -189,6 +192,7 @@ DEPENDENCIES
   rails (= 4.1.0)
   rails-assets-angular-animate
   rails-assets-angular-bootstrap
+  rails-assets-angular-breadcrumb
   rails-assets-angular-cookies
   rails-assets-angular-loader
   rails-assets-angular-mocks

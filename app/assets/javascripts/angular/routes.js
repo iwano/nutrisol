@@ -7,22 +7,34 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
       state('root', {
         url: '/',
         templateUrl: 'angular/templates/index.html',
-        controller: 'IndexController'
+        controller: 'IndexController',
+        data: {
+          ncyBreadcrumbLabel: 'Inicio'
+        }
       })
       .state('root.pregnant', {
         url: 'embarazo',
         templateUrl: 'angular/templates/pregnant/index.html',
-        controller: 'PregnantController'
+        controller: 'PregnantController',
+        data: {
+          ncyBreadcrumbLabel: 'Embarazo'
+        }
       })
       .state('root.pregnant.expected_weight', {
         url: '/peso_esperado',
         templateUrl: 'angular/templates/pregnant/expected_weight.html',
-        controller: 'PregnantExpectedWeightController'
+        controller: 'PregnantExpectedWeightController',
+        data: {
+          ncyBreadcrumbLabel: 'Peso esperado'
+        }
       })
       .state('root.pregnant.calories', {
         url: '/calorias',
         templateUrl: 'angular/templates/pregnant/calories.html',
-        controller: 'PregnantCaloriesController'
+        controller: 'PregnantCaloriesController',
+        data: {
+          ncyBreadcrumbLabel: 'Calorias'
+        }
       })
       .state('root.newborn', {
         url: 'recien_nacido',

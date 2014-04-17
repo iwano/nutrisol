@@ -35,6 +35,9 @@
       </div>
     </div>
     <div class='col-md-9'>
+      <div ng-show="currentSection.indexOf('root.') != -1">
+        <div ncy-breadcrumb></div>
+      </div>
       <div ui-view></div>
   </div>
 </div>
