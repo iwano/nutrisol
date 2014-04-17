@@ -19,7 +19,11 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'angular/templates/pregnant/expected_weight.html',
         controller: 'PregnantExpectedWeightController'
       })
-
+      .state('root.pregnant.calories', {
+        url: '/calorias',
+        templateUrl: 'angular/templates/pregnant/calories.html',
+        controller: 'PregnantCaloriesController'
+      })
       .state('root.newborn', {
         url: 'recien_nacido',
         templateUrl: 'angular/templates/newborn/index.html',

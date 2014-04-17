@@ -26,7 +26,29 @@
           return 0;
         }
 
+      },
+
+      totalCaloriesTeenager: function(weight, energeticCost) {
+        var get = ((65.3 * weight) - (0.454 * Math.pow(weight, 2))) + 263.4;
+        return get + energeticCost;
+      },
+
+      totalCaloriesAdult: function(weight, physicalActivity, energeticCost, age) {
+        var gerConst;
+        var gerConst2;
+        if (age >= 18 && age <= 30) {
+          gerConst = 14.818;
+          gerConst2 = 486.6;
+        } else {
+          console.log('passed');
+          gerConst = 8.126;
+          gerConst2 = 845.6;
+        }
+        var ger = (weight * gerConst) + gerConst2;
+        var ree = ger * physicalActivity;
+        return ree + energeticCost;
       }
+
     };
 
   });
