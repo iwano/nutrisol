@@ -12,3 +12,14 @@
 .breadcrumb {
   margin-top: -15px;
 }
+
+table.calculation-table {
+  input[type='number'] {
+    width: 55px;
+  }
+  td {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+

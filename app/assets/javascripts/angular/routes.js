@@ -36,6 +36,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Calorias'
         }
       })
+      .state('root.pregnant.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/pregnant/rations.html',
+        controller: 'PregnantRationsController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
+      })
       .state('root.newborn', {
         url: 'recien_nacido',
         templateUrl: 'angular/templates/newborn/index.html',
