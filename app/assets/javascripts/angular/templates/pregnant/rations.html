@@ -209,18 +209,32 @@
         <th>TOTAL REAL</th>
         <td></td>
         <td></td>
-        <td></td>
-        <td class='td-danger'></td>
-        <td class='td-warning'></td>
-        <td class='td-info'></td>
+        <td>
+          {{rations.totalKcal}}
+        </td>
+        <td class='td-danger'>
+          {{rations.totalProteins}}
+        </td>
+        <td class='td-warning'>
+          {{rations.totalLipids}}
+        </td>
+        <td class='td-info'>
+          {{rations.totalCarbohydrates}}
+        </td>
       </tr>
       <tr>
         <th colspan="2">TOTAL DE REFERENCIA</th>
         <td></td>
         <td>{{calories.totalCalories}}</td>
-        <td class='td-danger'></td>
-        <td class='td-warning'></td>
-        <td class='td-info'></td>
+        <td class='td-danger'>
+          {{calories.proteins.g}}
+        </td>
+        <td class='td-warning'>
+          {{calories.lipids.g}}
+        </td>
+        <td class='td-info'>
+          {{calories.carbohydrates.g}}
+        </td>
       </tr>
     </tfoot>
   </table>
