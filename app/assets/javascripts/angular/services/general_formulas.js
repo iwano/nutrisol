@@ -21,7 +21,7 @@
           grains: {
             without_fat: {
               kcal: 70,
-              proteins: 0,
+              proteins: 2,
               lipids: 0,
               hc: 15
             },
@@ -99,7 +99,7 @@
               kcal: 45,
               proteins: 0,
               lipids: 5,
-              hc: 15
+              hc: 0
             },
             with_proteins: {
               kcal: 70,
