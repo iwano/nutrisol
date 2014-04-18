@@ -1,3 +1,5 @@
+body { padding-top: 70px; }
+
 .ns-title {
   @extend .bg-primary;
   margin-bottom: 10px;
@@ -42,4 +44,8 @@ table.calculation-table {
     margin-top: 20px;
     font-style: italic;
   }
+}
+
+#ns-btn-about {
+  margin-top: 8px;
 }
