@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('PregnantRationsController', ['$scope', 'pregnantFormulas', controller]);
+      .controller('PregnantRationsController', ['$scope', 'GeneralFormulas', 'pregnantFormulas', controller]);
 
-  function controller($scope, Formulas) {
+  function controller($scope, GeneralFormulas, Formulas) {
 
     $scope.calories = {
       proteins: {
@@ -25,6 +25,8 @@
       totalPercentage: 0,
       totalCalories: 0
     };
+
+    $scope.rations = GeneralFormulas.rationsByGroup();
 
     $scope.$watch('calories.totalCalories', function(newValues, oldValue) {
       if ($scope.calories.proteins.percentage > 0) {
@@ -55,6 +57,7 @@
       $scope.calories.totalPercentage = $scope.calories.proteins.percentage + $scope.calories.lipids.percentage + $scope.calories.carbohydrates.percentage;
 
     });
+
   }
 
 })();
