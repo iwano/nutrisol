@@ -62,7 +62,7 @@
       <tr>
         <th>Verduras</th>
         <td></td>
-        <td><input type='number' step='1' name='vegetables_rations' ng-model='rations.vegetables.rations' /></td>
+        <td><input type='number' step='.5' name='vegetables_rations' ng-model='rations.vegetables.rations' /></td>
         <td>{{rations.vegetables.kcal}}</td>
         <td class='td-danger'>{{rations.vegetables.proteins}}</td>
         <td class='td-warning'>{{rations.vegetables.lipids}}</td>
@@ -71,7 +71,7 @@
       <tr>
         <th>Frutas</th>
         <td></td>
-        <td><input type='number' step='1' name='fruits_rations' ng-model='rations.fruits.rations' /></td>
+        <td><input type='number' step='.5' name='fruits_rations' ng-model='rations.fruits.rations' /></td>
         <td>{{rations.fruits.kcal}}</td>
         <td class='td-danger'>{{rations.fruits.proteins}}</td>
         <td class='td-warning'>{{rations.fruits.lipids}}</td>
@@ -80,7 +80,7 @@
       <tr>
         <th rowspan="2">Cereales y Tubérculos</th>
         <td>Sin/Gs</td>
-        <td><input type='number' step='1' name='grains_without_fat_rations' ng-model='rations.grains.without_fat.rations' /></td>
+        <td><input type='number' step='.5' name='grains_without_fat_rations' ng-model='rations.grains.without_fat.rations' /></td>
         <td>{{rations.grains.without_fat.kcal}}</td>
         <td class='td-danger'>{{rations.grains.without_fat.proteins}}</td>
         <td class='td-warning'>{{rations.grains.without_fat.lipids}}</td>
@@ -88,7 +88,7 @@
       </tr>
       <tr>
         <td>Con/Gs</td>
-        <td><input type='number' step='1' name='grains_with_fat_rations' ng-model='rations.grains.with_fat.rations' /></td>
+        <td><input type='number' step='.5' name='grains_with_fat_rations' ng-model='rations.grains.with_fat.rations' /></td>
         <td>{{rations.grains.with_fat.kcal}}</td>
         <td class='td-danger'>{{rations.grains.with_fat.proteins}}</td>
         <td class='td-warning'>{{rations.grains.with_fat.lipids}}</td>
@@ -97,7 +97,7 @@
       <tr>
         <th>Leguminosas</th>
         <td></td>
-        <td><input type='number' step='1' name='legumes_rations' ng-model='rations.legumes.rations' /></td>
+        <td><input type='number' step='.5' name='legumes_rations' ng-model='rations.legumes.rations' /></td>
         <td>{{rations.legumes.kcal}}</td>
         <td class='td-danger'>{{rations.legumes.proteins}}</td>
         <td class='td-warning'>{{rations.legumes.lipids}}</td>
@@ -106,7 +106,7 @@
       <tr>
         <th rowspan="4">Alimentos de Origen Animal</th>
         <td>Mb/Gs</td>
-        <td><input type='number' step='1' name='animal_source_very_low_fat_rations' ng-model='rations.animal_source.very_low_fat.rations' /></td>
+        <td><input type='number' step='.5' name='animal_source_very_low_fat_rations' ng-model='rations.animal_source.very_low_fat.rations' /></td>
         <td>{{rations.animal_source.very_low_fat.kcal}}</td>
         <td class='td-danger'>{{rations.animal_source.very_low_fat.proteins}}</td>
         <td class='td-warning'>{{rations.animal_source.very_low_fat.lipids}}</td>
@@ -114,7 +114,7 @@
       </tr>
       <tr>
         <td>B/Gs</td>
-        <td><input type='number' step='1' name='animal_source_low_fat_rations' ng-model='rations.animal_source.low_fat.rations' /></td>
+        <td><input type='number' step='.5' name='animal_source_low_fat_rations' ng-model='rations.animal_source.low_fat.rations' /></td>
         <td>{{rations.animal_source.low_fat.kcal}}</td>
         <td class='td-danger'>{{rations.animal_source.low_fat.proteins}}</td>
         <td class='td-warning'>{{rations.animal_source.low_fat.lipids}}</td>
@@ -122,7 +122,7 @@
       </tr>
       <tr>
         <td>Mod/Gs</td>
-        <td><input type='number' step='1' name='animal_source_moderated_fat_rations' ng-model='rations.animal_source.moderated_fat.rations' /></td>
+        <td><input type='number' step='.5' name='animal_source_moderated_fat_rations' ng-model='rations.animal_source.moderated_fat.rations' /></td>
         <td>{{rations.animal_source.moderated_fat.kcal}}</td>
         <td class='td-danger'>{{rations.animal_source.moderated_fat.proteins}}</td>
         <td class='td-warning'>{{rations.animal_source.moderated_fat.lipids}}</td>
@@ -130,7 +130,7 @@
       </tr>
       <tr>
         <td>Alto/Gs</th>
-        <td><input type='number' step='1' name='animal_source_high_fat_rations' ng-model='rations.animal_source.high_fat.rations' /></td>
+        <td><input type='number' step='.5' name='animal_source_high_fat_rations' ng-model='rations.animal_source.high_fat.rations' /></td>
         <td>{{rations.animal_source.high_fat.kcal}}</td>
         <td class='td-danger'>{{rations.animal_source.high_fat.proteins}}</td>
         <td class='td-warning'>{{rations.animal_source.high_fat.lipids}}</td>
@@ -139,7 +139,7 @@
       <tr>
         <th rowspan="4">Leche</th>
         <td>Descremada</td>
-        <td><input type='number' step='1' name='milk_skim' ng-model='rations.milk.skim.rations' /></td>
+        <td><input type='number' step='.5' name='milk_skim' ng-model='rations.milk.skim.rations' /></td>
         <td>{{rations.milk.skim.kcal}}</td>
         <td class='td-danger'>{{rations.milk.skim.proteins}}</td>
         <td class='td-warning'>{{rations.milk.skim.lipids}}</td>
@@ -147,7 +147,7 @@
       </tr>
       <tr>
         <td>Semidescremada</td>
-        <td><input type='number' step='1' name='milk_semiskim' ng-model='rations.milk.semiskim.rations' /></td>
+        <td><input type='number' step='.5' name='milk_semiskim' ng-model='rations.milk.semiskim.rations' /></td>
         <td>{{rations.milk.semiskim.kcal}}</td>
         <td class='td-danger'>{{rations.milk.semiskim.proteins}}</td>
         <td class='td-warning'>{{rations.milk.semiskim.lipids}}</td>
@@ -155,7 +155,7 @@
       </tr>
       <tr>
         <td>Entera</td>
-        <td><input type='number' step='1' name='milk_whole' ng-model='rations.milk.whole.rations' /></td>
+        <td><input type='number' step='.5' name='milk_whole' ng-model='rations.milk.whole.rations' /></td>
         <td>{{rations.milk.whole.kcal}}</td>
         <td class='td-danger'>{{rations.milk.whole.proteins}}</td>
         <td class='td-warning'>{{rations.milk.whole.lipids}}</td>
@@ -163,7 +163,7 @@
       </tr>
       <tr>
         <td>Con Azúcar</td>
-        <td><input type='number' step='1' name='milk_sugary' ng-model='rations.milk.sugary.rations' /></td>
+        <td><input type='number' step='.5' name='milk_sugary' ng-model='rations.milk.sugary.rations' /></td>
         <td>{{rations.milk.sugary.kcal}}</td>
         <td class='td-danger'>{{rations.milk.sugary.proteins}}</td>
         <td class='td-warning'>{{rations.milk.sugary.lipids}}</td>
@@ -172,7 +172,7 @@
       <tr>
         <th rowspan="2">Grasas y aceites</th>
         <td>Sin/Ps</th>
-        <td><input type='number' step='1' name='fats_and_oils_without_proteins' ng-model='rations.fats_and_oils.without_proteins.rations' /></td>
+        <td><input type='number' step='.5' name='fats_and_oils_without_proteins' ng-model='rations.fats_and_oils.without_proteins.rations' /></td>
         <td>{{rations.fats_and_oils.without_proteins.kcal}}</td>
         <td class='td-danger'>{{rations.fats_and_oils.without_proteins.proteins}}</td>
         <td class='td-warning'>{{rations.fats_and_oils.without_proteins.lipids}}</td>
@@ -180,7 +180,7 @@
       </tr>
       <tr>
         <td>Con/Ps</td>
-        <td><input type='number' step='1' name='fats_and_oils_with_proteins' ng-model='rations.fats_and_oils.with_proteins.rations' /></td>
+        <td><input type='number' step='.5' name='fats_and_oils_with_proteins' ng-model='rations.fats_and_oils.with_proteins.rations' /></td>
         <td>{{rations.fats_and_oils.with_proteins.kcal}}</td>
         <td class='td-danger'>{{rations.fats_and_oils.with_proteins.proteins}}</td>
         <td class='td-warning'>{{rations.fats_and_oils.with_proteins.lipids}}</td>
@@ -189,7 +189,7 @@
       <tr>
         <th rowspan="2">Azúcares</th>
         <td>Sin/Gs</td>
-        <td><input type='number' step='1' name='sugars_without_fat' ng-model='rations.sugars.without_fat.rations' /></td>
+        <td><input type='number' step='.5' name='sugars_without_fat' ng-model='rations.sugars.without_fat.rations' /></td>
         <td>{{rations.sugars.without_fat.kcal}}</td>
         <td class='td-danger'>{{rations.sugars.without_fat.proteins}}</td>
         <td class='td-warning'>{{rations.sugars.without_fat.lipids}}</td>
@@ -197,7 +197,7 @@
       </tr>
       <tr>
         <td>Con/Gs</td>
-        <td><input type='number' step='1' name='sugars_with_fat' ng-model='rations.sugars.with_fat.rations' /></td>
+        <td><input type='number' step='.5' name='sugars_with_fat' ng-model='rations.sugars.with_fat.rations' /></td>
         <td>{{rations.sugars.with_fat.kcal}}</td>
         <td class='td-danger'>{{rations.sugars.with_fat.proteins}}</td>
         <td class='td-warning'>{{rations.sugars.with_fat.lipids}}</td>
