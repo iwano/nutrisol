@@ -35,6 +35,11 @@
       </div>
     </div>
     <div class='col-md-9'>
+      <div ng-show="currentSection == 'root'">
+        <blockquote class="ns-main-quote">
+          <p>{{currentQuote}}</p>
+        </blockquote>
+      </div>
       <div ng-show="currentSection.indexOf('root.') != -1">
         <div ncy-breadcrumb></div>
       </div>

@@ -97,9 +97,10 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
   }]);
 
 
-nutrisol.run(['$rootScope', '$state', function($rootScope, $state) {
+nutrisol.run(['$rootScope', '$state', 'FamousQuotes', function($rootScope, $state, FamousQuotes) {
   $rootScope.$on('$stateChangeSuccess',
     function(event, toState, toParams, fromState, fromParams){
       $rootScope.currentSection = $state.current.name;
+      $rootScope.currentQuote = FamousQuotes[Math.floor((Math.random() * FamousQuotes.length) + 1)];
     });
 }]);
