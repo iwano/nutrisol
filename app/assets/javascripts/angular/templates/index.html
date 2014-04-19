@@ -4,18 +4,16 @@
       <div class="navbar-header">
         <a class="navbar-brand" ui-sref="root">Nutrisol <3</a>
       </div>
-      <div class='navbar-right'>
-        <a id="ns-btn-about" class='btn btn-info' ng-click='openAboutModal()'>
-          <span class="glyphicon glyphicon-question-sign"></span>
-        </a>
-      </div>
+      <a id="ns-btn-about" class='btn btn-info' ng-click='openAboutModal()'>
+        <span class="glyphicon glyphicon-question-sign"></span>
+      </a>
     </div>
   </nav>
 </header>
 
 <div class='container'>
   <div class='row'>
-    <div class='col-md-3'>
+    <div class='col-md-3 ns-main-sidebar'>
       <div class="form-group">
         <ul class="nav nav-pills nav-stacked">
           <li ng-class="{ 'active': currentSection.indexOf('teenager') != -1 }"><a ui-sref="root.teenager">Adolescente</a></li>
@@ -32,7 +30,7 @@
         </ul>
       </div>
     </div>
-    <div class='col-md-9'>
+    <div class='col-md-9 ns-main-container'>
       <div ng-show="currentSection == 'root'">
         <blockquote class="ns-main-quote">
           <p>{{currentQuote}}</p>
