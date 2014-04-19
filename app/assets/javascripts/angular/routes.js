@@ -139,6 +139,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Adulto'
         }
       })
+      .state('root.adult.calories', {
+        url: '/calorias',
+        templateUrl: 'angular/templates/adult/calories.html',
+        controller: 'AdultCaloriesController',
+        data: {
+          ncyBreadcrumbLabel: 'Peso Esperado'
+        }
+      })
       .state('root.adult.rations', {
         url: '/raciones',
         templateUrl: 'angular/templates/general/diet_calculation.html',

@@ -3,9 +3,9 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('IndexController', ['$modal', '$scope', 'Formulas', controller]);
+      .controller('IndexController', ['$modal', '$scope', controller]);
 
-  function controller($modal, $scope, Formulas) {
+  function controller($modal, $scope) {
 
     $scope.openAboutModal = function() {
        $modal.open({

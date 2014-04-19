@@ -1,11 +1,11 @@
 'use strict';
 
-describe('Formulas', function() {
+describe('adultFormulas', function() {
   var Formulas;
 
   beforeEach(module('services'));
-  beforeEach(inject(function(_Formulas_) {
-    Formulas = _Formulas_;
+  beforeEach(inject(function(adultFormulas) {
+    Formulas = adultFormulas;
   }));
 
   describe('#bmi', function() {
@@ -26,3 +26,4 @@ describe('Formulas', function() {
     });
   });
 });
+
