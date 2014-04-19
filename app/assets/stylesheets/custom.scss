@@ -1,5 +1,15 @@
 body { padding-top: 70px; }
 
+.navbar-header {
+  text-align: center;
+}
+
+.navbar-brand {
+  font-size: 25px;
+  min-width: 218px;
+  width: 100%;
+}
+
 .ns-main-sidebar {
   position: relative;
   .nav-stacked {
@@ -67,3 +77,4 @@ table.calculation-table {
     width: auto !important;
   }
 }
+
