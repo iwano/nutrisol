@@ -44,25 +44,7 @@
     </div>
 
     <div class="col-md-5">
-      <div class="form-group">
-        <label>Porcentaje de Valor Enérgetico Total (%VET)</label>
-      </div>
-      <table class="table calculation-table">
-        <tbody>
-          <tr class="info">
-            <th>Proteínas</th>
-            <td>12-15%</td>
-          </tr>
-          <tr class="danger">
-            <th>Hidratos de Carbono</th>
-            <td>55-63%</td>
-          </tr>
-          <tr class="warning">
-            <th>Lípidos</th>
-            <td>25-30%</td>
-          </tr>
-        </tbody>
-      </table>
+      <ng-include src="'angular/templates/' + currentTemplateFolder + '/vet.html'"></ng-include>
     </div>
   </div>
   <hr>

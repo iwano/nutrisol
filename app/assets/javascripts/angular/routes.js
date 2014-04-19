@@ -38,8 +38,8 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
       })
       .state('root.pregnant.rations', {
         url: '/raciones',
-        templateUrl: 'angular/templates/pregnant/rations.html',
-        controller: 'PregnantRationsController',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
         data: {
           ncyBreadcrumbLabel: 'Raciones'
         }
@@ -47,52 +47,162 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
       .state('root.newborn', {
         url: 'recien_nacido',
         templateUrl: 'angular/templates/newborn/index.html',
-        controller: 'NewbornController'
+        controller: 'NewbornController',
+        data: {
+          ncyBreadcrumbLabel: 'Recién nacido'
+        }
+      })
+      .state('root.newborn.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.infant', {
         url: 'lactante',
         templateUrl: 'angular/templates/infant/index.html',
-        controller: 'InfantController'
+        controller: 'InfantController',
+        data: {
+          ncyBreadcrumbLabel: 'Lactante'
+        }
+      })
+      .state('root.infant.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.preschool', {
         url: 'preescolar',
         templateUrl: 'angular/templates/preschool/index.html',
-        controller: 'PreschoolController'
+        controller: 'PreschoolController',
+        data: {
+          ncyBreadcrumbLabel: 'Preescolar'
+        }
+      })
+      .state('root.preschool.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.scholar', {
         url: 'escolar',
         templateUrl: 'angular/templates/scholar/index.html',
-        controller: 'ScholarController'
+        controller: 'ScholarController',
+        data: {
+          ncyBreadcrumbLabel: 'Escolar'
+        }
+      })
+      .state('root.scholar.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.teenager', {
         url: 'adolescente',
         templateUrl: 'angular/templates/teenager/index.html',
-        controller: 'TeenagerController'
+        controller: 'TeenagerController',
+        data: {
+          ncyBreadcrumbLabel: 'Adolescente'
+        }
+      })
+      .state('root.teenager.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.adult', {
         url: 'adulto',
         templateUrl: 'angular/templates/adult/index.html',
-        controller: 'AdultController'
+        controller: 'AdultController',
+        data: {
+          ncyBreadcrumbLabel: 'Adulto'
+        }
+      })
+      .state('root.adult.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.elderly', {
         url: 'adulto_mayor',
         templateUrl: 'angular/templates/elderly/index.html',
-        controller: 'ElderlyController'
+        controller: 'ElderlyController',
+        data: {
+          ncyBreadcrumbLabel: 'Adulto Mayor'
+        }
+      })
+      .state('root.elderly.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.predialytic', {
         url: 'predialitico',
         templateUrl: 'angular/templates/predialytic/index.html',
-        controller: 'PredialyticController'
+        controller: 'PredialyticController',
+        data: {
+          ncyBreadcrumbLabel: 'Prediálitico'
+        }
+      })
+      .state('root.predialytic.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.dialysis', {
         url: 'dialisis',
         templateUrl: 'angular/templates/dialysis/index.html',
-        controller: 'DialysisController'
+        controller: 'DialysisController',
+        data: {
+          ncyBreadcrumbLabel: 'Diálisis'
+        }
+      })
+      .state('root.dialysis.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       })
       .state('root.hemodialysis', {
         url: 'hemodialisis',
         templateUrl: 'angular/templates/hemodialysis/index.html',
-        controller: 'HemodialysisController'
+        controller: 'HemodialysisController',
+        data: {
+          ncyBreadcrumbLabel: 'Hemodiálisis'
+        }
+      })
+      .state('root.hemodialysis.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
       });
   }]);
 
@@ -102,5 +212,6 @@ nutrisol.run(['$rootScope', '$state', 'FamousQuotes', function($rootScope, $stat
     function(event, toState, toParams, fromState, fromParams){
       $rootScope.currentSection = $state.current.name;
       $rootScope.currentQuote = FamousQuotes[Math.floor((Math.random() * FamousQuotes.length) + 1)];
+      $rootScope.currentTemplateFolder = $rootScope.currentSection.split('.')[1];
     });
 }]);

@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('PregnantRationsController', ['$scope', 'GeneralFormulas', 'pregnantFormulas', controller]);
+      .controller('DietCalculationController', ['$scope', 'GeneralFormulas', 'pregnantFormulas', controller]);
 
   function controller($scope, GeneralFormulas, Formulas) {
 
