@@ -44,6 +44,13 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Raciones'
         }
       })
+      .state('root.pregnant.lab_studies', {
+        url: '/estudios_de_laboratorio',
+        templateUrl: 'angular/templates/pregnant/lab_studies.html',
+        data: {
+          ncyBreadcrumbLabel: 'Estudios de Laboratorio'
+        }
+      })
       .state('root.newborn', {
         url: 'recien_nacido',
         templateUrl: 'angular/templates/newborn/index.html',
