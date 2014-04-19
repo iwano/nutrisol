@@ -2,46 +2,68 @@
   <h2 class="ns-title">Dietocálculo</h2>
 
   <div class="row">
-  <div class="col-md-7">
-    <table class="table calculation-table">
-      <thead>
-        <tr class="active">
-          <th></th>
-          <th>gramos</th>
-          <th>kcal</th>
-          <th>%</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="info">
-          <th>Hidratos de Carbono</th>
-          <td>{{calories.carbohydrates.g}}</td>
-          <td>{{calories.carbohydrates.kcal}}</td>
-          <td><input type='number' step='.1' name='carbohydrates_percentage' ng-model='calories.carbohydrates.percentage' /></td>
-        </tr>
-        <tr class="danger">
-          <th>Proteínas</th>
-          <td>{{calories.proteins.g}}</td>
-          <td>{{calories.proteins.kcal}}</td>
-          <td><input type='number' step='.1' name='proteins_percentage' ng-model='calories.proteins.percentage' /></td>
-        </tr>
-        <tr class="warning">
-          <th>Lípidos</th>
-          <td>{{calories.lipids.g}}</td>
-          <td>{{calories.lipids.kcal}}</td>
-          <td><input type='number' step='.1' name='lipids_percentage' ng-model='calories.lipids.percentage' /></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr class="success">
-          <th>TOTAL</th>
-          <td></td>
-          <td><input type='number' step='.1' name='calories_total' ng-model='calories.totalCalories' /></td>
-          <td>{{calories.totalPercentage}}%</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
+    <div class="col-md-7">
+      <table class="table calculation-table">
+        <thead>
+          <tr class="active">
+            <th></th>
+            <th>gramos</th>
+            <th>kcal</th>
+            <th>%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <th>Hidratos de Carbono</th>
+            <td>{{calories.carbohydrates.g}}</td>
+            <td>{{calories.carbohydrates.kcal}}</td>
+            <td><input type='number' step='.1' name='carbohydrates_percentage' ng-model='calories.carbohydrates.percentage' /></td>
+          </tr>
+          <tr class="danger">
+            <th>Proteínas</th>
+            <td>{{calories.proteins.g}}</td>
+            <td>{{calories.proteins.kcal}}</td>
+            <td><input type='number' step='.1' name='proteins_percentage' ng-model='calories.proteins.percentage' /></td>
+          </tr>
+          <tr class="warning">
+            <th>Lípidos</th>
+            <td>{{calories.lipids.g}}</td>
+            <td>{{calories.lipids.kcal}}</td>
+            <td><input type='number' step='.1' name='lipids_percentage' ng-model='calories.lipids.percentage' /></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="success">
+            <th>TOTAL</th>
+            <td></td>
+            <td><input type='number' step='.1' name='calories_total' ng-model='calories.totalCalories' /></td>
+            <td>{{calories.totalPercentage}}%</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="col-md-5">
+      <div class="form-group">
+        <label>Porcentaje de Valor Enérgetico Total (%VET)</label>
+      </div>
+      <table class="table calculation-table">
+        <tbody>
+          <tr class="info">
+            <th>Proteínas</th>
+            <td>12-15%</td>
+          </tr>
+          <tr class="danger">
+            <th>Hidratos de Carbono</th>
+            <td>55-63%</td>
+          </tr>
+          <tr class="warning">
+            <th>Lípidos</th>
+            <td>25-30%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <hr>
   <h2 class="ns-title">Cálculo de Raciones</h2>
