@@ -14,7 +14,8 @@
       age: 0,
       height: 0,
       weight: 0,
-      bmi: 0
+      bmi: 0,
+      tmb: 0
     };
 
 
@@ -29,7 +30,7 @@
       } else {
         result = Formulas.tmbWomen($scope.person.age, $scope.person.height, $scope.person.weight);
       }
-      $scope.result = result;
+      $scope.person.tmb = result;
     });
 
   }
