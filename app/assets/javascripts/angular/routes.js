@@ -147,6 +147,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Peso Esperado'
         }
       })
+      .state('root.adult.anthropometry', {
+        url: '/antropometria',
+        templateUrl: 'angular/templates/adult/anthropometry.html',
+        controller: 'AdultAnthropometryController',
+        data: {
+          ncyBreadcrumbLabel: 'Antropometría'
+        }
+      })
       .state('root.adult.rations', {
         url: '/raciones',
         templateUrl: 'angular/templates/general/diet_calculation.html',

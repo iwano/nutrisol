@@ -3,9 +3,9 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('AdultCaloriesController', ['$modal', '$scope', 'adultFormulas', controller]);
+      .controller('AdultCaloriesController', ['$scope', 'adultFormulas', controller]);
 
-  function controller($modal, $scope, Formulas) {
+  function controller($scope, Formulas) {
     $scope.title = 'such nutriments';
 
     $scope.genderFilter = 'hombres';
