@@ -30,7 +30,11 @@ body { padding-top: 70px; }
 }
 
 .breadcrumb {
-  margin-top: -15px;
+  background-color: transparent;
+  float: right;
+  margin-bottom: 0;
+  margin-right: 60px;
+  margin-top: 6px;
 }
 
 table.calculation-table {
@@ -75,6 +79,11 @@ table.calculation-table {
   .ns-main-sidebar .nav-stacked {
     position: relative !important;
     width: auto !important;
+  }
+  .breadcrumb {
+    float: none;
+    text-align: center;
+    width: 100%;
   }
 }
 

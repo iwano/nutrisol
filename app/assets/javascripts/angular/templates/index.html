@@ -4,6 +4,9 @@
       <div class="navbar-header col-md-3">
         <a class="navbar-brand" ui-sref="root">Nutrisol <3</a>
       </div>
+      <div ng-show="currentSection.indexOf('root.') != -1">
+        <div ncy-breadcrumb></div>
+      </div>
       <a id="ns-btn-about" class='btn btn-info' ng-click='openAboutModal()'>
         <span class="glyphicon glyphicon-question-sign"></span>
       </a>
@@ -35,9 +38,6 @@
         <blockquote class="ns-main-quote">
           <p>{{currentQuote}}</p>
         </blockquote>
-      </div>
-      <div ng-show="currentSection.indexOf('root.') != -1">
-        <div ncy-breadcrumb></div>
       </div>
       <div ui-view></div>
   </div>
