@@ -26,15 +26,15 @@ describe('adultFormulas', function() {
     });
   });
 
-  xdescribe('#idealWeightMen', function() {
+  describe('#idealWeightMen', function() {
     it('calculates the ideal weight for men correctly', function() {
-      expect(Formulas.idealWeightMen(1)).toEqual(1);
+      expect(Formulas.idealWeightMen(160)).toEqual(56.916);
     });
   });
 
-  xdescribe('#idealWeightWomen', function() {
+  describe('#idealWeightWomen', function() {
     it('calculates the ideal weight for women correctly', function() {
-      expect(Formulas.idealWeightWomen(1)).toEqual(1);
+      expect(Formulas.idealWeightWomen(160)).toEqual(52.416);
     });
   });
 
@@ -56,9 +56,9 @@ describe('adultFormulas', function() {
     });
   });
 
-  xdescribe('#actMen', function() {
+  describe('#actMen', function() {
     it('calculates the total body water for men correctly', function() {
-      expect(Formulas.actMen(170, 70.6)).toEqual(1);
+      expect(Formulas.actMen(160, 48, 23)).toEqual(33.57992);
     });
   });
 
@@ -74,9 +74,9 @@ describe('adultFormulas', function() {
     });
   });
 
-  xdescribe('#gctWomen', function() {
+  describe('#gctWomen', function() {
     it('calculates the total body mass for women correctly', function() {
-      expect(Formulas.gctWomen(1)).toEqual(1);
+      expect(Formulas.gctWomen(160, 18.749999999999996)).toEqual(9.289599999999993);
     });
   });
 
@@ -92,9 +92,9 @@ describe('adultFormulas', function() {
     });
   });
 
-  xdescribe('#gctPercentageWomen', function() {
+  describe('#gctPercentageWomen', function() {
     it('calculates the percentage of total body fat form women correctly', function() {
-      expect(Formulas.gctPercentageWomen(1)).toEqual(1);
+      expect(Formulas.gctPercentageWomen(23, 65)).toEqual(24.218000000000004);
     });
   });
 });
