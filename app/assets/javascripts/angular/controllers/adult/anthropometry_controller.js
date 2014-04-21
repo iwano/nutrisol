@@ -53,7 +53,7 @@
     });
 
     $scope.$watchCollection('[person.waist, person.age]', function(newValues, oldValues){
-      $scope.person.agia = Formulas.agia($scope.person.waist, $scope.person.age);
+      $scope.person.agia = Formulas.agia($scope.person.age, $scope.person.waist);
     });
 
     $scope.$watchCollection('[person.height, person.weight, person.age, genderFilter]', function(newValues, oldValues){

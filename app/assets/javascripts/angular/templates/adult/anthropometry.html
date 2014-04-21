@@ -159,12 +159,68 @@
     </div>
   </div>
 
+  <hr>
 
+  <div class="row">
+    <div class="col-md-4">
+      <h3>
+        IMC: <code>{{person.bmi}}</code>
+      </h3>
+    </div>
+    <div class="col-md-8">
+      <label>Índice de Masa Corporal IMC</label>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Interpretación</th>
+            <th>Valores principales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Bajo peso</th>
+            <td>< 18.50</td>
+          </tr>
+          <tr>
+            <th>Delgadez severa</th>
+            <td>< 16</td>
+          </tr>
+          <tr>
+            <th>Delagez moderada</th>
+            <td>16 a 16.99</td>
+          </tr>
+          <tr>
+            <th>Delgadez aceptable</th>
+            <td>17 a 18.49</td>
+          </tr>
+          <tr>
+            <th>Normal</th>
+            <td>18.5 a 24.99</td>
+          </tr>
+          <tr>
+            <th>Sobrepeso</th>
+            <td>25 a 29.99</td>
+          </tr>
+          <tr>
+            <th>Obeso tipo I</th>
+            <td>30 a 34.99</td>
+          </tr>
+          <tr>
+            <th>Obeso tipo II</th>
+            <td>35 a 39.99</td>
+          </tr>
+          <tr>
+            <th>Obeso tipo III</th>
+            <td>>= 40</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr>
 
   <div class="form-group">
-    <h3>
-      IMC: <code>{{person.bmi}}</code>
-    </h3>
     <h3>
       Peso Ideal: <code>{{person.idealWeight}}</code>
     </h3>
@@ -175,19 +231,22 @@
       Agua corporal total: <code>{{person.act}}</code>
     </h3>
     <h3>
-       Masa corporal total: <code>{{person.gct}}</code>
+       Grasa corporal total: <code>{{person.gct}}</code>
     </h3>
     <h3>
       Masa libre de grasa: <code>{{person.mlg}}</code>
     </h3>
+    <h3>
+      Distribución de grasa corporal: <code>{{person.icc}}</code>
+    </h3>
+    <h3>
+      Grasa intraabdominal: <code>{{person.agia}}</code>
+    </h3>
+
+    <hr>
+
     <div class="row">
       <div class="col-md-5">
-        <h3>
-          Distribución de grasa corporal: <code>{{person.icc}}</code>
-        </h3>
-        <h3>
-          Grasa intraabdominal: <code>{{person.agia}}</code>
-        </h3>
         <h3>
           Porcentaje de Grasa Corporal Total: <code>{{person.gctPercentage}}</code>
         </h3>
@@ -260,4 +319,6 @@
       </div>
     </div>
   </div>
+
+
 </form>

@@ -7,7 +7,7 @@
   </div>
   <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
     <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-    <input type='number' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' ng-pattern='/^\d+$/' required/>
+    <input type='number' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
     <div class='error' ng-show="tmb_form.height.$dirty && tmb_form.height.$invalid">
       * Requerido: Numerico
     </div>
@@ -15,7 +15,7 @@
 
   <div class="form-group" ng-class="{ 'has-error': tmb_form.weight.$invalid }">
     <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-    <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' ng-pattern='/^\d+$/' required />
+    <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
     <div class='error' ng-show="tmb_form.weight.$dirty && tmb_form.weight.$invalid">
       * Requerido: Numerico
     </div>

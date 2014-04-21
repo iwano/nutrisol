@@ -45,13 +45,13 @@
       },
 
       agia: function(age, waist) {
-        //AGIA cm2= (2.125 * age)+ (2.843* waist circumference) -225.39
+        //AGIA cm2= (2.125 * age)+ (2.843* waist circumference) - 225.39
         return (2.125 * age) + (2.843 * waist) - 225.39;
       },
 
       actMen: function(height, weight, age) {
-        //(0.09516 * age)+(0.1074 * height)+(0.3362 * weight kg) + 2.447
-        return (0.09516 * age) + (0.1074 * height) + (0.3362 * weight) + 2.447;
+        //(-0.09516 * age) + (0.1074 * height) + (0.3362 * weight kg) + 2.447
+        return (-0.09516 * age) + (0.1074 * height) + (0.3362 * weight) + 2.447;
       },
 
       actWomen: function(height, weight) {
@@ -62,13 +62,13 @@
       gctMen: function(height, imc) {
         //GCT kg=(0.715 * IMCkg / m2) - 12.1 * height m2
         var height2 = Math.pow((height / 100), 2);
-        return (0.715 * imc) - 12.1 * height2;
+        return ((0.715 * imc) - 12.1) * height2;
       },
 
       gctWomen: function(height, imc) {
         //GCT kg=(0.713 * IMC kg/m2) - 9.74 * Talla m2
         var height2 = Math.pow((height / 100), 2);
-        return (0.713 * imc) - 9.74 * height2;
+        return ((0.713 * imc) - 9.74) * height2;
       },
 
       mlg: function(weight, gct) {
