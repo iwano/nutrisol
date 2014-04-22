@@ -1,4 +1,6 @@
-body { padding-top: 70px; }
+body {
+  padding-top: 70px;
+}
 
 .navbar-header {
   text-align: center;
@@ -80,6 +82,7 @@ table.calculation-table {
     position: relative !important;
     width: auto !important;
   }
+
   .breadcrumb {
     float: none;
     text-align: center;
@@ -87,3 +90,9 @@ table.calculation-table {
   }
 }
 
+@media (max-width: 768px) {
+    body {
+      padding-top: 94px;
+  }
+
+}
