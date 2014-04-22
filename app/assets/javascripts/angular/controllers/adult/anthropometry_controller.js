@@ -7,7 +7,7 @@
 
   function controller($scope, Formulas) {
 
-    $scope.genderFilter = 'hombres';
+    $scope.genderFilter = 'male';
 
     $scope.person = {
       age: 0,
@@ -31,7 +31,7 @@
 
     $scope.$watchCollection('[person.height, genderFilter]', function(newValues, oldValues){
       var result;
-      if ($scope.genderFilter == 'hombres') {
+      if ($scope.genderFilter == 'male') {
         result = Formulas.idealWeightMen($scope.person.height);
       } else {
         result = Formulas.idealWeightWomen($scope.person.height);
@@ -57,7 +57,7 @@
 
     $scope.$watchCollection('[person.height, person.weight, person.age, genderFilter]', function(newValues, oldValues){
       var result;
-      if ($scope.genderFilter == 'hombres') {
+      if ($scope.genderFilter == 'male') {
         result = Formulas.actMen($scope.person.height, $scope.person.weight, $scope.person.age);
       } else {
         result = Formulas.actWomen($scope.person.height, $scope.person.weight, $scope.person.age);
@@ -67,7 +67,7 @@
 
     $scope.$watchCollection('[person.height, person.weight, genderFilter]', function(newValues, oldValues){
       var result;
-      if ($scope.genderFilter == 'hombres') {
+      if ($scope.genderFilter == 'male') {
         result = Formulas.gctMen($scope.person.height, $scope.person.bmi);
       } else {
         result = Formulas.gctWomen($scope.person.height, $scope.person.bmi);
@@ -81,7 +81,7 @@
 
     $scope.$watchCollection('[person.age, person.waist, genderFilter]', function(newValues, oldValues){
       var result;
-      if ($scope.genderFilter == 'hombres') {
+      if ($scope.genderFilter == 'male') {
         result = Formulas.gctPercentageMen($scope.person.age, $scope.person.waist);
       } else {
         result = Formulas.gctPercentageWomen($scope.person.age, $scope.person.waist);

@@ -1,7 +1,7 @@
 <form name="anthropometry_form" role="form">
   <div class="form-group">
     <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'hombres'">Hombres</button>
+      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
       <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'mujeres'">Mujeres</button>
     </div>
   </div>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="col-md-5">
-      <div ng-show="genderFilter == 'hombres'">
+      <div ng-show="genderFilter == 'male'">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -98,7 +98,7 @@
     </div>
 
     <div class="col-md-5">
-      <div ng-show="genderFilter == 'hombres'">
+      <div ng-show="genderFilter == 'male'">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -252,7 +252,7 @@
         </h3>
       </div>
       <div class="col-md-5">
-        <div ng-show="genderFilter == 'hombres'">
+        <div ng-show="genderFilter == 'male'">
           <table class="table table-striped">
             <thead>
               <tr>

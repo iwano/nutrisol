@@ -8,7 +8,7 @@
   function controller($scope, Formulas) {
     $scope.title = 'such nutriments';
 
-    $scope.genderFilter = 'hombres';
+    $scope.genderFilter = 'male';
 
     $scope.person = {
       age: 0,
@@ -25,7 +25,7 @@
       var result;
       $scope.person.bmi = Formulas.bmi($scope.person.height, $scope.person.weight);
 
-      if ($scope.genderFilter == 'hombres'){
+      if ($scope.genderFilter == 'male'){
         result = Formulas.tmbMen($scope.person.age, $scope.person.height, $scope.person.weight);
       } else {
         result = Formulas.tmbWomen($scope.person.age, $scope.person.height, $scope.person.weight);
