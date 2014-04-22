@@ -6,7 +6,6 @@
       .controller('AdultAnthropometryController', ['$scope', 'adultFormulas', controller]);
 
   function controller($scope, Formulas) {
-    $scope.title = 'such nutriments';
 
     $scope.genderFilter = 'hombres';
 
