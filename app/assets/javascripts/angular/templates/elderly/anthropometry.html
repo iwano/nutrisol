@@ -34,7 +34,7 @@
   </div>
 
   <h3>
-    Talla: <code>{{person.tallness}}</code>
+    Talla: <code>{{person.tallness | number:2}}</code>
   </h3>
 
   <div class="form-group" ng-class="{ 'has-error': anthropometry_form.elbowWidth.$invalid }">
@@ -63,15 +63,15 @@
   </div>
 
   <h3>
-    Complexión Corporal: <code>{{person.cc}}</code>
+    Complexión Corporal: <code>{{person.cc | number:2}}</code>
   </h3>
 
   <h3>
-    IMC: <code>{{person.bmi}}</code>
+    IMC: <code>{{person.bmi | number:2}}</code>
   </h3>
 
   <h3>
-    Porcentaje de Grasa Corporal : <code>{{person.gct}}</code>
+    Porcentaje de Grasa Corporal : <code>{{person.gct | number:2}}</code>
   </h3>
 
   <label>Índice de Masa Corporal IMC</label>

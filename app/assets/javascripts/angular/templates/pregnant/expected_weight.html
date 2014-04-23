@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <h3>
-      IMC previo al embarazo <code>{{person.bmi}}</code>
+      IMC previo al embarazo <code>{{person.bmi | number:2}}</code>
     </h3>
   </div>
   <hr>
@@ -35,7 +35,7 @@
   </div>
 
   <div class="form-group">
-    <h4>IMC previo al embarazo <span class="label label-warning">{{person.bmi}}</span></h4>
+    <h4>IMC previo al embarazo <span class="label label-warning">{{person.bmi | number:2}}</span></h4>
   </div>
 
   <div class="form-group has-feedback" ng-class="{ 'has-error': imc_form.age.$invalid }">
@@ -50,7 +50,7 @@
 
   <div class="form-group">
     <h3>
-      Peso esperado: <code>{{result}}</code>
+      Peso esperado: <code>{{result | number:2}}</code>
     </h3>
   </div>
 
