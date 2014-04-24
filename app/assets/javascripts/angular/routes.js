@@ -240,6 +240,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Antropometría'
         }
       })
+      .state('root.kidney_failure.predialysis.calories', {
+        url: '/calorias',
+        templateUrl: 'angular/templates/kidney_failure/predialysis/calories.html',
+        controller: 'KidneyFailurePredialysisCaloriesController',
+        data: {
+          ncyBreadcrumbLabel: 'Calorias'
+        }
+      })
       .state('root.kidney_failure.predialysis.lab_studies', {
         url: '/estudios_de_laboratorio',
         templateUrl: 'angular/templates/kidney_failure/predialysis/lab_studies.html',

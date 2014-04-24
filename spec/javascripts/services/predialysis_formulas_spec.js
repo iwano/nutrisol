@@ -38,5 +38,17 @@ describe('predialysisFormulas', function() {
     });
   });
 
+  xdescribe('#kcal', function() {
+    it('calculates the number of calories needed', function() {
+      expect(Formulas.waistHipsIndex(0, 0)).toEqual(0);
+    });
+  });
+
+  xdescribe('#proteins', function() {
+    it('calculates the number of proteins needed', function() {
+      expect(Formulas.dryWeight(0, 0)).toEqual(0);
+    });
+  });
+
 });
 
