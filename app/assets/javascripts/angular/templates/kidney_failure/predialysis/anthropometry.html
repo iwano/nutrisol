@@ -1,0 +1,229 @@
+<ui-view>
+  <form name="anthropometry_form" role="form">
+    <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" ng-model="person.gender" btn-radio="'male'">Hombres</button>
+        <button type="button" class="btn btn-primary" ng-model="person.gender" btn-radio="'mujeres'">Mujeres</button>
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
+      <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
+      <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+      <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
+        * Requerido: Numerico
+      </div>
+    </div>
+
+    <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
+      <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
+      <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+      <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
+        * Requerido: Numerico
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-5">
+        <div class="form-group" ng-class="{ 'has-error': anthropometry_form.waist.$invalid }">
+          <label class="control-label" tooltip="cm" tooltip-placement="left" for="waist">Perímetro Cintura</label>
+          <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
+          <div class='error' ng-show="anthropometry_form.waist.$dirty && anthropometry_form.waist.$invalid">
+            * Requerido: Numerico
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div ng-show="person.gender == 'male'">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Punto de corte</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>>= 1</th>
+                <td>Androide</td>
+              </tr>
+              <tr>
+                <th><1</th>
+                <td>Ginecoide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div ng-show="person.gender == 'mujeres'">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Punto de corte</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>>= 0.8</th>
+                <td>Androide</td>
+              </tr>
+              <tr>
+                <th><0.8</th>
+                <td>Ginecoide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group" ng-class="{ 'has-error': anthropometry_form.hips.$invalid }">
+      <label class="control-label" tooltip="cm" tooltip-placement="left" for="hips">Perímetro cadera</label>
+      <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
+      <div class='error' ng-show="anthropometry_form.hips.$dirty && anthropometry_form.hips.$invalid">
+        * Requerido: Numerico
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" ng-model="person.adultType" btn-radio="'adult'">Adulto</button>
+        <button type="button" class="btn btn-primary" ng-model="person.adultType" btn-radio="'elderly'">Adulto Mayor</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>
+          IMC: <code>{{person.bmi | number:2}}</code>
+        </h3>
+      </div>
+      <div ng-show="person.adultType == 'adult'">
+        <div class="col-md-8">
+          <label>Índice de Masa Corporal IMC Adulto</label>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Interpretación</th>
+                <th>Valores principales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Bajo peso</th>
+                <td>< 18.50</td>
+              </tr>
+              <tr>
+                <th>Delgadez severa</th>
+                <td>< 16</td>
+              </tr>
+              <tr>
+                <th>Delagez moderada</th>
+                <td>16 a 16.99</td>
+              </tr>
+              <tr>
+                <th>Delgadez aceptable</th>
+                <td>17 a 18.49</td>
+              </tr>
+              <tr>
+                <th>Normal</th>
+                <td>18.5 a 24.99</td>
+              </tr>
+              <tr>
+                <th>Sobrepeso</th>
+                <td>25 a 29.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo I</th>
+                <td>30 a 34.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo II</th>
+                <td>35 a 39.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo III</th>
+                <td>>= 40</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div ng-show="person.adultType == 'elderly'">
+        <div class="col-md-8">
+          <label>Índice de Masa Corporal IMC Elderly</label>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Interpretación</th>
+                <th>Valores principales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Bajo peso</th>
+                <td>< 18.50</td>
+              </tr>
+              <tr>
+                <th>Delgadez severa</th>
+                <td>< 16</td>
+              </tr>
+              <tr>
+                <th>Delagez moderada</th>
+                <td>16 a 16.99</td>
+              </tr>
+              <tr>
+                <th>Delgadez aceptable</th>
+                <td>17 a 18.49</td>
+              </tr>
+              <tr>
+                <th>Normal</th>
+                <td>18.5 a 24.99</td>
+              </tr>
+              <tr>
+                <th>Sobrepeso</th>
+                <td>25 a 29.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo I</th>
+                <td>30 a 34.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo II</th>
+                <td>35 a 39.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo III</th>
+                <td>>= 40</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <h3>
+        Peso Ideal: <code>{{person.idealWeight | number:2}}</code>
+      </h3>
+      <h3>
+        Peso Seco: <code>{{person.dryWeight | number:2}}</code>
+      </h3>
+      <h3>
+        Índice Cintura Cadera: <code>{{person.waistHipsIndex | number:2}}</code>
+      </h3>
+    </div>
+  </form>
+
+</div>

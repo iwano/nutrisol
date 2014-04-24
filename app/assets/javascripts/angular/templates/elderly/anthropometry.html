@@ -38,7 +38,7 @@
   </h3>
 
   <div class="form-group" ng-class="{ 'has-error': anthropometry_form.elbowWidth.$invalid }">
-    <label class="control-label" tooltip="cm" tooltip-placement="left" for="elbowWidth">Anchura de codo</label>
+    <label class="control-label" tooltip="mm" tooltip-placement="left" for="elbowWidth">Anchura de codo</label>
     <input type='number' step='.1' name='elbowWidth' ng-model='person.elbowWidth' placeholder='Ingresa Anchura de codo' class='form-control' required/>
     <div class='error' ng-show="anthropometry_form.elbowWidth.$dirty && anthropometry_form.elbowWidth.$invalid">
       * Requerido: Numerico

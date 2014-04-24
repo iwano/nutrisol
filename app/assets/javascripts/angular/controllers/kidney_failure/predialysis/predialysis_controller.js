@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('HemodialysisController', ['$scope', 'hemodialysisFormulas', controller]);
+      .controller('KidneyFailurePredialysisController', ['$scope', 'predialysisFormulas', controller]);
 
   function controller($scope, Formulas) {
   }

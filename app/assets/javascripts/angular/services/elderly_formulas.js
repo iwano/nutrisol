@@ -9,9 +9,9 @@
       },
 
       cc: function(elbowWidth, height) {
-        //CC= elbow width mm/ height cm * 100
+        //CC= elbow width mm/ height cm
 
-        return (elbowWidth * 10) / height * 100
+        return elbowWidth / height
       },
 
       bmi: function(height, weight) {

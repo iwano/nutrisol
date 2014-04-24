@@ -209,31 +209,38 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Raciones'
         }
       })
-      .state('root.predialytic', {
-        url: 'predialitico',
-        templateUrl: 'angular/templates/predialytic/index.html',
-        controller: 'PredialyticController',
+      .state('root.kidney_failure', {
+        url: 'insuficiencia_renal',
+        templateUrl: 'angular/templates/kidney_failure/index.html',
+        controller: 'KidneyFailureController',
         data: {
-          ncyBreadcrumbLabel: 'Prediálitico'
+          ncyBreadcrumbLabel: 'Insuficiencia Renal'
         }
       })
-      .state('root.predialytic.rations', {
-        url: '/raciones',
-        templateUrl: 'angular/templates/general/diet_calculation.html',
-        controller: 'DietCalculationController',
-        data: {
-          ncyBreadcrumbLabel: 'Raciones'
-        }
-      })
-      .state('root.dialysis', {
-        url: 'dialisis',
-        templateUrl: 'angular/templates/dialysis/index.html',
-        controller: 'DialysisController',
+      .state('root.kidney_failure.dialysis', {
+        url: '/dialisis',
+        templateUrl: 'angular/templates/kidney_failure/dialysis/index.html',
+        controller: 'KidneyFailureDialysisController',
         data: {
           ncyBreadcrumbLabel: 'Diálisis'
         }
+      }).state('root.kidney_failure.predialysis', {
+        url: '/predialitico',
+        templateUrl: 'angular/templates/kidney_failure/predialysis/index.html',
+        controller: 'KidneyFailurePredialysisController',
+        data: {
+          ncyBreadcrumbLabel: 'Prediálisis'
+        }
       })
-      .state('root.dialysis.rations', {
+      .state('root.kidney_failure.predialysis.anthropometry', {
+        url: '/antropometria',
+        templateUrl: 'angular/templates/kidney_failure/predialysis/anthropometry.html',
+        controller: 'KidneyFailurePredialysisAnthropometryController',
+        data: {
+          ncyBreadcrumbLabel: 'Antropometría'
+        }
+      })
+      .state('root.kidney_failure.predialysis.rations', {
         url: '/raciones',
         templateUrl: 'angular/templates/general/diet_calculation.html',
         controller: 'DietCalculationController',
@@ -241,15 +248,23 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Raciones'
         }
       })
-      .state('root.hemodialysis', {
-        url: 'hemodialisis',
-        templateUrl: 'angular/templates/hemodialysis/index.html',
-        controller: 'HemodialysisController',
+      .state('root.kidney_failure.hemodialysis', {
+        url: '/hemodialisis',
+        templateUrl: 'angular/templates/kidney_failure/hemodialysis/index.html',
+        controller: 'KidneyFailureHemodialysisController',
         data: {
           ncyBreadcrumbLabel: 'Hemodiálisis'
         }
       })
-      .state('root.hemodialysis.rations', {
+      .state('root.kidney_failure.dialysis.rations', {
+        url: '/raciones',
+        templateUrl: 'angular/templates/general/diet_calculation.html',
+        controller: 'DietCalculationController',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
+      })
+      .state('root.kidney_failure.hemodialysis.rations', {
         url: '/raciones',
         templateUrl: 'angular/templates/general/diet_calculation.html',
         controller: 'DietCalculationController',
