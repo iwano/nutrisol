@@ -14,6 +14,7 @@ var nutrisol = angular.module('nutrisol', [
   'templates',
   'ui.bootstrap',
   'ncy-angular-breadcrumb',
-  'ui.router'
+  'ui.router',
+  'ngTouch'
 ]);
 
