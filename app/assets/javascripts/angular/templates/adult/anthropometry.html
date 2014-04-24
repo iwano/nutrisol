@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="btn-group">
       <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'mujeres'">Mujeres</button>
+      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
     </div>
   </div>
   <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
@@ -33,53 +33,56 @@
     </div>
 
     <div class="col-md-5">
-      <div ng-show="genderFilter == 'male'">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Valor</th>
-              <th>Interpretación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>> 10.4</th>
-              <td>Pequeña</td>
-            </tr>
-            <tr>
-              <th>9.6 a 10.4</th>
-              <td>Mediana</td>
-            </tr>
-            <tr>
-              <th>&#60; 9.6</th>
-              <td>Grande</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div ng-show="genderFilter == 'mujeres'">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Valor</th>
-              <th>Interpretación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>> 11</th>
-              <td>Pequeña</td>
-            </tr>
-            <tr>
-              <th>10.1 a 11</th>
-              <td>Mediana</td>
-            </tr>
-            <tr>
-              <th>&#60; 10.1</th>
-              <td>Grande</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="animate-switch-container" ng-switch on="genderFilter">
+        <div class="animate-switch" ng-switch-when="male">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Valor</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>> 10.4</th>
+                <td>Pequeña</td>
+              </tr>
+              <tr>
+                <th>9.6 a 10.4</th>
+                <td>Mediana</td>
+              </tr>
+              <tr>
+                <th>&#60; 9.6</th>
+                <td>Grande</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="animate-switch" ng-switch-when="female">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Valor</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>> 11</th>
+                <td>Pequeña</td>
+              </tr>
+              <tr>
+                <th>10.1 a 11</th>
+                <td>Mediana</td>
+              </tr>
+              <tr>
+                <th>&#60; 10.1</th>
+                <td>Grande</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -98,45 +101,48 @@
     </div>
 
     <div class="col-md-5">
-      <div ng-show="genderFilter == 'male'">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Punto de corte</th>
-              <th>Interpretación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>>= 1</th>
-              <td>Androide</td>
-            </tr>
-            <tr>
-              <th><1</th>
-              <td>Ginecoide</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div ng-show="genderFilter == 'mujeres'">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Punto de corte</th>
-              <th>Interpretación</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>>= 0.8</th>
-              <td>Androide</td>
-            </tr>
-            <tr>
-              <th><0.8</th>
-              <td>Ginecoide</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="animate-switch-container" ng-switch on="genderFilter">
+        <div class="animate-switch" ng-switch-when="male">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Punto de corte</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>>= 1</th>
+                <td>Androide</td>
+              </tr>
+              <tr>
+                <th><1</th>
+                <td>Ginecoide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="animate-switch" ng-switch-when="female">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Punto de corte</th>
+                <th>Interpretación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>>= 0.8</th>
+                <td>Androide</td>
+              </tr>
+              <tr>
+                <th><0.8</th>
+                <td>Ginecoide</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -252,73 +258,74 @@
         </h3>
       </div>
       <div class="col-md-5">
-        <div ng-show="genderFilter == 'male'">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Porcentaje</th>
-                <th>Interpretación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>2 a 4</th>
-                <td>Grasa esencial</td>
-              </tr>
-              <tr>
-                <th>6 a 13</th>
-                <td>Atletas</td>
-              </tr>
-              <tr>
-                <th>14 a 17</th>
-                <td>Gimnasio</td>
-              </tr>
-              <tr>
-                <th>18 a 25</th>
-                <td>Aceptable</td>
-              </tr>
-              <tr>
-                <th>>= 26</th>
-                <td>Acrecentada</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div ng-show="genderFilter == 'mujeres'">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Porcentaje</th>
-                <th>Interpretación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>10 a 12</th>
-                <td>Grasa esencial</td>
-              </tr>
-              <tr>
-                <th>14 a 20</th>
-                <td>Atletas</td>
-              </tr>
-              <tr>
-                <th>21 a 24</th>
-                <td>Gimnasio</td>
-              </tr>
-              <tr>
-                <th>25 a 31</th>
-                <td>Aceptable</td>
-              </tr>
-              <tr>
-                <th>>= 32</th>
-                <td>Acrecentada</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="animate-switch-container" ng-switch on="genderFilter">
+          <div class="animate-switch" ng-switch-when="male">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Porcentaje</th>
+                  <th>Interpretación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>2 a 4</th>
+                  <td>Grasa esencial</td>
+                </tr>
+                <tr>
+                  <th>6 a 13</th>
+                  <td>Atletas</td>
+                </tr>
+                <tr>
+                  <th>14 a 17</th>
+                  <td>Gimnasio</td>
+                </tr>
+                <tr>
+                  <th>18 a 25</th>
+                  <td>Aceptable</td>
+                </tr>
+                <tr>
+                  <th>>= 26</th>
+                  <td>Acrecentada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="animate-switch" ng-switch-when="female">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Porcentaje</th>
+                  <th>Interpretación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>10 a 12</th>
+                  <td>Grasa esencial</td>
+                </tr>
+                <tr>
+                  <th>14 a 20</th>
+                  <td>Atletas</td>
+                </tr>
+                <tr>
+                  <th>21 a 24</th>
+                  <td>Gimnasio</td>
+                </tr>
+                <tr>
+                  <th>25 a 31</th>
+                  <td>Aceptable</td>
+                </tr>
+                <tr>
+                  <th>>= 32</th>
+                  <td>Acrecentada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </form>

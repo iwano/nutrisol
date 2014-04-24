@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-animate
 //= require angular-bootstrap
 //= require angular-breadcrumb
 //= require angular-cookies

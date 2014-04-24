@@ -13,22 +13,24 @@
     </div>
   </div>
 
-  <div class='error' ng-show="heightOption == 'armspan'">
-    <div class="form-group" ng-class="{ 'has-error': anthropometry_form.armspan.$invalid }">
-      <label class="control-label" tooltip="cm" tooltip-placement="left" for="armspan">Envergadura</label>
-      <input type='number' step='.1' name='armspan' ng-model='person.armspan' placeholder='Ingresa Envergadura' class='form-control' required/>
-      <div class='error' ng-show="anthropometry_form.armspan.$dirty && anthropometry_form.armspan.$invalid">
-        * Requerido: Numerico
+  <div class="animate-switch-container" ng-switch on="heightOption">
+    <div class="animate-switch" ng-switch-when="armspan">
+      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.armspan.$invalid }">
+        <label class="control-label" tooltip="cm" tooltip-placement="left" for="armspan">Envergadura</label>
+        <input type='number' step='.1' name='armspan' ng-model='person.armspan' placeholder='Ingresa Envergadura' class='form-control' required/>
+        <div class='error' ng-show="anthropometry_form.armspan.$dirty && anthropometry_form.armspan.$invalid">
+          * Requerido: Numerico
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class='error' ng-show="heightOption == 'height'">
-    <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
-      <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-      <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
-      <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
-        * Requerido: Numerico
+    <div class="animate-switch" ng-switch-when="height">
+      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
+        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
+        <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
+          * Requerido: Numerico
+        </div>
       </div>
     </div>
   </div>
