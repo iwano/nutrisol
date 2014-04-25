@@ -1,23 +1,12 @@
-<header>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header col-md-3">
-        <a class="navbar-brand" ui-sref="root">Nutrisol <3</a>
-      </div>
-      <div ng-show="currentSection.indexOf('root.') != -1">
-        <div ncy-breadcrumb></div>
-      </div>
-      <a id="ns-btn-about" class='btn btn-info' ng-click='openAboutModal()'>
-        <span class="glyphicon glyphicon-question-sign"></span>
-      </a>
-    </div>
-  </nav>
-</header>
-
 <div class='container'>
-  <div class='row'>
-    <div class='col-md-3 ns-main-sidebar'>
-      <div class="form-group">
+  <div class="left ns-sidebar" ng-class="{ 'ns-sidebar-open': sidebarToggle }">
+    <div class="ns-sidebar-header">
+      <div class="logo">
+        <h1><a ui-sref="root">Nutrisol <3</a></h1>
+      </div>
+    </div>
+    <div class="body scroll-y">
+      <div class="ns-sidebar-inner">
         <ul class="nav nav-pills nav-stacked">
           <li ng-class="{ 'active': currentSection.indexOf('pregnant') != -1 }"><a ui-sref="root.pregnant">Embarazo</a></li>
           <li ng-class="{ 'active': currentSection.indexOf('newborn') != -1 }"><a ui-sref="root.newborn">Recién nacido</a></li>
@@ -31,14 +20,37 @@
         </ul>
       </div>
     </div>
-    <div class='col-md-9 ns-main-container'>
+
+    <div class="ns-sidebar-footer">
+
+    </div>
+  </div>
+
+  <div id='ns-main-container' class='right' ng-class="{ 'ns-sidebar-open-content': sidebarToggle }">
+    <header id='ns-main-container-header'>
+      <button class="ns-toggle-sidebar navbar-toggle" ng-click="sidebarToggle= !sidebarToggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <div ng-show="currentSection.indexOf('root.') != -1">
+          <div ncy-breadcrumb></div>
+        </div>
+        <a id="ns-btn-about" ng-click='openAboutModal()'>
+          <span class="glyphicon glyphicon-question-sign"></span>
+        </a>
+      </div>
+    </header>
+    <div class="view-container ns-scroll-y">
       <div ng-show="currentSection == 'root'">
         <blockquote class="ns-main-quote">
           <p>{{currentQuote}}</p>
         </blockquote>
       </div>
-      <div class="view-container">
-        <div ui-view class="view-frame"></div>
-      </div>
-  </div>
+      <div ui-view class="view-frame"></div>
+    </div>
 </div>

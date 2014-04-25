@@ -2,6 +2,104 @@ body {
   padding-top: 70px;
 }
 
+.container {
+  min-width: 100%;
+}
+
+#ns-main-container-header {
+  background: #fff;
+  height: 50px;
+  .navbar-default {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+.ns-sidebar-header {
+  background: #121515;
+  height: 50px;
+  text-align: center;
+  h1 {
+    display: inline-block;
+    font-size: 30px;
+    margin: 8px 0 0 0;
+    a {
+      color: #8B91A0;
+      text-decoration: none;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.ns-sidebar .ns-sidebar-inner {
+  margin-top: 60px;
+  & > ul > li {
+    &.active a{
+      background: #121515;
+      border-left-color: #3B9BED;
+      color: #fff;
+      padding-left: 20px;
+    }
+    > a{
+      border-left: 4px solid transparent;
+      border-radius: 0;
+      color: #8B91A0;
+      display: block;
+      font-size: 14px;
+      padding: 10px 15px;
+      -webkit-transition: All 0.25s ease;
+      -moz-transition: All 0.25s ease;
+      -o-transition: All 0.25s ease;
+      &:hover {
+        background: #121515;
+        border-left-color: #3B9BED;
+        color: #fff;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.ns-toggle-sidebar {
+  background: #1B1E24;
+  border: none;
+  border-radius: 0;
+  color: #A5B2BC;
+  display: none;
+  font-size: 20px;
+  height: 50px;
+  left: 0;
+  margin: 0;
+  padding: 11px 20px;
+  position: absolute;
+  top: 0px;
+  z-index: 99999;
+  span {
+    background: #fff;
+  }
+}
+
+.left {
+  width: 225px;
+  background: #1B1E24;
+  margin-left: -15px;
+  overflow: hidden;
+  position: absolute;
+  top: 0; bottom: 0;
+}
+
+.right {
+  left: 225px;
+  right: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
 .navbar-header {
   text-align: center;
 }
@@ -10,14 +108,6 @@ body {
   font-size: 25px;
   min-width: 218px;
   width: 100%;
-}
-
-.ns-main-sidebar {
-  position: relative;
-  .nav-stacked {
-    position: fixed;
-    width: 20%;
-  }
 }
 
 .ns-title {
@@ -71,28 +161,25 @@ table.calculation-table {
 }
 
 #ns-btn-about {
-  margin-top: 8px;
+  font-size: 40px;
+  margin-top: 1px;
   position: absolute;
   right: 15px;
   top: 0px;
 }
 
-@media (max-width: 992px) {
-  .ns-main-sidebar .nav-stacked {
-    position: relative !important;
-    width: auto !important;
-  }
-
-  .breadcrumb {
-    float: none;
-    text-align: center;
-    width: 100%;
-  }
+.ns-scroll-x {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.ns-scroll-y {
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
 }
 
-@media (max-width: 768px) {
-    body {
-      padding-top: 94px;
-  }
-
+.view-container {
+  background: #E5E9EC;
+  bottom: 0;
+  padding: 20px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
 }
