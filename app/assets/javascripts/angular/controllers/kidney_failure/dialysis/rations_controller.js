@@ -2,9 +2,28 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('DietCalculationController', ['$scope', 'GeneralFormulas', controller]);
+      .controller('KidneyFailureDialysisRationsController', ['$scope', 'GeneralFormulas', controller]);
 
   function controller($scope, GeneralFormulas) {
+
+    $scope.caloriesValuesDiabetic = [25, 30, 35];
+    $scope.caloriesValues         = [40, 45, 50];
+
+    $scope.proteinGramsDiabetic = [1.2, 1.3];
+    $scope.proteinGrams         = [1.2, 1.3, 1.4, 1.5];
+
+    $scope.dialysisPercentages  = [1.5, 2.5, 4.25];
+
+    $scope.person = {
+      isDiabetic: false,
+      weightProteinValue: 0,
+      weightCaloriesValue: 0,
+      weightCalories: 0,
+      weightProtein: 0,
+      dialysisTimesPerDay: 0,
+      dialysisLiters: 0,
+      dialysisPercentage: 0
+    }
 
     $scope.calories = {
       proteins: {
@@ -18,6 +37,11 @@
         percentage: 0
       },
       carbohydrates: {
+        g: 0,
+        kcal: 0,
+        percentage: 0
+      },
+      carbohydratesDialysisBag: {
         g: 0,
         kcal: 0,
         percentage: 0
