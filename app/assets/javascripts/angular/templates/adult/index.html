@@ -1,13 +1,23 @@
 <ui-view class="view-frame">
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h1 class='text-right'>Adulto</h1>
+<div class="ns-card">
+  <div class="ns-card-header">
+    <h1>Adulto</h1>
   </div>
-  <div class="panel-body">
-    <a class="btn btn-default ns-button" ui-sref="root.adult.clinical_history">Historia clínica</a>
-    <a class="btn btn-default ns-button" ui-sref="root.adult.lab_studies">Estudios de Laboratorio</a>
-    <a class="btn btn-default ns-button" ui-sref="root.adult.anthropometry">Antropometría</a>
-    <a class="btn btn-default ns-button" ui-sref="root.adult.calories">Cálculo de Calorías</a>
-    <a class="btn btn-default ns-button" ui-sref="root.adult.rations">Cálculo de Raciones</a>
+  <div class="ns-card-body row">
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a class="btn btn-default ns-button ns-green" ui-sref="root.adult.clinical_history"><span>Historia clínica</span></a>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a class="btn btn-default ns-button ns-red" ui-sref="root.adult.lab_studies"><span>Estudios de Laboratorio</span></a>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a class="btn btn-default ns-button ns-blue" ui-sref="root.adult.anthropometry"><span>Antropometría</span></a>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a class="btn btn-default ns-button ns-yellow" ui-sref="root.adult.calories"><span>Cálculo de Calorías</span></a>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <a class="btn btn-default ns-button ns-black" ui-sref="root.adult.rations"><span>Cálculo de Raciones</span></a>
+    </div>
   </div>
 </div>
