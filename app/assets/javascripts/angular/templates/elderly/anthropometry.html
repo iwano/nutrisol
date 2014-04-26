@@ -1,131 +1,143 @@
-<form name="anthropometry_form" role="form">
-  <div class="form-group">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
-    </div>
-  </div>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="anthropometry_form" role="form">
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
+        </div>
+      </div>
 
-  <div class="form-group">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-model="heightOption" btn-radio="'armspan'">Talla por Envergadura</button>
-      <button type="button" class="btn btn-primary" ng-model="heightOption" btn-radio="'height'">Talla por altura</button>
-    </div>
-  </div>
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="heightOption" btn-radio="'armspan'">Talla por Envergadura</button>
+          <button type="button" class="btn btn-primary" ng-model="heightOption" btn-radio="'height'">Talla por altura</button>
+        </div>
+      </div>
 
-  <div class="animate-switch-container" ng-switch on="heightOption">
-    <div class="animate-switch" ng-switch-when="armspan">
-      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.armspan.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="armspan">Envergadura</label>
-        <input type='number' step='.1' name='armspan' ng-model='person.armspan' placeholder='Ingresa Envergadura' class='form-control' required/>
-        <div class='error' ng-show="anthropometry_form.armspan.$dirty && anthropometry_form.armspan.$invalid">
+      <div class="animate-switch-container" ng-switch on="heightOption">
+        <div class="animate-switch" ng-switch-when="armspan">
+          <div class="form-group" ng-class="{ 'has-error': anthropometry_form.armspan.$invalid }">
+            <label class="control-label" tooltip="cm" tooltip-placement="left" for="armspan">Envergadura</label>
+            <input type='number' step='.1' name='armspan' ng-model='person.armspan' placeholder='Ingresa Envergadura' class='form-control' required/>
+            <div class='error' ng-show="anthropometry_form.armspan.$dirty && anthropometry_form.armspan.$invalid">
+              * Requerido: Numerico
+            </div>
+          </div>
+        </div>
+
+        <div class="animate-switch" ng-switch-when="height">
+          <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
+            <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
+            <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+            <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
+              * Requerido: Numerico
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>
+        Talla: <code>{{person.tallness | number:2}}</code>
+      </h3>
+
+      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.elbowWidth.$invalid }">
+        <label class="control-label" tooltip="mm" tooltip-placement="left" for="elbowWidth">Anchura de codo</label>
+        <input type='number' step='.1' name='elbowWidth' ng-model='person.elbowWidth' placeholder='Ingresa Anchura de codo' class='form-control' required/>
+        <div class='error' ng-show="anthropometry_form.elbowWidth.$dirty && anthropometry_form.elbowWidth.$invalid">
           * Requerido: Numerico
         </div>
       </div>
-    </div>
 
-    <div class="animate-switch" ng-switch-when="height">
-      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-        <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
-        <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
+
+      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
+        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
           * Requerido: Numerico
         </div>
       </div>
-    </div>
+
+      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.age.$invalid }">
+        <label class="control-label" for="age">Edad</label>
+        <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        <div class='error' ng-show="anthropometry_form.age.$dirty && anthropometry_form.age.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
+    </form>
   </div>
+</div>
 
-  <h3>
-    Talla: <code>{{person.tallness | number:2}}</code>
-  </h3>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <h3>
+      Complexión Corporal: <code>{{person.cc | number:2}}</code>
+    </h3>
 
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.elbowWidth.$invalid }">
-    <label class="control-label" tooltip="mm" tooltip-placement="left" for="elbowWidth">Anchura de codo</label>
-    <input type='number' step='.1' name='elbowWidth' ng-model='person.elbowWidth' placeholder='Ingresa Anchura de codo' class='form-control' required/>
-    <div class='error' ng-show="anthropometry_form.elbowWidth.$dirty && anthropometry_form.elbowWidth.$invalid">
-      * Requerido: Numerico
-    </div>
+    <h3>
+      IMC: <code>{{person.bmi | number:2}}</code>
+    </h3>
+
+    <h3>
+      Porcentaje de Grasa Corporal : <code>{{person.gct | number:2}}</code>
+    </h3>
   </div>
+</div>
 
-
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
-    <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-    <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
-    <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
-      * Requerido: Numerico
-    </div>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <label>Índice de Masa Corporal IMC</label>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>IMC (kg/m2)</th>
+          <th>Interpretación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>< 16.0</th>
+          <td>Desnutrición severa</td>
+        </tr>
+        <tr>
+          <th>16.0 a 16.9</th>
+          <td>Desnutrición moderada</td>
+        </tr>
+        <tr>
+          <th>17.0 a 18.4</th>
+          <td>Desnutrición leve</td>
+        </tr>
+        <tr>
+          <th>18.5 a 21.9</th>
+          <td>Peso insuficiente</td>
+        </tr>
+        <tr>
+          <th>22.0 a 26.9</th>
+          <td>Peso normal</td>
+        </tr>
+        <tr>
+          <th>27.0 a 29.9</th>
+          <td>Sobrepeso</td>
+        </tr>
+        <tr>
+          <th>30.0 34.9</th>
+          <td>Obesidad grado I</td>
+        </tr>
+        <tr>
+          <th>35.0 39.9</th>
+          <td>Obesidad grado II</td>
+        </tr>
+        <tr>
+          <th>40.0 a 40.9</th>
+          <td>Obesidad grado III</td>
+        </tr>
+        <tr>
+          <th>>= 50.0</th>
+          <td>Obesidad grado IV (extrema)</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.age.$invalid }">
-    <label class="control-label" for="age">Edad</label>
-    <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
-    <div class='error' ng-show="anthropometry_form.age.$dirty && anthropometry_form.age.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-
-  <h3>
-    Complexión Corporal: <code>{{person.cc | number:2}}</code>
-  </h3>
-
-  <h3>
-    IMC: <code>{{person.bmi | number:2}}</code>
-  </h3>
-
-  <h3>
-    Porcentaje de Grasa Corporal : <code>{{person.gct | number:2}}</code>
-  </h3>
-
-  <label>Índice de Masa Corporal IMC</label>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>IMC (kg/m2)</th>
-        <th>Interpretación</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>< 16.0</th>
-        <td>Desnutrición severa</td>
-      </tr>
-      <tr>
-        <th>16.0 a 16.9</th>
-        <td>Desnutrición moderada</td>
-      </tr>
-      <tr>
-        <th>17.0 a 18.4</th>
-        <td>Desnutrición leve</td>
-      </tr>
-      <tr>
-        <th>18.5 a 21.9</th>
-        <td>Peso insuficiente</td>
-      </tr>
-      <tr>
-        <th>22.0 a 26.9</th>
-        <td>Peso normal</td>
-      </tr>
-      <tr>
-        <th>27.0 a 29.9</th>
-        <td>Sobrepeso</td>
-      </tr>
-      <tr>
-        <th>30.0 34.9</th>
-        <td>Obesidad grado I</td>
-      </tr>
-      <tr>
-        <th>35.0 39.9</th>
-        <td>Obesidad grado II</td>
-      </tr>
-      <tr>
-        <th>40.0 a 40.9</th>
-        <td>Obesidad grado III</td>
-      </tr>
-      <tr>
-        <th>>= 50.0</th>
-        <td>Obesidad grado IV (extrema)</td>
-      </tr>
-    </tbody>
-  </table>
-</form>
+</div>
 

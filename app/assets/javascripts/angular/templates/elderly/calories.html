@@ -1,64 +1,71 @@
-<form name="anthropometry_form" role="form">
-  <div class="form-group">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
-    </div>
-  </div>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="anthropometry_form" role="form">
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
+        </div>
+      </div>
 
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
-    <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-    <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
-    <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-5">
-      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.naf.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="naf">NAF</label>
-        <input type='number' step='.1' name='naf' ng-model='person.naf' placeholder='Ingresa NAF' class='form-control' required />
-        <div class='error' ng-show="anthropometry_form.naf.$dirty && anthropometry_form.naf.$invalid">
+      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
+        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
           * Requerido: Numerico
         </div>
       </div>
-    </div>
 
-    <div class="col-md-7">
-      <label>Nivel de actividad Fisica (NAF)</label>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Categoría</th>
-            <th>Valor de NAF</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Sedentaria o estilo de vida con actividad ligera</th>
-            <td>1.40 a 1.69</td>
-          </tr>
-          <tr>
-            <th>Activo o estilo de vida con actividad moderada</th>
-            <td>1.70 a 1.99</td>
-          </tr>
-          <tr>
-            <th>Vigoroso o estilo de vida con actividad vigorosa</th>
-            <td>2.00 a 2.40</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group" ng-class="{ 'has-error': anthropometry_form.naf.$invalid }">
+            <label class="control-label" tooltip="kg" tooltip-placement="left" for="naf">NAF</label>
+            <input type='number' step='.1' name='naf' ng-model='person.naf' placeholder='Ingresa NAF' class='form-control' required />
+            <div class='error' ng-show="anthropometry_form.naf.$dirty && anthropometry_form.naf.$invalid">
+              * Requerido: Numerico
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <label>Nivel de actividad Fisica (NAF)</label>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Categoría</th>
+                <th>Valor de NAF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Sedentaria o estilo de vida con actividad ligera</th>
+                <td>1.40 a 1.69</td>
+              </tr>
+              <tr>
+                <th>Activo o estilo de vida con actividad moderada</th>
+                <td>1.70 a 1.99</td>
+              </tr>
+              <tr>
+                <th>Vigoroso o estilo de vida con actividad vigorosa</th>
+                <td>2.00 a 2.40</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
   </div>
+</div>
 
-  <h3>
-    Gasto Energético en Reposo (GER): <code>{{person.ger | number:2}}</code>
-  </h3>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <h3>
+      Gasto Energético en Reposo (GER): <code>{{person.ger | number:2}}</code>
+    </h3>
 
-  <h3>
-    Requerimiento de Energía Estimado (REE): <code>{{person.ree | number:2}}</code>
-  </h3>
-
-</form>
+    <h3>
+      Requerimiento de Energía Estimado (REE): <code>{{person.ree | number:2}}</code>
+    </h3>
+  </div>
+</div>
 
