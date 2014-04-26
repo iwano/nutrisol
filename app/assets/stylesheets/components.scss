@@ -1,0 +1,136 @@
+@import 'variables';
+
+.breadcrumb {
+  background-color: transparent;
+  float: right;
+  margin-bottom: 0;
+  margin-right: 60px;
+  margin-top: 6px;
+}
+
+.ns-card {
+  background: $ns-white;
+  margin-bottom: 20px;
+}
+
+.ns-card-body {
+  padding: 15px;
+}
+
+.ns-card-header {
+  border-bottom: 2px solid $ns-view-container-bk;
+  padding: 15px;
+}
+
+.view-container {
+  background: $ns-view-container-bk;
+  bottom: 0;
+  padding: 20px;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+
+.ns-button {
+  border: 0;
+  border-radius: 0;
+  color: $ns-white;
+  font-size: 20px;
+  margin: 5px 5px;
+  min-height: 100px;
+  line-height: 70px;
+  padding: 20px 10px;
+  white-space: normal;
+  width: 30%;
+  &:hover {
+    color: $ns-white;
+  }
+  span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
+  }
+}
+
+.ns-button.ns-green {
+  background: $ns-green;
+  &:hover {
+    background: darken($ns-green, 15%);
+  }
+}
+.ns-button.ns-blue {
+  background: $ns-blue;
+  &:hover {
+    background: darken($ns-blue, 15%);
+  }
+}
+.ns-button.ns-red {
+  background: $ns-red;
+  &:hover {
+    background: darken($ns-red, 15%);
+  }
+}
+.ns-button.ns-yellow {
+  background: $ns-yellow;
+  &:hover {
+    background: darken($ns-yellow, 15%);
+  }
+}
+.ns-button.ns-black {
+  background: lighten($ns-black, 10%);
+  &:hover {
+    background: $ns-black;
+  }
+}
+
+.ns-main-quote {
+  margin-top: 70px;
+  font-size: 25px;
+  p {
+    margin-top: 20px;
+    font-style: italic;
+  }
+}
+
+.ns-title {
+  @extend .bg-primary;
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.ns-scroll-x {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.ns-scroll-y {
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+}
+
+.td-danger {
+  background-color: #f2dede;
+}
+
+.td-warning {
+  background-color: #fcf8e3;
+}
+
+.td-info {
+  background-color: #d9edf7;
+}
+
+.left-panel {
+  width: 225px;
+  background: $ns-sidebar;
+  margin-left: -15px;
+  overflow: hidden;
+  position: absolute;
+  top: 0; bottom: 0;
+}
+
+.right-panel {
+  left: 225px;
+  right: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}

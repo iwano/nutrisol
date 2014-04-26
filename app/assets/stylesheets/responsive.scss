@@ -33,7 +33,7 @@
     margin: 0 0 0 40px;
   }
 
-  .left {
+  .left-panel {
     width: 225px;
     margin-left: 0px;
     left: -225px;
@@ -42,7 +42,7 @@
     transition: all 0.3s ease;
   }
 
-  .right {
+  .right-panel {
     left: 0;
     right: 0;
     -webkit-transition: all 0.3s ease;
@@ -67,7 +67,7 @@
     display: block;
   }
 
-  .left {
+  .left-panel {
     width: 250px;
     margin-left: 0px;
     left: -225px;
@@ -76,7 +76,7 @@
     transition: all 0.3s ease;
   }
 
-  .right {
+  .right-panel {
     left: 0;
     right: 0;
     -webkit-transition: all 0.3s ease;

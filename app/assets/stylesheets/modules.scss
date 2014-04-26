@@ -1,3 +1,5 @@
+@import 'variables';
+
 body {
   padding-top: 70px;
 }
@@ -7,7 +9,7 @@ body {
 }
 
 #ns-main-container-header {
-  background: #fff;
+  background: $ns-white;
   height: 50px;
   .navbar-default {
     background-color: transparent;
@@ -17,7 +19,7 @@ body {
 }
 
 .ns-sidebar-header {
-  background: #121515;
+  background: $ns-sidebar-active;
   height: 50px;
   text-align: center;
   h1 {
@@ -25,11 +27,14 @@ body {
     font-size: 30px;
     margin: 8px 0 0 0;
     a {
-      color: #8B91A0;
+      color: $ns-carved-text;
       text-decoration: none;
       &:hover{
-        color: #fff;
+        color: $ns-white;
       }
+    }
+    span {
+      font-size: 21px;
     }
   }
 }
@@ -38,15 +43,15 @@ body {
   margin-top: 60px;
   & > ul > li {
     &.active a{
-      background: #121515;
-      border-left-color: #3B9BED;
-      color: #fff;
+      background: $ns-sidebar-active;
+      border-left-color: $ns-blue;
+      color: $ns-white;
       padding-left: 20px;
     }
-    > a{
+    > a {
       border-left: 4px solid transparent;
       border-radius: 0;
-      color: #8B91A0;
+      color: $ns-carved-text;
       display: block;
       font-size: 14px;
       padding: 10px 15px;
@@ -54,9 +59,9 @@ body {
       -moz-transition: All 0.25s ease;
       -o-transition: All 0.25s ease;
       &:hover {
-        background: #121515;
-        border-left-color: #3B9BED;
-        color: #fff;
+        background: $ns-sidebar-active;
+        border-left-color: $ns-blue;
+        color: $ns-white;
         padding-left: 20px;
       }
     }
@@ -64,10 +69,10 @@ body {
 }
 
 .ns-toggle-sidebar {
-  background: #1B1E24;
+  background: $ns-sidebar;
   border: none;
   border-radius: 0;
-  color: #A5B2BC;
+  color: $ns-white;
   display: none;
   font-size: 20px;
   height: 50px;
@@ -78,26 +83,8 @@ body {
   top: 0px;
   z-index: 99999;
   span {
-    background: #fff;
+    background: $ns-white;
   }
-}
-
-.left {
-  width: 225px;
-  background: #1B1E24;
-  margin-left: -15px;
-  overflow: hidden;
-  position: absolute;
-  top: 0; bottom: 0;
-}
-
-.right {
-  left: 225px;
-  right: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
 }
 
 .navbar-header {
@@ -110,25 +97,6 @@ body {
   width: 100%;
 }
 
-.ns-title {
-  @extend .bg-primary;
-  margin-bottom: 10px;
-  padding: 7px;
-}
-
-.ns-button {
-  margin: 5px 0;
-  padding: 20px;
-}
-
-.breadcrumb {
-  background-color: transparent;
-  float: right;
-  margin-bottom: 0;
-  margin-right: 60px;
-  margin-top: 6px;
-}
-
 table.calculation-table {
   input[type='number'] {
     width: 55px;
@@ -139,47 +107,10 @@ table.calculation-table {
   }
 }
 
-.td-danger {
-  background-color: #f2dede;
-}
-
-.td-warning {
-  background-color: #fcf8e3;
-}
-
-.td-info {
-  background-color: #d9edf7;
-}
-
-.ns-main-quote {
-  margin-top: 70px;
-  font-size: 25px;
-  p {
-    margin-top: 20px;
-    font-style: italic;
-  }
-}
-
 #ns-btn-about {
   font-size: 40px;
   margin-top: 1px;
   position: absolute;
   right: 15px;
   top: 0px;
-}
-
-.ns-scroll-x {
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
-}
-.ns-scroll-y {
-  overflow-y: auto; -webkit-overflow-scrolling: touch;
-}
-
-.view-container {
-  background: #E5E9EC;
-  bottom: 0;
-  padding: 20px;
-  position: absolute;
-  top: 50px;
-  width: 100%;
 }

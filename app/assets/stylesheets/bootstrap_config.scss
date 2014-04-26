@@ -1,7 +1,10 @@
+$link-color: #4385F5;
+
 @import "bootstrap";
 
-.ns-title{
+.ns-title {
   @extend .bg-primary;
   padding: 7px;
   margin-bottom: 10px;
 }
+
