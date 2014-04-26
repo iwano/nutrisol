@@ -1,37 +1,41 @@
-<ui-view>
-  <form name="calories_form" role="form">
-    <div class="form-group" ng-class="{ 'has-error': calories_form.weight_calories.$invalid }">
-      <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight_calories">Peso</label>
-      <input type='number' step='.1' name='weight_calories' ng-model='person.weightCalories' placeholder='Ingresa peso' class='form-control' required />
-      <div class='error' ng-show="calories_form.weight_calories.$dirty && calories_form.weight_calories.$invalid">
-        * Requerido: Numerico
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="calories_form" role="form">
+      <div class="form-group" ng-class="{ 'has-error': calories_form.weight_calories.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight_calories">Peso</label>
+        <input type='number' step='.1' name='weight_calories' ng-model='person.weightCalories' placeholder='Ingresa peso' class='form-control' required />
+        <div class='error' ng-show="calories_form.weight_calories.$dirty && calories_form.weight_calories.$invalid">
+          * Requerido: Numerico
+        </div>
+
+        <label class="control-label" for="calories_values" tooltip="calorias" tooltip-placement="left">Calorias</label>
+        <select name="calories_values" class="form-control" ng-model="person.weightCaloriesValue", ng-options='c for c in caloriesValues'></select>
       </div>
 
-      <label class="control-label" for="calories_values" tooltip="calorias" tooltip-placement="left">Calorias</label>
-      <select name="calories_values" class="form-control" ng-model="person.weightCaloriesValue", ng-options='c for c in caloriesValues'></select>
-    </div>
+      <div class="form-group" ng-class="{ 'has-error': calories_form.weight_protein.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight_protein">Peso</label>
+        <input type='number' step='.1' name='weight_protein' ng-model='person.weightProtein' placeholder='Ingresa peso' class='form-control' required />
+        <div class='error' ng-show="calories_form.weight_protein.$dirty && calories_form.weight_protein.$invalid">
+          * Requerido: Numerico
+        </div>
 
-    <div class="form-group" ng-class="{ 'has-error': calories_form.weight_protein.$invalid }">
-      <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight_protein">Peso</label>
-      <input type='number' step='.1' name='weight_protein' ng-model='person.weightProtein' placeholder='Ingresa peso' class='form-control' required />
-      <div class='error' ng-show="calories_form.weight_protein.$dirty && calories_form.weight_protein.$invalid">
-        * Requerido: Numerico
+        <label class="control-label" for="protein_values" tooltip="gr" tooltip-placement="left">Proteínas</label>
+        <select name="protein_values" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGrams'></select>
       </div>
+    </form>
+  </div>
+</div>
 
-      <label class="control-label" for="protein_values" tooltip="gr" tooltip-placement="left">Proteínas</label>
-      <select name="protein_values" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGrams'></select>
-    </div>
-
-    <hr>
-
+<div class="ns-card">
+  <div class="ns-card-body">
     <div class="form-group">
       <h3>
         Kcal: <code>{{person.kcal | number:2}}</code>
       </h3>
+
       <h3>
         Proteína: <code>{{person.protein | number:2}}</code>
       </h3>
     </div>
-  </form>
-
+  </div>
 </div>
