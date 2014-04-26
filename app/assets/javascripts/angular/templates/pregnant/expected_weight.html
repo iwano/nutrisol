@@ -1,255 +1,274 @@
-<form name='imc_form' role='form'>
-  <h2 class="ns-title">Antropometría previo a la gestación</h2>
+<div class="ns-card">
+  <div class="ns-card-header ns-title">
+    <h2>Antropometría previo a la gestación</h2>
+  </div>
+  <div class="ns-card-body">
+    <form name='imc_form' role='form'>
 
-  <div class="form-group has-feedback" ng-class="{ 'has-error': imc_form.weight.$invalid }">
-    <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso previo al embarazo</label>
-    <input type='number' step='.1' name='weight' ng-model='person.weightBeforePregnancy' placeholder='Ingresa peso' class='form-control' required />
+      <div class="form-group has-feedback" ng-class="{ 'has-error': imc_form.weight.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso previo al embarazo</label>
+        <input type='number' step='.1' name='weight' ng-model='person.weightBeforePregnancy' placeholder='Ingresa peso' class='form-control' required />
 
-    <div class='error' ng-show="imc_form.weight.$dirty && imc_form.weight.$invalid">
-      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-      Requerido: numérico
+        <div class='error' ng-show="imc_form.weight.$dirty && imc_form.weight.$invalid">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          Requerido: numérico
+        </div>
+      </div>
+
+      <div class="form-group has-feedback" ng-class="{ 'has-error': imc_form.height.$invalid }">
+        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
+        <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa altura' class='form-control' required/>
+
+        <div class='error' ng-show="imc_form.height.$dirty && imc_form.height.$invalid">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          Requerido: numérico
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3>
+          IMC previo al embarazo <code>{{person.bmi | number:2}}</code>
+        </h3>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="ns-card">
+  <div class="ns-card-header ns-title">
+    <h2>Peso esperado</h2>
+  </div>
+  <div class="ns-card-body">
+    <form name='expected_weight_form' role='form'>
+
+      <div class="form-group">
+        <h4>Semanas de gestación <span class="label label-warning">{{person.weightBeforePregnancy}}</span></h4>
+      </div>
+
+      <div class="form-group">
+        <h4>IMC previo al embarazo <span class="label label-warning">{{person.bmi | number:2}}</span></h4>
+      </div>
+
+      <div class="form-group has-feedback" ng-class="{ 'has-error': expected_weight_form.age.$invalid }">
+        <label class="control-label" for="number_of_weeks">Semanas de gestación</label>
+        <input type='number' step='.1' name='number_of_weeks' ng-model='person.numberOfWeeks' placeholder='Ingresa número de semanas' class='form-control' required/>
+
+        <div class='error' ng-show="expected_weight_form.age.$dirty && expected_weight_form.age.$invalid">
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          Requerido: numérico
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3>
+          Peso esperado: <code>{{result | number:2}}</code>
+        </h3>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="ns-card">
+  <div class="ns-card-header ns-title">
+    <h2>Aumento de peso durante el embarazo en kg.</h2>
+  </div>
+  <div class="ns-card-body">
+    <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr class="active">
+            <th rowspan="2">Edad de gestación (semana)</th>
+            <th colspan="4">IMC kg/m2 previo a la gestación</th>
+          </tr>
+          <tr class="active">
+            <th><18.5</th>
+            <th>18.5- 24.9</th>
+            <th>25-29.9</th>
+            <th>>= 30</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>16</td>
+            <td>5.15</td>
+            <td>4.27</td>
+            <td>3.79</td>
+            <td>2.93</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>5.47</td>
+            <td>4.54</td>
+            <td>4.03</td>
+            <td>3.11</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>5.8</td>
+            <td>4.81</td>
+            <td>4.27</td>
+            <td>3.29</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>6.12</td>
+            <td>5.07</td>
+            <td>4.5</td>
+            <td>3.48</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>6.44</td>
+            <td>5.34</td>
+            <td>4.74</td>
+            <td>3.66</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>6.76</td>
+            <td>5.61</td>
+            <td>4.98</td>
+            <td>3.84</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>7.08</td>
+            <td>5.87</td>
+            <td>5.21</td>
+            <td>4.03</td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>7.41</td>
+            <td>6.14</td>
+            <td>5.45</td>
+            <td>4.21</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>7.73</td>
+            <td>6.41</td>
+            <td>5.69</td>
+            <td>4.39</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>8.05</td>
+            <td>6.68</td>
+            <td>5.93</td>
+            <td>4.58</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>8.37</td>
+            <td>6.94</td>
+            <td>6.16</td>
+            <td>4.76</td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>8.69</td>
+            <td>7.21</td>
+            <td>6.4</td>
+            <td>4.94</td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>9.02</td>
+            <td>7.48</td>
+            <td>6.64</td>
+            <td>5.12</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>9.34</td>
+            <td>7.74</td>
+            <td>6.87</td>
+            <td>5.31</td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>9.66</td>
+            <td>8.01</td>
+            <td>7.11</td>
+            <td>4.49</td>
+          </tr>
+            <td>31</td>
+            <td>9.98</td>
+            <td>8.28</td>
+            <td>7.35</td>
+            <td>5.67</td>
+          </tr>
+          </tr>
+            <td>32</td>
+            <td>10.3</td>
+            <td>8.54</td>
+            <td>7.58</td>
+            <td>5.86</td>
+          </tr>
+          </tr>
+            <td>33</td>
+            <td>10.63</td>
+            <td>8.81</td>
+            <td>7.82</td>
+            <td>6.04</td>
+          </tr>
+          </tr>
+            <td>34</td>
+            <td>10.95</td>
+            <td>9.08</td>
+            <td>8.06</td>
+            <td>6.22</td>
+          </tr>
+          </tr>
+            <td>35</td>
+            <td>11.27</td>
+            <td>9.35</td>
+            <td>8.3</td>
+            <td>6.41</td>
+          </tr>
+          </tr>
+            <td>36</td>
+            <td>11.59</td>
+            <td>9.61</td>
+            <td>8.53</td>
+            <td>6.59</td>
+          </tr>
+          </tr>
+            <td>37</td>
+            <td>11.91</td>
+            <td>9.88</td>
+            <td>8.77</td>
+            <td>6.77</td>
+          </tr>
+          </tr>
+            <td>38</td>
+            <td>12.24</td>
+            <td>10.15</td>
+            <td>9.01</td>
+            <td>6.95</td>
+          </tr>
+          </tr>
+            <td>39</td>
+            <td>12.56</td>
+            <td>10.41</td>
+            <td>9.24</td>
+            <td>7.14</td>
+          </tr>
+          </tr>
+            <td>40</td>
+            <td>12.88</td>
+            <td>10.68</td>
+            <td>9.48</td>
+            <td>7.32</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     </div>
   </div>
-
-  <div class="form-group has-feedback" ng-class="{ 'has-error': imc_form.height.$invalid }">
-    <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-    <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa altura' class='form-control' required/>
-
-    <div class='error' ng-show="imc_form.height.$dirty && imc_form.height.$invalid">
-      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-      Requerido: numérico
-    </div>
-  </div>
-
-  <div class="form-group">
-    <h3>
-      IMC previo al embarazo <code>{{person.bmi | number:2}}</code>
-    </h3>
-  </div>
-  <hr>
-
-  <h2 class="ns-title">Peso esperado</h2>
-
-  <div class="form-group">
-    <h4>Semanas de gestación <span class="label label-warning">{{person.weightBeforePregnancy}}</span></h4>
-  </div>
-
-  <div class="form-group">
-    <h4>IMC previo al embarazo <span class="label label-warning">{{person.bmi | number:2}}</span></h4>
-  </div>
-
-  <div class="form-group has-feedback" ng-class="{ 'has-error': imc_form.age.$invalid }">
-    <label class="control-label" for="number_of_weeks">Semanas de gestación</label>
-    <input type='number' step='.1' name='number_of_weeks' ng-model='person.numberOfWeeks' placeholder='Ingresa número de semanas' class='form-control' required/>
-
-    <div class='error' ng-show="imc_form.age.$dirty && imc_form.age.$invalid">
-      <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-      Requerido: numérico
-    </div>
-  </div>
-
-  <div class="form-group">
-    <h3>
-      Peso esperado: <code>{{result | number:2}}</code>
-    </h3>
-  </div>
-
-</form>
-
-<hr>
-
-<div class="col-md-8">
-  <div class="form-group">
-    <label>Aumento de peso durante el embarazo en kg.</label>
-  </div>
-  <table class="table table-bordered">
-    <thead>
-      <tr class="active">
-        <th rowspan="2">Edad de gestación (semana)</th>
-        <th colspan="4">IMC kg/m2 previo a la gestación</th>
-      </tr>
-      <tr class="active">
-        <th><18.5</th>
-        <th>18.5- 24.9</th>
-        <th>25-29.9</th>
-        <th>>= 30</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>16</td>
-        <td>5.15</td>
-        <td>4.27</td>
-        <td>3.79</td>
-        <td>2.93</td>
-      </tr>
-      <tr>
-        <td>17</td>
-        <td>5.47</td>
-        <td>4.54</td>
-        <td>4.03</td>
-        <td>3.11</td>
-      </tr>
-      <tr>
-        <td>18</td>
-        <td>5.8</td>
-        <td>4.81</td>
-        <td>4.27</td>
-        <td>3.29</td>
-      </tr>
-      <tr>
-        <td>19</td>
-        <td>6.12</td>
-        <td>5.07</td>
-        <td>4.5</td>
-        <td>3.48</td>
-      </tr>
-      <tr>
-        <td>20</td>
-        <td>6.44</td>
-        <td>5.34</td>
-        <td>4.74</td>
-        <td>3.66</td>
-      </tr>
-      <tr>
-        <td>21</td>
-        <td>6.76</td>
-        <td>5.61</td>
-        <td>4.98</td>
-        <td>3.84</td>
-      </tr>
-      <tr>
-        <td>22</td>
-        <td>7.08</td>
-        <td>5.87</td>
-        <td>5.21</td>
-        <td>4.03</td>
-      </tr>
-      <tr>
-        <td>23</td>
-        <td>7.41</td>
-        <td>6.14</td>
-        <td>5.45</td>
-        <td>4.21</td>
-      </tr>
-      <tr>
-        <td>24</td>
-        <td>7.73</td>
-        <td>6.41</td>
-        <td>5.69</td>
-        <td>4.39</td>
-      </tr>
-      <tr>
-        <td>25</td>
-        <td>8.05</td>
-        <td>6.68</td>
-        <td>5.93</td>
-        <td>4.58</td>
-      </tr>
-      <tr>
-        <td>26</td>
-        <td>8.37</td>
-        <td>6.94</td>
-        <td>6.16</td>
-        <td>4.76</td>
-      </tr>
-      <tr>
-        <td>27</td>
-        <td>8.69</td>
-        <td>7.21</td>
-        <td>6.4</td>
-        <td>4.94</td>
-      </tr>
-      <tr>
-        <td>28</td>
-        <td>9.02</td>
-        <td>7.48</td>
-        <td>6.64</td>
-        <td>5.12</td>
-      </tr>
-      <tr>
-        <td>29</td>
-        <td>9.34</td>
-        <td>7.74</td>
-        <td>6.87</td>
-        <td>5.31</td>
-      </tr>
-      <tr>
-        <td>30</td>
-        <td>9.66</td>
-        <td>8.01</td>
-        <td>7.11</td>
-        <td>4.49</td>
-      </tr>
-        <td>31</td>
-        <td>9.98</td>
-        <td>8.28</td>
-        <td>7.35</td>
-        <td>5.67</td>
-      </tr>
-      </tr>
-        <td>32</td>
-        <td>10.3</td>
-        <td>8.54</td>
-        <td>7.58</td>
-        <td>5.86</td>
-      </tr>
-      </tr>
-        <td>33</td>
-        <td>10.63</td>
-        <td>8.81</td>
-        <td>7.82</td>
-        <td>6.04</td>
-      </tr>
-      </tr>
-        <td>34</td>
-        <td>10.95</td>
-        <td>9.08</td>
-        <td>8.06</td>
-        <td>6.22</td>
-      </tr>
-      </tr>
-        <td>35</td>
-        <td>11.27</td>
-        <td>9.35</td>
-        <td>8.3</td>
-        <td>6.41</td>
-      </tr>
-      </tr>
-        <td>36</td>
-        <td>11.59</td>
-        <td>9.61</td>
-        <td>8.53</td>
-        <td>6.59</td>
-      </tr>
-      </tr>
-        <td>37</td>
-        <td>11.91</td>
-        <td>9.88</td>
-        <td>8.77</td>
-        <td>6.77</td>
-      </tr>
-      </tr>
-        <td>38</td>
-        <td>12.24</td>
-        <td>10.15</td>
-        <td>9.01</td>
-        <td>6.95</td>
-      </tr>
-      </tr>
-        <td>39</td>
-        <td>12.56</td>
-        <td>10.41</td>
-        <td>9.24</td>
-        <td>7.14</td>
-      </tr>
-      </tr>
-        <td>40</td>
-        <td>12.88</td>
-        <td>10.68</td>
-        <td>9.48</td>
-        <td>7.32</td>
-      </tr>
-    </tbody>
-  </table>
 </div>

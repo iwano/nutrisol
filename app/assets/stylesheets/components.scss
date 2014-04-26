@@ -92,10 +92,11 @@
   }
 }
 
-.ns-title {
-  @extend .bg-primary;
-  margin-bottom: 10px;
-  padding: 7px;
+.ns-card-header.ns-title {
+  background: $ns-blue;
+  h2 {
+    margin: 0;
+  }
 }
 
 .ns-scroll-x {

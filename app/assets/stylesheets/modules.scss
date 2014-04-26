@@ -27,7 +27,7 @@ body {
     font-size: 30px;
     margin: 8px 0 0 0;
     a {
-      color: $ns-carved-text;
+      color: $ns-pink;
       text-decoration: none;
       &:hover{
         color: $ns-white;
@@ -44,7 +44,7 @@ body {
   & > ul > li {
     &.active a{
       background: $ns-sidebar-active;
-      border-left-color: $ns-blue;
+      border-left-color: $ns-pink;
       color: $ns-white;
       padding-left: 20px;
     }

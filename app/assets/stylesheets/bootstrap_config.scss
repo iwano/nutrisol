@@ -1,4 +1,5 @@
 $link-color: #4385F5;
+$brand-primary: #4385F5;
 
 @import "bootstrap";
 
@@ -6,5 +7,9 @@ $link-color: #4385F5;
   @extend .bg-primary;
   padding: 7px;
   margin-bottom: 10px;
+}
+
+.btn-primary.active {
+  background-color: darken($link-color, 20%);
 }
 
