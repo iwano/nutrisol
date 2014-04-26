@@ -13,3 +13,11 @@ $brand-primary: #4385F5;
   background-color: darken($link-color, 20%);
 }
 
+.modal-content {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
