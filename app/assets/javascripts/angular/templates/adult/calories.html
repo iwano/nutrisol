@@ -1,38 +1,42 @@
-<form name="tmb_form" role="form">
-  <div class="form-group">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
-    </div>
-  </div>
-  <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
-    <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-    <input type='number' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
-    <div class='error' ng-show="tmb_form.height.$dirty && tmb_form.height.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="tmb_form" role="form">
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
+        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
+        <input type='number' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        <div class='error' ng-show="tmb_form.height.$dirty && tmb_form.height.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
 
-  <div class="form-group" ng-class="{ 'has-error': tmb_form.weight.$invalid }">
-    <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-    <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
-    <div class='error' ng-show="tmb_form.weight.$dirty && tmb_form.weight.$invalid">
-      * Requerido: Numerico
-    </div>
+      <div class="form-group" ng-class="{ 'has-error': tmb_form.weight.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
+        <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <div class='error' ng-show="tmb_form.weight.$dirty && tmb_form.weight.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
+        <label class="control-label" for="age">Edad</label>
+        <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        <div class='error' ng-show="tmb_form.age.$dirty && tmb_form.age.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
+      <div class="form-group">
+        <h2>
+          IMC: <code>{{person.bmi | number:2}}</code>
+        </h2>
+        <h1>
+          Calorías: <code>{{person.tmb | number:2}}</code>
+        </h1>
+      </div>
+    </form>
   </div>
-  <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
-    <label class="control-label" for="age">Edad</label>
-    <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
-    <div class='error' ng-show="tmb_form.age.$dirty && tmb_form.age.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-  <div class="form-group">
-    <h2>
-      IMC: <code>{{person.bmi | number:2}}</code>
-    </h2>
-    <h1>
-      Calorías: <code>{{person.tmb | number:2}}</code>
-    </h1>
-  </div>
-</form>
+</div>

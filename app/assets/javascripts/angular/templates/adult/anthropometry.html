@@ -1,331 +1,348 @@
-<form name="anthropometry_form" role="form">
-  <div class="form-group">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
-      <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
-    </div>
-  </div>
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
-    <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-    <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
-    <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
-    <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-    <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
-    <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-5">
-      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.wrist.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="wrist">Perímetro Muñeca</label>
-        <input type='number' step='.1' name='wrist' ng-model='person.wrist' placeholder='Ingresa perímetro muñeca' class='form-control' ng-pattern='/^\d+$/' required />
-        <div class='error' ng-show="anthropometry_form.wrist.$dirty && anthropometry_form.wrist.$invalid">
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="bmi_form" role="form">
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'male'">Hombres</button>
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': bmi_form.height.$invalid }">
+        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
+        <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        <div class='error' ng-show="bmi_form.height.$dirty && bmi_form.height.$invalid">
           * Requerido: Numerico
         </div>
       </div>
-    </div>
 
-    <div class="col-md-5">
-      <div class="animate-switch-container" ng-switch on="genderFilter">
-        <div class="animate-switch" ng-switch-when="male">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Valor</th>
-                <th>Interpretación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>> 10.4</th>
-                <td>Pequeña</td>
-              </tr>
-              <tr>
-                <th>9.6 a 10.4</th>
-                <td>Mediana</td>
-              </tr>
-              <tr>
-                <th>&#60; 9.6</th>
-                <td>Grande</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="animate-switch" ng-switch-when="female">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Valor</th>
-                <th>Interpretación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>> 11</th>
-                <td>Pequeña</td>
-              </tr>
-              <tr>
-                <th>10.1 a 11</th>
-                <td>Mediana</td>
-              </tr>
-              <tr>
-                <th>&#60; 10.1</th>
-                <td>Grande</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-md-5">
-      <div class="form-group" ng-class="{ 'has-error': anthropometry_form.waist.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="waist">Perímetro Cintura</label>
-        <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
-        <div class='error' ng-show="anthropometry_form.waist.$dirty && anthropometry_form.waist.$invalid">
+      <div class="form-group" ng-class="{ 'has-error': bmi_form.weight.$invalid }">
+        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
+        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <div class='error' ng-show="bmi_form.weight.$dirty && bmi_form.weight.$invalid">
           * Requerido: Numerico
         </div>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
 
-    <div class="col-md-5">
-      <div class="animate-switch-container" ng-switch on="genderFilter">
-        <div class="animate-switch" ng-switch-when="male">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Punto de corte</th>
-                <th>Interpretación</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>>= 1</th>
-                <td>Androide</td>
-              </tr>
-              <tr>
-                <th><1</th>
-                <td>Ginecoide</td>
-              </tr>
-            </tbody>
-          </table>
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="bmi_form" role="form">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group" ng-class="{ 'has-error': wrist_form.wrist.$invalid }">
+            <label class="control-label" tooltip="cm" tooltip-placement="left" for="wrist">Perímetro Muñeca</label>
+            <input type='number' step='.1' name='wrist' ng-model='person.wrist' placeholder='Ingresa perímetro muñeca' class='form-control' ng-pattern='/^\d+$/' required />
+            <div class='error' ng-show="wrist_form.wrist.$dirty && wrist_form.wrist.$invalid">
+              * Requerido: Numerico
+            </div>
+          </div>
         </div>
 
-        <div class="animate-switch" ng-switch-when="female">
+        <div class="col-md-5">
+          <div class="animate-switch-container" ng-switch on="genderFilter">
+            <div class="animate-switch" ng-switch-when="male">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Valor</th>
+                    <th>Interpretación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>> 10.4</th>
+                    <td>Pequeña</td>
+                  </tr>
+                  <tr>
+                    <th>9.6 a 10.4</th>
+                    <td>Mediana</td>
+                  </tr>
+                  <tr>
+                    <th>&#60; 9.6</th>
+                    <td>Grande</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="animate-switch" ng-switch-when="female">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Valor</th>
+                    <th>Interpretación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>> 11</th>
+                    <td>Pequeña</td>
+                  </tr>
+                  <tr>
+                    <th>10.1 a 11</th>
+                    <td>Mediana</td>
+                  </tr>
+                  <tr>
+                    <th>&#60; 10.1</th>
+                    <td>Grande</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="ns-card">
+  <div class="ns-card-body">
+    <form name="body_fat_form" role="form">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group" ng-class="{ 'has-error': body_fat_form.waist.$invalid }">
+            <label class="control-label" tooltip="cm" tooltip-placement="left" for="waist">Perímetro Cintura</label>
+            <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
+            <div class='error' ng-show="body_fat_form.waist.$dirty && body_fat_form.waist.$invalid">
+              * Requerido: Numerico
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="animate-switch-container" ng-switch on="genderFilter">
+            <div class="animate-switch" ng-switch-when="male">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Punto de corte</th>
+                    <th>Interpretación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>>= 1</th>
+                    <td>Androide</td>
+                  </tr>
+                  <tr>
+                    <th><1</th>
+                    <td>Ginecoide</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="animate-switch" ng-switch-when="female">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Punto de corte</th>
+                    <th>Interpretación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>>= 0.8</th>
+                    <td>Androide</td>
+                  </tr>
+                  <tr>
+                    <th><0.8</th>
+                    <td>Ginecoide</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="form-group" ng-class="{ 'has-error': body_fat_form.hips.$invalid }">
+        <label class="control-label" tooltip="cm" tooltip-placement="left" for="hips">Perímetro cadera</label>
+        <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
+        <div class='error' ng-show="body_fat_form.hips.$dirty && body_fat_form.hips.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
+
+      <div class="form-group" ng-class="{ 'has-error': body_fat_form.age.$invalid }">
+        <label class="control-label" for="age">Edad</label>
+        <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        <div class='error' ng-show="body_fat_form.age.$dirty && body_fat_form.age.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="ns-card">
+  <div class="ns-card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>
+            IMC: <code>{{person.bmi | number:2}}</code>
+          </h3>
+        </div>
+        <div class="col-md-8">
+          <label>Índice de Masa Corporal IMC</label>
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>Punto de corte</th>
                 <th>Interpretación</th>
+                <th>Valores principales</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>>= 0.8</th>
-                <td>Androide</td>
+                <th>Bajo peso</th>
+                <td>< 18.50</td>
               </tr>
               <tr>
-                <th><0.8</th>
-                <td>Ginecoide</td>
+                <th>Delgadez severa</th>
+                <td>< 16</td>
+              </tr>
+              <tr>
+                <th>Delagez moderada</th>
+                <td>16 a 16.99</td>
+              </tr>
+              <tr>
+                <th>Delgadez aceptable</th>
+                <td>17 a 18.49</td>
+              </tr>
+              <tr>
+                <th>Normal</th>
+                <td>18.5 a 24.99</td>
+              </tr>
+              <tr>
+                <th>Sobrepeso</th>
+                <td>25 a 29.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo I</th>
+                <td>30 a 34.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo II</th>
+                <td>35 a 39.99</td>
+              </tr>
+              <tr>
+                <th>Obeso tipo III</th>
+                <td>>= 40</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </div>
-  </div>
 
-  <hr>
+      <hr>
 
-  <div class="form-group" ng-class="{ 'has-error': anthropometry_form.hips.$invalid }">
-    <label class="control-label" tooltip="cm" tooltip-placement="left" for="hips">Perímetro cadera</label>
-    <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
-    <div class='error' ng-show="anthropometry_form.hips.$dirty && anthropometry_form.hips.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-
-  <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
-    <label class="control-label" for="age">Edad</label>
-    <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
-    <div class='error' ng-show="tmb_form.age.$dirty && tmb_form.age.$invalid">
-      * Requerido: Numerico
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h3>
-        IMC: <code>{{person.bmi | number:2}}</code>
-      </h3>
-    </div>
-    <div class="col-md-8">
-      <label>Índice de Masa Corporal IMC</label>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Interpretación</th>
-            <th>Valores principales</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Bajo peso</th>
-            <td>< 18.50</td>
-          </tr>
-          <tr>
-            <th>Delgadez severa</th>
-            <td>< 16</td>
-          </tr>
-          <tr>
-            <th>Delagez moderada</th>
-            <td>16 a 16.99</td>
-          </tr>
-          <tr>
-            <th>Delgadez aceptable</th>
-            <td>17 a 18.49</td>
-          </tr>
-          <tr>
-            <th>Normal</th>
-            <td>18.5 a 24.99</td>
-          </tr>
-          <tr>
-            <th>Sobrepeso</th>
-            <td>25 a 29.99</td>
-          </tr>
-          <tr>
-            <th>Obeso tipo I</th>
-            <td>30 a 34.99</td>
-          </tr>
-          <tr>
-            <th>Obeso tipo II</th>
-            <td>35 a 39.99</td>
-          </tr>
-          <tr>
-            <th>Obeso tipo III</th>
-            <td>>= 40</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="form-group">
-    <h3>
-      Peso Ideal: <code>{{person.idealWeight | number:2}}</code>
-    </h3>
-    <h3>
-      Complexion corporal: <code>{{person.cc | number:2}}</code>
-    </h3>
-    <h3>
-      Agua corporal total: <code>{{person.act | number:2}}</code>
-    </h3>
-    <h3>
-      Grasa corporal total: <code>{{person.gct | number:2}}</code>
-    </h3>
-    <h3>
-      Masa libre de grasa: <code>{{person.mlg | number:2}}</code>
-    </h3>
-    <h3>
-      Distribución de grasa corporal: <code>{{person.icc | number:2}}</code>
-    </h3>
-    <h3>
-      Grasa intraabdominal: <code>{{person.agia | number:2}}</code>
-    </h3>
-
-    <hr>
-
-    <div class="row">
-      <div class="col-md-5">
+      <div class="form-group">
         <h3>
-          Porcentaje de Grasa Corporal Total: <code>{{person.gctPercentage | number:2}}</code>
+          Peso Ideal: <code>{{person.idealWeight | number:2}}</code>
         </h3>
-      </div>
-      <div class="col-md-5">
-        <div class="animate-switch-container" ng-switch on="genderFilter">
-          <div class="animate-switch" ng-switch-when="male">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Porcentaje</th>
-                  <th>Interpretación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>2 a 4</th>
-                  <td>Grasa esencial</td>
-                </tr>
-                <tr>
-                  <th>6 a 13</th>
-                  <td>Atletas</td>
-                </tr>
-                <tr>
-                  <th>14 a 17</th>
-                  <td>Gimnasio</td>
-                </tr>
-                <tr>
-                  <th>18 a 25</th>
-                  <td>Aceptable</td>
-                </tr>
-                <tr>
-                  <th>>= 26</th>
-                  <td>Acrecentada</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <h3>
+          Complexion corporal: <code>{{person.cc | number:2}}</code>
+        </h3>
+        <h3>
+          Agua corporal total: <code>{{person.act | number:2}}</code>
+        </h3>
+        <h3>
+          Grasa corporal total: <code>{{person.gct | number:2}}</code>
+        </h3>
+        <h3>
+          Masa libre de grasa: <code>{{person.mlg | number:2}}</code>
+        </h3>
+        <h3>
+          Distribución de grasa corporal: <code>{{person.icc | number:2}}</code>
+        </h3>
+        <h3>
+          Grasa intraabdominal: <code>{{person.agia | number:2}}</code>
+        </h3>
 
-          <div class="animate-switch" ng-switch-when="female">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Porcentaje</th>
-                  <th>Interpretación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>10 a 12</th>
-                  <td>Grasa esencial</td>
-                </tr>
-                <tr>
-                  <th>14 a 20</th>
-                  <td>Atletas</td>
-                </tr>
-                <tr>
-                  <th>21 a 24</th>
-                  <td>Gimnasio</td>
-                </tr>
-                <tr>
-                  <th>25 a 31</th>
-                  <td>Aceptable</td>
-                </tr>
-                <tr>
-                  <th>>= 32</th>
-                  <td>Acrecentada</td>
-                </tr>
-              </tbody>
-            </table>
+        <hr>
+
+        <div class="row">
+          <div class="col-md-5">
+            <h3>
+              Porcentaje de Grasa Corporal Total: <code>{{person.gctPercentage | number:2}}</code>
+            </h3>
+          </div>
+          <div class="col-md-5">
+            <div class="animate-switch-container" ng-switch on="genderFilter">
+              <div class="animate-switch" ng-switch-when="male">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Porcentaje</th>
+                      <th>Interpretación</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>2 a 4</th>
+                      <td>Grasa esencial</td>
+                    </tr>
+                    <tr>
+                      <th>6 a 13</th>
+                      <td>Atletas</td>
+                    </tr>
+                    <tr>
+                      <th>14 a 17</th>
+                      <td>Gimnasio</td>
+                    </tr>
+                    <tr>
+                      <th>18 a 25</th>
+                      <td>Aceptable</td>
+                    </tr>
+                    <tr>
+                      <th>>= 26</th>
+                      <td>Acrecentada</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="animate-switch" ng-switch-when="female">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Porcentaje</th>
+                      <th>Interpretación</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>10 a 12</th>
+                      <td>Grasa esencial</td>
+                    </tr>
+                    <tr>
+                      <th>14 a 20</th>
+                      <td>Atletas</td>
+                    </tr>
+                    <tr>
+                      <th>21 a 24</th>
+                      <td>Gimnasio</td>
+                    </tr>
+                    <tr>
+                      <th>25 a 31</th>
+                      <td>Aceptable</td>
+                    </tr>
+                    <tr>
+                      <th>>= 32</th>
+                      <td>Acrecentada</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</form>
+</div>
