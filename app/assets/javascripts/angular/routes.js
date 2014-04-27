@@ -297,5 +297,6 @@ nutrisol.run(['$rootScope', '$state', 'FamousQuotes', function($rootScope, $stat
       $rootScope.currentSection = $state.current.name;
       $rootScope.currentQuote = FamousQuotes[Math.floor((Math.random() * FamousQuotes.length) + 1)];
       $rootScope.currentTemplateFolder = $rootScope.currentSection.split('.')[1];
+      $rootScope.sidebarToggle = false;
     });
 }]);
