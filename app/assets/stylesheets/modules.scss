@@ -39,6 +39,14 @@ body {
   }
 }
 
+.ns-sidebar-body {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+
 .ns-sidebar .ns-sidebar-inner {
   margin-top: 60px;
   & > ul > li {
@@ -86,7 +94,7 @@ body {
   padding: 11px 20px;
   position: absolute;
   top: 0px;
-  z-index: 99999;
+  z-index: 999;
   span {
     background: $ns-white;
   }
