@@ -16,7 +16,32 @@
           <li ng-class="{ 'active': currentSection.indexOf('teenager') != -1 }"><a ui-sref="root.teenager">Adolescente</a></li>
           <li ng-class="{ 'active': currentSection.indexOf('adult') != -1 }"><a ui-sref="root.adult">Adulto</a></li>
           <li ng-class="{ 'active': currentSection.indexOf('elderly') != -1 }"><a ui-sref="root.elderly">Adulto mayor</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('kidney_failure') != -1 }"><a ui-sref="root.kidney_failure">Insuficiencia Renal</a></li>
+          <li ng-class="{ 'active': currentSection.indexOf('kidney_failure') != -1 }">
+            <a href="" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" ng-class="{ 'open': !isCollapsed }">
+              Insuficiencia Renal
+            </a>
+            <span class="glyphicon glyphicon-chevron-down icon-right"></span>
+            <ul class="ns-sidebar-submenu" collapse="isCollapsed">
+              <li>
+                <a ui-sref="root.kidney_failure.predialysis">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  Prediálitico
+                </a>
+              </li>
+              <li>
+                <a ui-sref="root.kidney_failure.dialysis">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  Diálisis
+                </a>
+              </li>
+              <li>
+                <a ui-sref="root.kidney_failure.dialysis">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  Diálisis
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -55,4 +80,5 @@
       </div>
       <div ui-view class="view-frame"></div>
     </div>
+  </div>
 </div>
