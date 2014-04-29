@@ -225,6 +225,21 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Diálisis'
         }
       })
+      .state('root.kidney_failure.dialysis.lab_studies', {
+        url: '/estudios_de_laboratorio',
+        templateUrl: 'angular/templates/kidney_failure/predialysis/lab_studies.html',
+        data: {
+          ncyBreadcrumbLabel: 'Raciones'
+        }
+      })
+      .state('root.kidney_failure.dialysis.anthropometry', {
+        url: '/antropometria',
+        templateUrl: 'angular/templates/kidney_failure/predialysis/anthropometry.html',
+        controller: 'KidneyFailurePredialysisAnthropometryController',
+        data: {
+          ncyBreadcrumbLabel: 'Diálisis'
+        }
+      })
       .state('root.kidney_failure.dialysis.rations', {
         url: '/raciones',
         templateUrl: 'angular/templates/kidney_failure/dialysis/rations.html',
