@@ -51,7 +51,8 @@
         percentage: 0
       },
       totalPercentage: 0,
-      totalCalories: 0
+      totalCalories: 0,
+      totalCaloriesReference: 0
     };
 
     //Calories & Proteins **************************************************
@@ -60,6 +61,8 @@
     $scope.$watchCollection('[person.weightCalories, person.weightProtein, person.weightCaloriesValue, person.weightProteinValue]', function(newValues, oldValues){
       $scope.person.kcal = Formulas.kcal($scope.person.weightCalories, $scope.person.weightCaloriesValue);
       $scope.person.proteins = Formulas.proteins($scope.person.weightProtein, $scope.person.weightProteinValue);
+
+      $scope.calories.totalCalories = $scope.person.kcal;
     });
 
     //Dialysis Calculations ************************************************
@@ -121,6 +124,8 @@
         $scope.calories.carbohydratesByDialysis.g = $scope.calories.carbohydratesByDialysis.kcal / 4;
       }
       $scope.calories.totalPercentage = $scope.calories.proteins.percentage + $scope.calories.lipids.percentage + $scope.calories.carbohydrates.percentage + $scope.calories.carbohydratesByDialysis.percentage;
+
+      $scope.calories.totalCaloriesReference = $scope.calories.totalCalories - $scope.calories.carbohydratesByDialysis.kcal;
 
     });
 
