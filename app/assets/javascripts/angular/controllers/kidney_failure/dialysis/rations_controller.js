@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('controllers')
-      .controller('KidneyFailureDialysisRationsController', ['$scope', 'GeneralFormulas', controller]);
+      .controller('KidneyFailureDialysisRationsController', ['$scope', 'GeneralFormulas', 'dialysisFormulas', controller]);
 
-  function controller($scope, GeneralFormulas) {
+  function controller($scope, GeneralFormulas, Formulas) {
 
     $scope.caloriesValuesDiabetic = [25, 30, 35];
     $scope.caloriesValues         = [40, 45, 50];
@@ -22,7 +22,11 @@
       weightProtein: 0,
       dialysisTimesPerDay: 0,
       dialysisLiters: 0,
-      dialysisPercentage: 0
+      dialysisPercentage: 0,
+      dialysisHC: 0,
+      dialysisHCkcal: 0,
+      kcal: 0,
+      proteins: 0
     }
 
     $scope.calories = {
@@ -41,7 +45,7 @@
         kcal: 0,
         percentage: 0
       },
-      carbohydratesDialysisBag: {
+      carbohydratesByDialysis: {
         g: 0,
         kcal: 0,
         percentage: 0
@@ -49,6 +53,26 @@
       totalPercentage: 0,
       totalCalories: 0
     };
+
+    //Calories & Proteins **************************************************
+    //********************
+
+    $scope.$watchCollection('[person.weightCalories, person.weightProtein, person.weightCaloriesValue, person.weightProteinValue]', function(newValues, oldValues){
+      $scope.person.kcal = Formulas.kcal($scope.person.weightCalories, $scope.person.weightCaloriesValue);
+      $scope.person.proteins = Formulas.proteins($scope.person.weightProtein, $scope.person.weightProteinValue);
+    });
+
+    //Dialysis Calculations ************************************************
+    //********************
+
+    $scope.$watchCollection('[person.dialysisTimesPerDay, person.dialysisPercentage, person.dialysisLiters]', function(newValues, oldValues){
+      $scope.person.dialysisHC = Formulas.dialysisHC($scope.person.dialysisTimesPerDay, $scope.person.dialysisPercentage, $scope.person.dialysisLiters);
+      $scope.person.dialysisHCkcal = Formulas.dialysisHCkcal($scope.person.dialysisHC);
+
+      if ($scope.calories.totalCalories > 0) {
+        $scope.calories.carbohydratesByDialysis.percentage = $scope.person.dialysisHCkcal * 100 / $scope.calories.totalCalories;
+      }
+    });
 
     $scope.rationsValues = GeneralFormulas.rationsByGroup();
 
@@ -59,7 +83,7 @@
     $scope.rations.totalLipids = 57;
     $scope.rations.totalCarbohydrates = 158;
 
-    //Calories Calculations ***********************************
+    //Calories Distribution Calculations ***********************************
     //*********************
 
     $scope.$watch('calories.totalCalories', function(newValue, oldValue) {
@@ -75,20 +99,28 @@
         $scope.calories.carbohydrates.kcal = ($scope.calories.carbohydrates.percentage * $scope.calories.totalCalories) / 100;
         $scope.calories.carbohydrates.g = $scope.calories.carbohydrates.kcal / 4;
       }
+      if ($scope.person.dialysisHCkcal > 0) {
+        $scope.calories.carbohydratesByDialysis.percentage = $scope.person.dialysisHCkcal * 100 / $scope.calories.totalCalories;
+      }
     });
 
-    $scope.$watchCollection('[calories.proteins.percentage, calories.lipids.percentage, calories.carbohydrates.percentage]', function(newValues, oldValues){
+    $scope.$watchCollection('[calories.proteins.percentage, calories.lipids.percentage, calories.carbohydrates.percentage, calories.carbohydratesByDialysis.percentage]', function(newValues, oldValues){
       var result;
 
       if ($scope.calories.totalCalories > 0) {
         $scope.calories.proteins.kcal = ($scope.calories.proteins.percentage * $scope.calories.totalCalories) / 100;
         $scope.calories.proteins.g = $scope.calories.proteins.kcal / 4;
+
         $scope.calories.lipids.kcal = ($scope.calories.lipids.percentage * $scope.calories.totalCalories) / 100;
         $scope.calories.lipids.g = $scope.calories.lipids.kcal / 9;
+
         $scope.calories.carbohydrates.kcal = ($scope.calories.carbohydrates.percentage * $scope.calories.totalCalories) / 100;
         $scope.calories.carbohydrates.g = $scope.calories.carbohydrates.kcal / 4;
+
+        $scope.calories.carbohydratesByDialysis.kcal = ($scope.calories.carbohydratesByDialysis.percentage * $scope.calories.totalCalories) / 100;
+        $scope.calories.carbohydratesByDialysis.g = $scope.calories.carbohydratesByDialysis.kcal / 4;
       }
-      $scope.calories.totalPercentage = $scope.calories.proteins.percentage + $scope.calories.lipids.percentage + $scope.calories.carbohydrates.percentage;
+      $scope.calories.totalPercentage = $scope.calories.proteins.percentage + $scope.calories.lipids.percentage + $scope.calories.carbohydrates.percentage + $scope.calories.carbohydratesByDialysis.percentage;
 
     });
 
