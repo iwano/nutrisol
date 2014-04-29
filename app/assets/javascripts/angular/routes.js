@@ -229,7 +229,7 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         url: '/estudios_de_laboratorio',
         templateUrl: 'angular/templates/kidney_failure/predialysis/lab_studies.html',
         data: {
-          ncyBreadcrumbLabel: 'Raciones'
+          ncyBreadcrumbLabel: 'Estudios de Laboratorio'
         }
       })
       .state('root.kidney_failure.dialysis.anthropometry', {
@@ -237,7 +237,7 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'angular/templates/kidney_failure/predialysis/anthropometry.html',
         controller: 'KidneyFailurePredialysisAnthropometryController',
         data: {
-          ncyBreadcrumbLabel: 'Diálisis'
+          ncyBreadcrumbLabel: 'Antropometría'
         }
       })
       .state('root.kidney_failure.dialysis.rations', {
@@ -293,6 +293,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         controller: 'KidneyFailureHemodialysisController',
         data: {
           ncyBreadcrumbLabel: 'Hemodiálisis'
+        }
+      })
+      .state('root.kidney_failure.hemodialysis.anthropometry', {
+        url: '/antropometria',
+        templateUrl: 'angular/templates/kidney_failure/predialysis/anthropometry.html',
+        controller: 'KidneyFailurePredialysisAnthropometryController',
+        data: {
+          ncyBreadcrumbLabel: 'Antropometría'
         }
       })
       .state('root.kidney_failure.hemodialysis.rations', {
