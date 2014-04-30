@@ -1,0 +1,43 @@
+<div class="ns-card">
+  <div class="ns-card-header ns-title">
+    <h2>Cálculo de requerimiento de energía estimado (REE)</h2>
+  </div>
+  <div class="ns-card-body">
+    <form name="calories_form" role="form">
+
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="person.nourishment" btn-radio="'breast'">Seno Materno</button>
+          <button type="button" class="btn btn-primary" ng-model="person.nourishment" btn-radio="'substitute'"> Sucedáneo</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+
+          <div class="form-group" ng-class="{ 'has-error': calories_form.weight.$invalid }">
+
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">Kg</span>
+              <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+            </div>
+
+            <div class='error' ng-show="calories_form.weight.$dirty && calories_form.weight.$invalid">
+              * Requerido: Numerico
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="ns-card">
+  <div class="ns-card-body">
+    <div class="form-group">
+      <h3>
+        Requerimiento de energía estimado: <code>{{person.ree | number:2}} kcal</code>
+      </h3>
+    </div>
+  </div>
+</div>
