@@ -8,16 +8,22 @@
         </div>
       </div>
       <div class="form-group" ng-class="{ 'has-error': bmi_form.height.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-        <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        <label class="control-label" for="height">Talla</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">cm</span>
+          <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        </div>
         <div class='error' ng-show="bmi_form.height.$dirty && bmi_form.height.$invalid">
           * Requerido: Numerico
         </div>
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': bmi_form.weight.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight">Peso</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="bmi_form.weight.$dirty && bmi_form.weight.$invalid">
           * Requerido: Numerico
         </div>
@@ -32,8 +38,11 @@
       <div class="row">
         <div class="col-md-5">
           <div class="form-group" ng-class="{ 'has-error': wrist_form.wrist.$invalid }">
-            <label class="control-label" tooltip="cm" tooltip-placement="left" for="wrist">Perímetro Muñeca</label>
-            <input type='number' step='.1' name='wrist' ng-model='person.wrist' placeholder='Ingresa perímetro muñeca' class='form-control' ng-pattern='/^\d+$/' required />
+            <label class="control-label" for="wrist">Perímetro Muñeca</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">cm</span>
+              <input type='number' step='.1' name='wrist' ng-model='person.wrist' placeholder='Ingresa perímetro muñeca' class='form-control' ng-pattern='/^\d+$/' required />
+            </div>
             <div class='error' ng-show="wrist_form.wrist.$dirty && wrist_form.wrist.$invalid">
               * Requerido: Numerico
             </div>
@@ -104,8 +113,11 @@
       <div class="row">
         <div class="col-md-5">
           <div class="form-group" ng-class="{ 'has-error': body_fat_form.waist.$invalid }">
-            <label class="control-label" tooltip="cm" tooltip-placement="left" for="waist">Perímetro Cintura</label>
-            <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
+            <label class="control-label" for="waist">Perímetro Cintura</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">cm</span>
+              <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
+            </div>
             <div class='error' ng-show="body_fat_form.waist.$dirty && body_fat_form.waist.$invalid">
               * Requerido: Numerico
             </div>
@@ -162,8 +174,11 @@
       <hr>
 
       <div class="form-group" ng-class="{ 'has-error': body_fat_form.hips.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="hips">Perímetro cadera</label>
-        <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
+        <label class="control-label" for="hips">Perímetro cadera</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">cm</span>
+          <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
+        </div>
         <div class='error' ng-show="body_fat_form.hips.$dirty && body_fat_form.hips.$invalid">
           * Requerido: Numerico
         </div>
@@ -171,7 +186,10 @@
 
       <div class="form-group" ng-class="{ 'has-error': body_fat_form.age.$invalid }">
         <label class="control-label" for="age">Edad</label>
-        <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">Años</span>
+          <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        </div>
         <div class='error' ng-show="body_fat_form.age.$dirty && body_fat_form.age.$invalid">
           * Requerido: Numerico
         </div>
@@ -185,7 +203,7 @@
       <div class="row">
         <div class="col-md-4">
           <h3>
-            IMC: <code>{{person.bmi | number:2}}</code>
+            IMC: <code>{{person.bmi | number:2}} <sup>kg</sup>&frasl;<sub>m<sup>2</sup></sub></span></code>
           </h3>
         </div>
         <div class="col-md-8">
@@ -243,25 +261,25 @@
 
       <div class="form-group">
         <h3>
-          Peso Ideal: <code>{{person.idealWeight | number:2}}</code>
+          Peso Ideal: <code>{{person.idealWeight | number:2}} kg</code>
         </h3>
         <h3>
-          Complexion corporal: <code>{{person.cc | number:2}}</code>
+          Complexion corporal: <code>{{person.cc | number:2}} </code>
         </h3>
         <h3>
-          Agua corporal total: <code>{{person.act | number:2}}</code>
+          Agua corporal total: <code>{{person.act | number:2}} litros</code>
         </h3>
         <h3>
-          Grasa corporal total: <code>{{person.gct | number:2}}</code>
+          Grasa corporal total: <code>{{person.gct | number:2}} kg</code>
         </h3>
         <h3>
-          Masa libre de grasa: <code>{{person.mlg | number:2}}</code>
+          Masa libre de grasa: <code>{{person.mlg | number:2}} kg</code>
         </h3>
         <h3>
-          Distribución de grasa corporal: <code>{{person.icc | number:2}}</code>
+          Distribución de grasa corporal: <code>{{person.icc | number:2}} cm<sup>2</sup></code>
         </h3>
         <h3>
-          Grasa intraabdominal: <code>{{person.agia | number:2}}</code>
+          Grasa intraabdominal: <code>{{person.agia | number:2}} cm<sup>2</sup></code>
         </h3>
 
         <hr>
@@ -269,7 +287,7 @@
         <div class="row">
           <div class="col-md-5">
             <h3>
-              Porcentaje de Grasa Corporal Total: <code>{{person.gctPercentage | number:2}}</code>
+              Porcentaje de Grasa Corporal Total: <code>{{person.gctPercentage | number:2}} %</code>
             </h3>
           </div>
           <div class="col-md-5">

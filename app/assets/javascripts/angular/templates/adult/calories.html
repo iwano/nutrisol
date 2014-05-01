@@ -8,33 +8,42 @@
         </div>
       </div>
       <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-        <input type='number' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        <label class="control-label" for="height">Talla</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">cm</span>
+          <input type='number' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        </div>
         <div class='error' ng-show="tmb_form.height.$dirty && tmb_form.height.$invalid">
           * Requerido: Numerico
         </div>
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': tmb_form.weight.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-        <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight">Peso</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="tmb_form.weight.$dirty && tmb_form.weight.$invalid">
           * Requerido: Numerico
         </div>
       </div>
       <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
         <label class="control-label" for="age">Edad</label>
-        <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">Años</span>
+          <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        </div>
         <div class='error' ng-show="tmb_form.age.$dirty && tmb_form.age.$invalid">
           * Requerido: Numerico
         </div>
       </div>
       <div class="form-group">
         <h2>
-          IMC: <code>{{person.bmi | number:2}}</code>
+          IMC: <code>{{person.bmi | number:2}} <sup>kg</sup>&frasl;<sub>m<sup>2</sup></sub></span></code>
         </h2>
         <h1>
-          Calorías: <code>{{person.tmb | number:2}}</code>
+          Calorías: <code>{{person.tmb | number:2}} kcal</code>
         </h1>
       </div>
     </form>
