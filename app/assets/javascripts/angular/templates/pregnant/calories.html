@@ -15,7 +15,10 @@
         <div class="animate-switch" ng-switch-when="adult">
           <div class="form-group has-feedback" ng-class="{ 'has-error': calories_form.age.$invalid }">
             <label class="control-label" for="age">Edad</label>
-            <input type='number' step='.1' name='weight' ng-model='person.age' placeholder='Ingresa edad' class='form-control' required />
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">Años</span>
+              <input type='number' step='.1' name='weight' ng-model='person.age' placeholder='Ingresa edad' class='form-control' required />
+            </div>
 
             <div class='error' ng-show="calories_form.weight.$dirty && calories_form.weight.$invalid">
               <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -24,8 +27,11 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label" for="adult_calories" tooltip="kcal" tooltip-placement="left">Calorias extra segun la edad</label>
-            <select name="adult_calories" class="form-control" ng-model="person.adultCalories", ng-options='a.calories as a.quarter for a in adultCalories'></select>
+            <label class="control-label" for="adult_calories">Costo energético del embarazo por trimestre</label>
+            <big><span class="label label-warning">{{person.adultCalories}} kcal</span></big>
+            <div class="input-group input-group-lg input-group-select">
+              <select name="adult_calories" class="form-control" ng-model="person.adultCalories", ng-options='a.calories as a.quarter for a in adultCalories'></select>
+            </div>
             <hr>
             <table class="table table-striped">
               <thead>
@@ -54,7 +60,10 @@
 
           <div class="form-group has-feedback" ng-class="{ 'has-error': calories_form.physical_activity.$invalid }">
             <label class="control-label" for="physical_activity">Actividad física</label>
-            <input type='number' step='.1' name='physical_activity' ng-model='person.physicalActivity' placeholder='Ingresa Actividad física' class='form-control' required />
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">NAF</span>
+              <input type='number' step='.1' name='physical_activity' ng-model='person.physicalActivity' placeholder='Ingresa Actividad física' class='form-control' required />
+            </div>
 
             <div class='error' ng-show="calories_form.physical_activity.$dirty && calories_form.physical_activity.$invalid">
               <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -65,15 +74,21 @@
 
         <div class="animate-switch" ng-switch-when="teenager">
           <div class="form-group">
-            <label class="control-label" for="teenager_calories" tooltip="kcal" tooltip-placement="left">Calorias extra segun la edad</label>
-            <select class="form-control" ng-model="person.teenagerCalories", ng-options='a.calories as a.age for a in teenagerCalories'></select>
+            <label class="control-label" for="teenager_calories">Calorias extra segun la edad</label>
+            <big><span class="label label-warning">{{person.teenagerCalories}} kcal</span></big>
+            <div class="input-group input-group-lg input-group-select">
+              <select class="form-control" ng-model="person.teenagerCalories", ng-options='a.calories as a.age for a in teenagerCalories'></select>
+            </div>
           </div>
         </div>
       </div> <!-- end ng-switch -->
 
       <div class="form-group has-feedback" ng-class="{ 'has-error': calories_form.weight.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso previo al embarazo</label>
-        <input type='number' step='.1' name='weight' ng-model='person.weightBeforePregnancy' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight">Peso previo al embarazo</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight' ng-model='person.weightBeforePregnancy' placeholder='Ingresa peso' class='form-control' required />
+        </div>
 
         <div class='error' ng-show="calories_form.weight.$dirty && calories_form.weight.$invalid">
           <span class="glyphicon glyphicon-remove form-control-feedback"></span>
@@ -83,7 +98,7 @@
 
       <div class="form-group">
         <h3>
-          Total de calorías <code>{{result | number:2}}</code>
+          Total de calorías <code>{{result | number:2}} kcal</code>
         </h3>
       </div>
     </form>
