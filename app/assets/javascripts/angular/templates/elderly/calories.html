@@ -10,7 +10,10 @@
 
       <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
         <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
           * Requerido: Numerico
         </div>
@@ -20,7 +23,9 @@
         <div class="col-md-5">
           <div class="form-group" ng-class="{ 'has-error': anthropometry_form.naf.$invalid }">
             <label class="control-label" tooltip="kg" tooltip-placement="left" for="naf">NAF</label>
-            <input type='number' step='.1' name='naf' ng-model='person.naf' placeholder='Ingresa NAF' class='form-control' required />
+            <div class="input-group input-group-lg input-group-select">
+              <input type='number' step='.1' name='naf' ng-model='person.naf' placeholder='Ingresa NAF' class='form-control' required />
+            </div>
             <div class='error' ng-show="anthropometry_form.naf.$dirty && anthropometry_form.naf.$invalid">
               * Requerido: Numerico
             </div>
@@ -60,11 +65,11 @@
 <div class="ns-card">
   <div class="ns-card-body">
     <h3>
-      Gasto Energético en Reposo (GER): <code>{{person.ger | number:2}}</code>
+      Gasto Energético en Reposo (GER): <code>{{person.ger | number:2}} kcal</code>
     </h3>
 
     <h3>
-      Requerimiento de Energía Estimado (REE): <code>{{person.ree | number:2}}</code>
+      Requerimiento de Energía Estimado (REE): <code>{{person.ree | number:2}} kcal</code>
     </h3>
   </div>
 </div>

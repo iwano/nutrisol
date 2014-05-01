@@ -18,8 +18,11 @@
       <div class="animate-switch-container" ng-switch on="heightOption">
         <div class="animate-switch" ng-switch-when="armspan">
           <div class="form-group" ng-class="{ 'has-error': anthropometry_form.armspan.$invalid }">
-            <label class="control-label" tooltip="cm" tooltip-placement="left" for="armspan">Envergadura</label>
-            <input type='number' step='.1' name='armspan' ng-model='person.armspan' placeholder='Ingresa Envergadura' class='form-control' required/>
+            <label class="control-label" for="armspan">Envergadura</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">cm</span>
+              <input type='number' step='.1' name='armspan' ng-model='person.armspan' placeholder='Ingresa Envergadura' class='form-control' required/>
+            </div>
             <div class='error' ng-show="anthropometry_form.armspan.$dirty && anthropometry_form.armspan.$invalid">
               * Requerido: Numerico
             </div>
@@ -28,8 +31,11 @@
 
         <div class="animate-switch" ng-switch-when="height">
           <div class="form-group" ng-class="{ 'has-error': anthropometry_form.height.$invalid }">
-            <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-            <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+            <label class="control-label" for="height">Talla</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">cm</span>
+              <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+            </div>
             <div class='error' ng-show="anthropometry_form.height.$dirty && anthropometry_form.height.$invalid">
               * Requerido: Numerico
             </div>
@@ -37,13 +43,16 @@
         </div>
       </div>
 
-      <h3>
-        Talla: <code>{{person.tallness | number:2}}</code>
-      </h3>
+      <div class="form-group">
+        <big>Talla <span class="label label-warning">{{person.tallness | number:2}} cm</span></big>
+      </div>
 
       <div class="form-group" ng-class="{ 'has-error': anthropometry_form.elbowWidth.$invalid }">
-        <label class="control-label" tooltip="mm" tooltip-placement="left" for="elbowWidth">Anchura de codo</label>
-        <input type='number' step='.1' name='elbowWidth' ng-model='person.elbowWidth' placeholder='Ingresa Anchura de codo' class='form-control' required/>
+        <label class="control-label" for="elbowWidth">Anchura de codo</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">mm</span>
+          <input type='number' step='.1' name='elbowWidth' ng-model='person.elbowWidth' placeholder='Ingresa Anchura de codo' class='form-control' required/>
+        </div>
         <div class='error' ng-show="anthropometry_form.elbowWidth.$dirty && anthropometry_form.elbowWidth.$invalid">
           * Requerido: Numerico
         </div>
@@ -51,8 +60,11 @@
 
 
       <div class="form-group" ng-class="{ 'has-error': anthropometry_form.weight.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight">Peso</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="anthropometry_form.weight.$dirty && anthropometry_form.weight.$invalid">
           * Requerido: Numerico
         </div>
@@ -60,7 +72,10 @@
 
       <div class="form-group" ng-class="{ 'has-error': anthropometry_form.age.$invalid }">
         <label class="control-label" for="age">Edad</label>
-        <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">Años</span>
+          <input type='number' name='age' ng-model='person.age' placeholder='Ingresa edad' class='form-control' ng-pattern='/^[0-9]+$/' required/>
+        </div>
         <div class='error' ng-show="anthropometry_form.age.$dirty && anthropometry_form.age.$invalid">
           * Requerido: Numerico
         </div>
@@ -76,18 +91,18 @@
     </h3>
 
     <h3>
-      IMC: <code>{{person.bmi | number:2}}</code>
+      IMC: <code>{{person.bmi | number:2}} <sup>kg</sup>&frasl;<sub>m<sup>2</sup></sub></span></code>
     </h3>
 
     <h3>
-      Porcentaje de Grasa Corporal : <code>{{person.gct | number:2}}</code>
+      Porcentaje de Grasa Corporal : <code>{{person.gct | number:2}} %</code>
     </h3>
   </div>
 </div>
 
 <div class="ns-card">
   <div class="ns-card-body">
-    <label>Índice de Masa Corporal IMC</label>
+    <label>Índice de Masa Corporal IMC</label> <big> <span class="label label-warning">{{person.bmi | number:2}} <sup>kg</sup>&frasl;<sub>m<sup>2</sup></sub></span></span></big>
     <table class="table table-striped">
       <thead>
         <tr>
