@@ -24,7 +24,9 @@
 
   }
 
-  var GraphicsModalCtrl = function ($scope, $modalInstance, image) {
+  var GraphicsModalCtrl = ['$scope', '$modalInstance', 'image', modal]
+
+  function modal ($scope, $modalInstance, image) {
 
     $scope.image = image;
 
