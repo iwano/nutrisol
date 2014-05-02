@@ -11,6 +11,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
+gem "non-stupid-digest-assets"
 gem 'pg'
 gem 'rails-assets-angular-animate'
 gem 'rails-assets-angular-bootstrap'

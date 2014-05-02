@@ -170,3 +170,11 @@
 .input-group .form-control {
   border-radius: 0;
 }
+
+.ns-close-btn {
+  background: transparent;
+  color: $ns-red;
+  font-size: 50px;
+  position: absolute;
+  right: 0;
+}

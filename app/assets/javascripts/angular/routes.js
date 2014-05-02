@@ -66,6 +66,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
           ncyBreadcrumbLabel: 'Estudios de Laboratorio'
         }
       })
+      .state('root.newborn.anthropometry', {
+        url: '/antropometria',
+        templateUrl: 'angular/templates/newborn/anthropometry.html',
+        controller: 'NewbornAnthropometryController',
+        data: {
+          ncyBreadcrumbLabel: 'Antropometría'
+        }
+      })
       .state('root.newborn.calories', {
         url: '/calorias',
         templateUrl: 'angular/templates/newborn/calories.html',
@@ -88,6 +96,14 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
         controller: 'InfantController',
         data: {
           ncyBreadcrumbLabel: 'Lactante'
+        }
+      })
+      .state('root.infant.anthropometry', {
+        url: '/antropometria',
+        templateUrl: 'angular/templates/newborn/anthropometry.html',
+        controller: 'NewbornAnthropometryController',
+        data: {
+          ncyBreadcrumbLabel: 'Antropometría'
         }
       })
       .state('root.infant.rations', {

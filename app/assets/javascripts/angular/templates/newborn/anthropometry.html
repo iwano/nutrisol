@@ -1,0 +1,163 @@
+<div class="ns-card">
+  <div class="ns-card-header ns-title">
+    <h2>Cálculo de requerimiento de energía estimado (REE)</h2>
+  </div>
+  <div class="ns-card-body">
+    <section class="anthropometry-graphics">
+
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'boy'">Niño</button>
+          <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'girl'"> Niña</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" ng-model="typeFilter" btn-radio="'percentile'">Percentil</button>
+          <button type="button" class="btn btn-primary" ng-model="typeFilter" btn-radio="'zscore'">Puntaje z</button>
+        </div>
+      </div>
+
+      <div ng-switch on="genderFilter">
+        <div ng-switch-when="boy">
+          <div ng-switch on="typeFilter">
+            <div ng-switch-when="percentile">
+              <ul>
+                <li>
+                  <a href="" ng-click="showImage('longitud_6_meses_a_2_años')">Longitud 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('longitud_nacimiento_a_2_años')">Longitud nacimiento a 2 años</a>
+                </li>
+                <li>
+                 <a href="" ng-click="showImage('longitud_nacimiento_a_6_meses')">Longitud nacimiento a 6 meses</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_2_años')">Perímetro cefálico nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_13_semanas')">Perímetro cefálico nacimiento a 13 semanas</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_6_meses_a_2_años')">Peso 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_a_2_años')">Peso nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_a_6_meses')">Peso nacimiento a 6 meses</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso-longitud_nacimiento_a_2_años')">Peso longitud nacimiento a 2 años</a>
+                </li>
+              </ul>
+            </div>
+
+            <div ng-switch-when="zscore">
+              <ul>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_2_años')">Peso a nacimiento 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('0_a_6_meses')">0 a 6 meses</a>
+                </li>
+                <li>
+                 <a href="" ng-click="showImage('longitud_6_meses_a_2_años')">Longitud 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('longitud_nacimiento_a_2_años')">Longitud nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_2_años')">Perímetro cefálico nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_13_semanas')">Perímetro cefálico nacimiento a 13 semanas</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_6_meses_a_2_años')">Peso 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_a_6_meses')">Peso nacimiento a 6 meses</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso-longitud_nacimiento_a_2_años')">Peso longitud nacimiento a 2 años</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div ng-switch-when="girl">
+          <div ng-switch on="typeFilter">
+            <div ng-switch-when="percentile">
+              <ul>
+                <li>
+                  <a href="" ng-click="showImage('6_meses_a_2_años')">6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('longitud_nacimiento_a_2_años')">Longitud nacimiento a 2 años</a>
+                </li>
+                <li>
+                 <a href="" ng-click="showImage('longitud_nacimiento_a_6_meses')">Longitud nacimiento a 6 meses</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_2_años')">Perímetro cefálico nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_13_semanas')">Perímetro cefálico nacimiento a 13 semanas</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_6_meses_a_2_años')">Peso 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_a_2_años')">Peso nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_a_6_meses')">Peso nacimiento a 6 meses</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso-longitud_nacimiento_a_2_años')">Peso longitud nacimiento a 2 años</a>
+                </li>
+              </ul>
+            </div>
+
+            <div ng-switch-when="zscore">
+              <ul>
+                <li>
+                  <a href="" ng-click="showImage('0_a_6_meses')">0 a 6 meses</a>
+                </li>
+                <li>
+                 <a href="" ng-click="showImage('longitud_6_meses_a_2_años')">Longitud 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('longitud_nacimiento_a_2_años')">Longitud nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_2_años')">Perímetro cefálico nacimiento a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('perimetro_cefalico_nacimiento_a_13_semanas')">Perímetro cefálico nacimiento a 13 semanas</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_6_meses_a_2_años')">Peso 6 meses a 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_2_años')">Peso a nacimiento 2 años</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso_nacimiento_a_6_meses')">Peso nacimiento a 6 meses</a>
+                </li>
+                <li>
+                  <a href="" ng-click="showImage('peso-longitud_nacimiento_a_2_años')">Peso longitud nacimiento a 2 años</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
