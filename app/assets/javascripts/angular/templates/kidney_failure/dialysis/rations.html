@@ -7,46 +7,60 @@
       </button>
 
       <div class="form-group" ng-class="{ 'has-error': calories_form.weight_calories.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight_calories">Peso</label>
-        <input type='number' step='.1' name='weight_calories' ng-model='person.weightCalories' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight_calories">Peso</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight_calories' ng-model='person.weightCalories' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="calories_form.weight_calories.$dirty && calories_form.weight_calories.$invalid">
           * Requerido: Numerico
         </div>
 
         <div class="animate-switch-container" ng-switch on="person.isDiabetic">
           <div class="animate-switch" ng-switch-when="true">
-            <label class="control-label" for="calories_values" tooltip="calorias" tooltip-placement="left">Calorias para persona diabética</label>
-            <select name="calories_values_diabetic" class="form-control" ng-model="person.weightCaloriesValue", ng-options='c for c in caloriesValuesDiabetic'></select>
+            <label class="control-label" for="calories_values">Calorías para persona diabética</label>
+            <div class="input-group input-group-lg input-group-select">
+              <select name="calories_values_diabetic" class="form-control" ng-model="person.weightCaloriesValue", ng-options='c for c in caloriesValuesDiabetic'></select>
+            </div>
           </div>
           <div class="animate-switch" ng-switch-when="false">
-            <label class="control-label" for="calories_values" tooltip="calorias" tooltip-placement="left">Calorias para persona no diabética</label>
-            <select name="calories_values" class="form-control" ng-model="person.weightCaloriesValue", ng-options='c for c in caloriesValues'></select>
+            <label class="control-label" for="calories_values">Calorías para persona no diabética</label>
+            <div class="input-group input-group-lg input-group-select">
+              <select name="calories_values" class="form-control" ng-model="person.weightCaloriesValue", ng-options='c for c in caloriesValues'></select>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': calories_form.weight_protein.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight_protein">Peso</label>
-        <input type='number' step='.1' name='weight_protein' ng-model='person.weightProtein' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight_protein">Peso</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight_protein' ng-model='person.weightProtein' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="calories_form.weight_protein.$dirty && calories_form.weight_protein.$invalid">
           * Requerido: Numerico
         </div>
 
         <div class="animate-switch-container" ng-switch on="person.isDiabetic">
           <div class="animate-switch" ng-switch-when="true">
-            <label class="control-label" for="protein_values" tooltip="gr" tooltip-placement="left">Proteínas para persona diabética</label>
-            <select name="protein_values_diabetic" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGramsDiabetic'></select>
+            <label class="control-label" for="protein_values">Proteínas para persona diabética</label>
+            <div class="input-group input-group-lg input-group-select">
+              <select name="protein_values_diabetic" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGramsDiabetic'></select>
+            </div>
           </div>
           <div class="animate-switch" ng-switch-when="false">
-            <label class="control-label" for="protein_values" tooltip="gr" tooltip-placement="left">Proteínas para persona no diabética</label>
-            <select name="protein_values_diabetic" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGrams'></select>
+            <label class="control-label" for="protein_values">Proteínas para persona no diabética</label>
+            <div class="input-group input-group-lg input-group-select">
+              <select name="protein_values_diabetic" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGrams'></select>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <h4>Calorías: <span class="label label-warning">{{person.kcal  | number:2}}</span></h4>
-        <h4>Proteínas: <span class="label label-warning">{{person.proteins  | number:2}}</span></h4>
+        <h4>Calorías: <span class="label label-warning">{{person.kcal  | number:2}} kcal</span></h4>
+        <h4>Proteínas: <span class="label label-warning">{{person.proteins  | number:2}} gm</span></h4>
       </div>
     </form>
   </div>
@@ -56,29 +70,36 @@
   <div class="ns-card-body">
     <form name='dialysis_form' role='form'>
       <div class="form-group" ng-class="{ 'has-error': dialysis_form.dialysis_times_a_day.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="dialysis_times_a_day">¿Cuántas veces se dialisa al día?</label>
-        <input type='number' step='1' name='dialysis_times_a_day' ng-model='person.dialysisTimesPerDay' placeholder='Ingresa numero de veces al día' class='form-control' required />
+        <label class="control-label" for="dialysis_times_a_day">¿Cuántas veces se dialisa al día?</label>
+        <div class="input-group input-group-lg">
+          <input type='number' step='1' name='dialysis_times_a_day' ng-model='person.dialysisTimesPerDay' placeholder='Ingresa numero de veces al día' class='form-control' required />
+        </div>
         <div class='error' ng-show="dialysis_form.dialysis_times_a_day.$dirty && dialysis_form.dialysis_times_a_day.$invalid">
           * Requerido: Numerico
         </div>
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': dialysis_form.dialysis_percentages.$invalid }">
-        <label class="control-label" for="dialysis_percentages" tooltip="calorias" tooltip-placement="left">¿De que porcentaje es su bolsa?</label>
-        <select name="dialysis_percentages" class="form-control" ng-model="person.dialysisPercentage", ng-options='c for c in dialysisPercentages'></select>
+        <label class="control-label" for="dialysis_percentages">¿De que porcentaje es su bolsa?</label>
+        <div class="input-group input-group-lg input-group-select">
+          <select name="dialysis_percentages" class="form-control" ng-model="person.dialysisPercentage", ng-options='c for c in dialysisPercentages'></select>
+        </div>
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': dialysis_form.dialysis_liters.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="dialysis_liters">¿De cuántos litros?</label>
-        <input type='number' step='.1' name='dialysis_liters' ng-model='person.dialysisLiters' placeholder='Ingresa numero de litros' class='form-control' required />
+        <label class="control-label" for="dialysis_liters">¿De cuántos litros?</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">L</span>
+          <input type='number' step='.1' name='dialysis_liters' ng-model='person.dialysisLiters' placeholder='Ingresa numero de litros' class='form-control' required />
+        </div>
         <div class='error' ng-show="dialysis_form.dialysis_liters.$dirty && dialysis_form.dialysis_liters.$invalid">
           * Requerido: Numerico
         </div>
       </div>
 
       <div class="form-group">
-        <h4>Total Hidratos de Carbono por Diálisis: <span class="label label-warning">{{person.dialysisHC  | number:2}}</span></h4>
-        <h4>Total Calorías de Hidratos de Carbono por Diálisis: <span class="label label-warning">{{person.dialysisHCkcal  | number:2}}</span></h4>
+        <h4>Total Hidratos de Carbono por Diálisis: <span class="label label-warning">{{person.dialysisHC  | number:2}} gr</span></h4>
+        <h4>Total Calorías de Hidratos de Carbono por Diálisis: <span class="label label-warning">{{person.dialysisHCkcal  | number:2}} kcal</span></h4>
       </div>
     </form>
   </div>

@@ -9,16 +9,22 @@
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': bmi_form.height.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="height">Talla</label>
-        <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        <label class="control-label" for="height">Talla</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">cm</span>
+          <input type='number' step='.1' name='height' ng-model='person.height' placeholder='Ingresa Talla' class='form-control' required/>
+        </div>
         <div class='error' ng-show="bmi_form.height.$dirty && bmi_form.height.$invalid">
           * Requerido: Numerico
         </div>
       </div>
 
       <div class="form-group" ng-class="{ 'has-error': bmi_form.weight.$invalid }">
-        <label class="control-label" tooltip="kg" tooltip-placement="left" for="weight">Peso</label>
-        <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        <label class="control-label" for="weight">Peso</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">kg</span>
+          <input type='number' step='.1' name='weight' ng-model='person.weight' placeholder='Ingresa peso' class='form-control' required />
+        </div>
         <div class='error' ng-show="bmi_form.weight.$dirty && bmi_form.weight.$invalid">
           * Requerido: Numerico
         </div>
@@ -33,8 +39,11 @@
       <div class="row">
         <div class="col-md-5">
           <div class="form-group" ng-class="{ 'has-error': waist_form.waist.$invalid }">
-            <label class="control-label" tooltip="cm" tooltip-placement="left" for="waist">Perímetro Cintura</label>
-            <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
+            <label class="control-label" for="waist">Perímetro Cintura</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-addon">cm</span>
+              <input type='number' step='.1' name='waist' ng-model='person.waist' placeholder='Ingresa perímetro cintura' class='form-control' required />
+            </div>
             <div class='error' ng-show="waist_form.waist.$dirty && waist_form.waist.$invalid">
               * Requerido: Numerico
             </div>
@@ -88,141 +97,20 @@
         </div>
       </div>
     </form>
-  </div>
-</div>
 
-<div class="ns-card">
-  <div class="ns-card-body">
+    <big>Índice Cintura Cadera <span class="label label-warning">{{person.waistHipsIndex | number:2}} cm</span></big>
+
+    <hr>
+
     <form name="waist_form" role="form">
       <div class="form-group" ng-class="{ 'has-error': waist_form.hips.$invalid }">
-        <label class="control-label" tooltip="cm" tooltip-placement="left" for="hips">Perímetro cadera</label>
-        <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
+        <label class="control-label" for="hips">Perímetro cadera</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">cm</span>
+          <input type='number' step='.1' name='hips' ng-model='person.hips' placeholder='Ingresa perímetro cadera' class='form-control' required />
+        </div>
         <div class='error' ng-show="waist_form.hips.$dirty && waist_form.hips.$invalid">
           * Requerido: Numerico
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="form-group">
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary" ng-model="person.adultType" btn-radio="'adult'">Adulto</button>
-          <button type="button" class="btn btn-primary" ng-model="person.adultType" btn-radio="'elderly'">Adulto Mayor</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <h3>
-            IMC: <code>{{person.bmi | number:2}}</code>
-          </h3>
-        </div>
-        <div class="col-md-8">
-          <div class="animate-switch-container" ng-switch on="person.adultType">
-            <div class="animate-switch" ng-switch-when="adult">
-              <label>Índice de Masa Corporal IMC Adulto</label>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Interpretación</th>
-                    <th>Valores principales</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>Bajo peso</th>
-                    <td>< 18.50</td>
-                  </tr>
-                  <tr>
-                    <th>Delgadez severa</th>
-                    <td>< 16</td>
-                  </tr>
-                  <tr>
-                    <th>Delagez moderada</th>
-                    <td>16 a 16.99</td>
-                  </tr>
-                  <tr>
-                    <th>Delgadez aceptable</th>
-                    <td>17 a 18.49</td>
-                  </tr>
-                  <tr>
-                    <th>Normal</th>
-                    <td>18.5 a 24.99</td>
-                  </tr>
-                  <tr>
-                    <th>Sobrepeso</th>
-                    <td>25 a 29.99</td>
-                  </tr>
-                  <tr>
-                    <th>Obeso tipo I</th>
-                    <td>30 a 34.99</td>
-                  </tr>
-                  <tr>
-                    <th>Obeso tipo II</th>
-                    <td>35 a 39.99</td>
-                  </tr>
-                  <tr>
-                    <th>Obeso tipo III</th>
-                    <td>>= 40</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="animate-switch" ng-switch-when="elderly">
-              <label>Índice de Masa Corporal IMC Adulto Mayor</label>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>IMC (kg/m2)</th>
-                    <th>Interpretación</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>< 16.0</th>
-                    <td>Desnutrición severa</td>
-                  </tr>
-                  <tr>
-                    <th>16.0 a 16.9</th>
-                    <td>Desnutrición moderada</td>
-                  </tr>
-                  <tr>
-                    <th>17.0 a 18.4</th>
-                    <td>Desnutrición leve</td>
-                  </tr>
-                  <tr>
-                    <th>18.5 a 21.9</th>
-                    <td>Peso insuficiente</td>
-                  </tr>
-                  <tr>
-                    <th>22.0 a 26.9</th>
-                    <td>Peso normal</td>
-                  </tr>
-                  <tr>
-                    <th>27.0 a 29.9</th>
-                    <td>Sobrepeso</td>
-                  </tr>
-                  <tr>
-                    <th>30.0 34.9</th>
-                    <td>Obesidad grado I</td>
-                  </tr>
-                  <tr>
-                    <th>35.0 39.9</th>
-                    <td>Obesidad grado II</td>
-                  </tr>
-                  <tr>
-                    <th>40.0 a 40.9</th>
-                    <td>Obesidad grado III</td>
-                  </tr>
-                  <tr>
-                    <th>>= 50.0</th>
-                    <td>Obesidad grado IV (extrema)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </div>
     </form>
@@ -232,11 +120,137 @@
 <div class="ns-card">
   <div class="ns-card-body">
     <div class="form-group">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" ng-model="person.adultType" btn-radio="'adult'">Adulto</button>
+        <button type="button" class="btn btn-primary" ng-model="person.adultType" btn-radio="'elderly'">Adulto Mayor</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h3>
+          IMC: <code>{{person.bmi | number:2}}<sup>kg</sup>&frasl;<sub>m<sup>2</sup></sub></span></code>
+        </h3>
+      </div>
+      <div class="col-md-8">
+        <div class="animate-switch-container" ng-switch on="person.adultType">
+          <div class="animate-switch" ng-switch-when="adult">
+            <label>Índice de Masa Corporal IMC Adulto</label>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Interpretación</th>
+                  <th>Valores principales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Bajo peso</th>
+                  <td>< 18.50</td>
+                </tr>
+                <tr>
+                  <th>Delgadez severa</th>
+                  <td>< 16</td>
+                </tr>
+                <tr>
+                  <th>Delagez moderada</th>
+                  <td>16 a 16.99</td>
+                </tr>
+                <tr>
+                  <th>Delgadez aceptable</th>
+                  <td>17 a 18.49</td>
+                </tr>
+                <tr>
+                  <th>Normal</th>
+                  <td>18.5 a 24.99</td>
+                </tr>
+                <tr>
+                  <th>Sobrepeso</th>
+                  <td>25 a 29.99</td>
+                </tr>
+                <tr>
+                  <th>Obeso tipo I</th>
+                  <td>30 a 34.99</td>
+                </tr>
+                <tr>
+                  <th>Obeso tipo II</th>
+                  <td>35 a 39.99</td>
+                </tr>
+                <tr>
+                  <th>Obeso tipo III</th>
+                  <td>>= 40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="animate-switch" ng-switch-when="elderly">
+            <label>Índice de Masa Corporal IMC Adulto Mayor</label>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>IMC (kg/m2)</th>
+                  <th>Interpretación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>< 16.0</th>
+                  <td>Desnutrición severa</td>
+                </tr>
+                <tr>
+                  <th>16.0 a 16.9</th>
+                  <td>Desnutrición moderada</td>
+                </tr>
+                <tr>
+                  <th>17.0 a 18.4</th>
+                  <td>Desnutrición leve</td>
+                </tr>
+                <tr>
+                  <th>18.5 a 21.9</th>
+                  <td>Peso insuficiente</td>
+                </tr>
+                <tr>
+                  <th>22.0 a 26.9</th>
+                  <td>Peso normal</td>
+                </tr>
+                <tr>
+                  <th>27.0 a 29.9</th>
+                  <td>Sobrepeso</td>
+                </tr>
+                <tr>
+                  <th>30.0 34.9</th>
+                  <td>Obesidad grado I</td>
+                </tr>
+                <tr>
+                  <th>35.0 39.9</th>
+                  <td>Obesidad grado II</td>
+                </tr>
+                <tr>
+                  <th>40.0 a 40.9</th>
+                  <td>Obesidad grado III</td>
+                </tr>
+                <tr>
+                  <th>>= 50.0</th>
+                  <td>Obesidad grado IV (extrema)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ns-card">
+  <div class="ns-card-body">
+    <div class="form-group">
       <h3>
-        Peso Ideal: <code>{{person.idealWeight | number:2}}</code>
+        Peso Ideal: <code>{{person.idealWeight | number:2}} kg</code>
       </h3>
       <h3>
-        Peso Seco: <code>{{person.dryWeight | number:2}}</code>
+        Peso Seco: <code>{{person.dryWeight | number:2}} kg</code>
       </h3>
       <h3>
         Índice Cintura Cadera: <code>{{person.waistHipsIndex | number:2}}</code>

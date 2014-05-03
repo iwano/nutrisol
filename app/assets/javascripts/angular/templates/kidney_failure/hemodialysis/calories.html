@@ -35,8 +35,7 @@
 
       <div class="form-group" ng-show="person.isDiabetic">
         <label class="control-label" for="protein_values">Proteínas por kilo</label>
-        <div class="input-group input-group-lg">
-          <span class="input-group-addon">gr</span>
+        <div class="input-group input-group-lg input-group-select">
           <select name="protein_values" class="form-control" ng-model="person.weightProteinValue", ng-options='p for p in proteinGrams'></select>
         </div>
       </div>
