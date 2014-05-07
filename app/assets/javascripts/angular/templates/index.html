@@ -7,6 +7,19 @@
     </div>
     <div class="ns-sidebar-body ns-scroll-y">
       <div class="ns-sidebar-inner">
+        <div class='ns-login-box'>
+          <div data-facebook='1480133565551807'>
+            <div id="fb-root"></div>
+            <div>
+              <div class='ns-user-info' ng-show="user">
+                <div class='ns-clip-circle' style="background: url('http://graph.facebook.com/{{user.identifier}}/picture?type=normal') no-repeat"></div>
+                <p class="lead ns-user-name">{{user.name}}</p>
+              </div>
+              <a href='#' ng-hide="login_status == 'connected'" class="btn btn-primary" data-ng-click='fetch()' class='btn btn-primary'>Login with Facebook</a>
+              <a href='#' ng-show="login_status == 'connected'" class="btn btn-danger" data-ng-click='logout()' class='btn btn-primary'>Logout from Facebook</a>
+            </div>
+          </div>
+        </div>
         <ul class="nav nav-pills nav-stacked">
           <li ng-class="{ 'active': currentSection.indexOf('pregnant') != -1 }"><a ui-sref="root.pregnant">Embarazo</a></li>
           <li ng-class="{ 'active': currentSection.indexOf('newborn') != -1 }"><a ui-sref="root.newborn">Recién nacido</a></li>

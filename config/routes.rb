@@ -8,6 +8,8 @@ Nutrisol::Application.routes.draw do
 
   root 'static_pages#index'
 
+  post 'facebook/fetch' => 'facebook#fetch', format: :json, as: :facebook
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
