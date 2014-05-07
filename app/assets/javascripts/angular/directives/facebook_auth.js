@@ -1,8 +1,8 @@
-nutrisol.directive('facebook', function($http) {
+nutrisol.directive('facebook', ['$http', function($http) {
   return {
     restrict: 'A',
     scope: true,
-    controller: function($scope, $attrs, $window) {
+    controller: ['$scope', '$attrs', function($scope, $attrs) {
       // Load the SDK Asynchronously
       (function(d){
         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -48,7 +48,7 @@ nutrisol.directive('facebook', function($http) {
           console.log('FB.logout success');
         });
       };
-    },
+    }],
 
     link: function(scope, element, attrs, controller) {
       // Additional JS functions here
@@ -93,4 +93,4 @@ nutrisol.directive('facebook', function($http) {
       }; // end of fbAsyncInit
     }
   }
-});
+}]);
