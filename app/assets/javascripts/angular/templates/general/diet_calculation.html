@@ -18,20 +18,20 @@
             <tbody>
               <tr class="info">
                 <th>Hidratos de Carbono</th>
-                <td>{{calories.carbohydrates.g}}</td>
-                <td>{{calories.carbohydrates.kcal}}</td>
+                <td>{{calories.carbohydrates.g | number:2}}</td>
+                <td>{{calories.carbohydrates.kcal | number:2}}</td>
                 <td><input type='number' step='.1' name='carbohydrates_percentage' ng-model='calories.carbohydrates.percentage' /></td>
               </tr>
               <tr class="danger">
                 <th>Proteínas</th>
-                <td>{{calories.proteins.g}}</td>
-                <td>{{calories.proteins.kcal}}</td>
+                <td>{{calories.proteins.g | number:2}}</td>
+                <td>{{calories.proteins.kcal | number:2}}</td>
                 <td><input type='number' step='.1' name='proteins_percentage' ng-model='calories.proteins.percentage' /></td>
               </tr>
               <tr class="warning">
                 <th>Lípidos</th>
-                <td>{{calories.lipids.g}}</td>
-                <td>{{calories.lipids.kcal}}</td>
+                <td>{{calories.lipids.g | number:2}}</td>
+                <td>{{calories.lipids.kcal | number:2}}</td>
                 <td><input type='number' step='.1' name='lipids_percentage' ng-model='calories.lipids.percentage'></td>
               </tr>
             </tbody>
@@ -40,7 +40,7 @@
                 <th>TOTAL</th>
                 <td></td>
                 <td><input type='number' step='.1' name='calories_total' ng-model='calories.totalCalories' /></td>
-                <td>{{calories.totalPercentage}}%</td>
+                <td>{{calories.totalPercentage | number:2}}%</td>
               </tr>
             </tfoot>
           </table>
@@ -224,30 +224,30 @@
             <td></td>
             <td></td>
             <td>
-              {{rations.totalKcal}}
+              {{rations.totalKcal | number:2}}
             </td>
             <td class='td-danger'>
-              {{rations.totalProteins}}
+              {{rations.totalProteins | number:2}}
             </td>
             <td class='td-warning'>
-              {{rations.totalLipids}}
+              {{rations.totalLipids | number:2}}
             </td>
             <td class='td-info'>
-              {{rations.totalCarbohydrates}}
+              {{rations.totalCarbohydrates | number:2}}
             </td>
           </tr>
           <tr>
             <th colspan="2">TOTAL DE REFERENCIA</th>
             <td></td>
-            <td>{{calories.totalCalories}}</td>
+            <td>{{calories.totalCalories | number:2}}</td>
             <td class='td-danger'>
-              {{calories.proteins.g}}
+              {{calories.proteins.g | number:2}}
             </td>
             <td class='td-warning'>
-              {{calories.lipids.g}}
+              {{calories.lipids.g | number:2}}
             </td>
             <td class='td-info'>
-              {{calories.carbohydrates.g}}
+              {{calories.carbohydrates.g | number:2}}
             </td>
           </tr>
         </tfoot>
