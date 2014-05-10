@@ -19,4 +19,16 @@
       });
     }
   }
+
+  nutrisol.config(['$stateProvider',
+      function($stateProvider) {
+        $stateProvider.state('root', {
+          url: '/',
+          templateUrl: 'angular/templates/index.html',
+          controller: 'IndexController',
+          data: {
+            ncyBreadcrumbLabel: 'Inicio'
+          }
+        });
+  }]);
 })();

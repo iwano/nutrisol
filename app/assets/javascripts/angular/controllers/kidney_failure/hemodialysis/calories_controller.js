@@ -18,7 +18,7 @@
     }
 
     $scope.$watch('person.isDiabetic', function(newValues, oldValues) {
-      if (!isDiabetic) $scope.person.weightProteinValue = 1.2;
+      if (!$scope.person.isDiabetic) $scope.person.weightProteinValue = 1.2;
     });
 
     $scope.$watchCollection('[person.weightCalories, person.weightProtein, person.weightProteinValue]', function(newValues, oldValues){
