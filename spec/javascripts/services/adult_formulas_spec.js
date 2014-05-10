@@ -97,5 +97,11 @@ describe('adultFormulas', function() {
       expect(Formulas.gctPercentageWomen(23, 65)).toEqual(24.218000000000004);
     });
   });
+
+  xdescribe('#totalCalories', function() {
+    it('calculates the total of calories needed correctly', function() {
+      expect(Formulas.totalCalories()).toEqual();
+    });
+  });
 });
 

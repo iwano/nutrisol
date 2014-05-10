@@ -7,6 +7,7 @@
           <button type="button" class="btn btn-primary" ng-model="genderFilter" btn-radio="'female'">Mujeres</button>
         </div>
       </div>
+
       <div class="form-group" ng-class="{ 'has-error': tmb_form.height.$invalid }">
         <label class="control-label" for="height">Talla</label>
         <div class="input-group input-group-lg">
@@ -28,6 +29,7 @@
           * Requerido: Numerico
         </div>
       </div>
+
       <div class="form-group" ng-class="{ 'has-error': tmb_form.age.$invalid }">
         <label class="control-label" for="age">Edad</label>
         <div class="input-group input-group-lg">
@@ -38,13 +40,28 @@
           * Requerido: Numerico
         </div>
       </div>
+
+      <div class="form-group" ng-class="{ 'has-error': tmb_form.physical_activity.$invalid }">
+        <label class="control-label" for="physical_activity">Actividad Física</label>
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon">%</span>
+          <input type='number' name='physical_activity' ng-model='person.physicalActivity' placeholder='Ingresa porcentaje de actividad física' class='form-control' required />
+        </div>
+        <div class='error' ng-show="tmb_form.physical_activity.$dirty && tmb_form.physical_activity.$invalid">
+          * Requerido: Numerico
+        </div>
+      </div>
+
       <div class="form-group">
-        <h2>
+        <h3>
           IMC: <code>{{person.bmi | number:2}} <sup>kg</sup>&frasl;<sub>m<sup>2</sup></sub></span></code>
-        </h2>
-        <h1>
+        </h3>
+        <h3>
           Calorías: <code>{{person.tmb | number:2}} kcal</code>
-        </h1>
+        </h3>
+        <h3>
+          Total de calorias: <code>{{person.totalCalories | number:2}} kcal</code>
+        </h3>
       </div>
     </form>
   </div>

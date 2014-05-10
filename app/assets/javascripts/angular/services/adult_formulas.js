@@ -24,6 +24,14 @@
         return 655.0955 + (9.5634 * weight) + (1.8496 * height) - (4.6756 * age);
       },
 
+      totalCalories: function(tmb, physicalActivityPercentage) {
+        //totalCalories = calories + 10% of calories + physical Activity percentage
+
+        var extra = tmb * 10 / 100;
+        var physicalActPerc = tmb * physicalActivityPercentage / 100;
+        return tmb + extra + physicalActivityPercentage;
+      },
+
       idealWeightMen: function(height) {
         //50+0.91(talla en cm - 152.4)
         return 50 + 0.91 * (height - 152.4);
