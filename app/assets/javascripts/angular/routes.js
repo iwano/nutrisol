@@ -100,8 +100,8 @@ nutrisol.config(['$stateProvider', '$urlRouterProvider',
       })
       .state('root.infant.anthropometry', {
         url: '/antropometria',
-        templateUrl: 'angular/templates/newborn/anthropometry.html',
-        controller: 'NewbornAnthropometryController',
+        templateUrl: 'angular/templates/infant/anthropometry.html',
+        controller: 'InfantAnthropometryController',
         data: {
           ncyBreadcrumbLabel: 'Antropometría'
         }
