@@ -178,3 +178,13 @@
   position: absolute;
   right: 0;
 }
+
+.ns-clip-circle {
+  background-size: 720px 480px;
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 105px;
+  margin: auto;
+  overflow: hidden;
+  width: 105px;
+}

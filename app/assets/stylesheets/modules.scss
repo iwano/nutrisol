@@ -47,8 +47,16 @@ body {
   top: 50px;
 }
 
+.ns-login-box {
+  border-bottom: 1px solid #1F2429;
+  padding: 20px;
+  text-align: center;
+  .ns-user-name {
+    color: $ns-white;
+  }
+}
+
 .ns-sidebar .ns-sidebar-inner {
-  margin-top: 60px;
   & > ul > li {
     &.active > a{
       background: $ns-sidebar-active;
