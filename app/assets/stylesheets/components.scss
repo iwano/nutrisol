@@ -192,3 +192,11 @@
 .ns-quote-author {
   float: right;
 }
+
+button[btn-radio], button[btn-checkbox] {
+  font-size: 20px;
+  padding: 8px 15px;
+  &.active {
+    color: $ns-carved-text;
+  }
+}
