@@ -54,3 +54,11 @@ $brand-primary: #4385F5;
   background-color: #000;
   color: #fff;
 }
+
+.list-group-item {
+  padding: 0;
+  a {
+    display: block;
+    padding: 10px 15px;
+  }
+}
