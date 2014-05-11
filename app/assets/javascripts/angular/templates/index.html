@@ -1,12 +1,12 @@
 <div class='container'>
   <div class="left-panel ns-sidebar" ng-class="{ 'ns-sidebar-open': $root.sidebarToggle }">
     <div class="ns-sidebar-header">
-      <div class="logo">
+      <div class="logo animated-slow rubberBand">
         <h1><a ui-sref="root">Nutrisol <span class="glyphicon glyphicon-heart"</span></a></h1>
       </div>
     </div>
     <div class="ns-sidebar-body ns-scroll-y">
-      <div class="ns-sidebar-inner">
+      <div class="ns-sidebar-inner animated fadeInLeftBig">
         <div class='ns-login-box'>
           <div data-facebook='1480133565551807'>
             <div id="fb-root"></div>
@@ -79,17 +79,19 @@
               <div ncy-breadcrumb></div>
           </div>
         </div>
-        <a id="ns-btn-about" ng-click='openAboutModal()'>
+        <a id="ns-btn-about" class="animated-slow shake" ng-click='openAboutModal()'>
           <span class="glyphicon glyphicon-question-sign"></span>
         </a>
       </div>
     </header>
     <div class="view-container ns-scroll-y">
       <div ng-show="currentSection == 'root'">
-        <div class="ns-card ns-card-body">
-          <blockquote class="ns-main-quote">
-            <p>{{currentQuote[0]}}</p><span class='ns-quote-author'>{{currentQuote[1]}}</span>
-          </blockquote>
+        <div class="ns-card animated fadeInUpBig">
+          <div class="ns-card-body">
+            <blockquote class="ns-main-quote">
+              <p>{{currentQuote[0]}}</p><span class='ns-quote-author'>{{currentQuote[1]}}</span>
+            </blockquote>
+          </div>
         </div>
       </div>
       <div ui-view class="view-frame"></div>
