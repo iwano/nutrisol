@@ -29,11 +29,6 @@ $brand-primary: #4385F5;
   @include transition(height .15s ease);
 }
 
-.modal-dialog {
-  max-width: 1000px;
-  width: auto;
-}
-
 .modal-body.image-modal {
   padding: 0;
 }

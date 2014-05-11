@@ -11,6 +11,7 @@
        $modal.open({
         templateUrl: 'angular/templates/about_modal.html',
         controller: 'AboutModalCtrl',
+        windowClass: 'modal-small',
         resolve: {
           message: function () {
             return '//TODO: fill this in';

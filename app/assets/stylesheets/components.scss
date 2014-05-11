@@ -200,3 +200,8 @@ button[btn-radio], button[btn-checkbox] {
     color: $ns-carved-text;
   }
 }
+
+.modal-big .modal-dialog {
+  max-width: 1000px;
+  width: auto;
+}

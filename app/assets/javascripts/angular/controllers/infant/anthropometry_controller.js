@@ -36,6 +36,7 @@
        $modal.open({
         templateUrl: 'angular/templates/newborn/graphics_modal.html',
         controller: GraphicsModalCtrl,
+        windowClass: 'modal-big',
         resolve: {
           image: function() {
             var image = 'assets/graphics/' + $scope.genderFilter + '/' + $scope.typeFilter + '/' + title + '.png';
