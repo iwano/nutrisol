@@ -1,6 +1,11 @@
 /*Large Desktop*/
 @media (min-width: 1200px) {
-
+  .view-container {
+    padding: 20px 5%;
+  }
+  .ns-card-body {
+    padding: 15px 5%;
+  }
 }
 
 /*Desktop*/
@@ -90,6 +95,12 @@
   }
   .ns-sidebar-open-content{
     left: 250px;right: -250px;
+  }
+}
+
+@media (max-width: 600px){
+  .view-container {
+    padding: 20px 2px;
   }
 }
 
