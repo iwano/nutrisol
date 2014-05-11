@@ -107,15 +107,15 @@
 }
 
 .td-danger {
-  background-color: #f2dede;
+  background-color: rgba($ns-red, .5);
 }
 
 .td-warning {
-  background-color: #fcf8e3;
+  background-color: rgba($ns-yellow, .5);
 }
 
 .td-info {
-  background-color: #d9edf7;
+  background-color: rgba($ns-blue, .5);
 }
 
 .left-panel {
