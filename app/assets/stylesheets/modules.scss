@@ -143,3 +143,23 @@ table.calculation-table {
   right: 60px;
   white-space: nowrap;
 }
+
+#about_modal {
+  text-align: center;
+  h1 {
+    color: $ns-pink;
+  }
+
+  .authors {
+    margin: 30px 0;
+  }
+
+  .ns-close-btn {
+    top: 0;
+    right: 0;
+  }
+
+  p {
+    font-size: 17px;
+  }
+}
