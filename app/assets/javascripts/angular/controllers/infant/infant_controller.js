@@ -17,6 +17,13 @@
             ncyBreadcrumbLabel: 'Lactante'
           }
         })
+        .state('root.infant.lab_studies', {
+          url: '/estudios_de_laboratorio',
+          templateUrl: 'angular/templates/infant/lab_studies.html',
+          data: {
+            ncyBreadcrumbLabel: 'Estudios de Laboratorio'
+          }
+        })
         .state('root.infant.anthropometry', {
           url: '/antropometria',
           templateUrl: 'angular/templates/infant/anthropometry.html',
