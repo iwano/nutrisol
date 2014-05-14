@@ -147,11 +147,18 @@
   background: #22262E;
   border-bottom: 1px solid #121515;
   padding: 0;
+  & > li.active > a {
+    background: $ns-sidebar-active;
+    border-left-color: $ns-pink;
+    color: $ns-white;
+    padding-left: 20px;
+  }
   & > li > a {
-    padding: 10px 25px;
-    display: block;
+    border-left: 4px solid transparent;
     color: #D3D6DB;
+    display: block;
     font-size: 13px;
+    padding: 10px 25px;
     -webkit-transition:All 0.4s ease;
     -moz-transition:All 0.4s ease;
     -o-transition:All 0.4s ease;

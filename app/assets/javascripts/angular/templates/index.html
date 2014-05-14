@@ -21,33 +21,33 @@
           </div>
         </div>
         <ul class="nav nav-pills nav-stacked">
-          <li ng-class="{ 'active': currentSection.indexOf('pregnant') != -1 }"><a ui-sref="root.pregnant">Embarazo</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('newborn') != -1 }"><a ui-sref="root.newborn">Recién nacido</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('infant') != -1 }"><a ui-sref="root.infant">Lactante</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('preschool') != -1 }"><a ui-sref="root.preschool">Preescolar</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('scholar') != -1 }"><a ui-sref="root.scholar">Escolar</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('teenager') != -1 }"><a ui-sref="root.teenager">Adolescente</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('adult') != -1 }"><a ui-sref="root.adult">Adulto</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('elderly') != -1 }"><a ui-sref="root.elderly">Adulto mayor</a></li>
-          <li ng-class="{ 'active': currentSection.indexOf('kidney_failure') != -1 }">
+          <li ng-class="{ 'active': $state.includes('root.pregnant') }"><a ui-sref="root.pregnant">Embarazo</a></li>
+          <li ng-class="{ 'active': $state.includes('root.newborn') }"><a ui-sref="root.newborn">Recién nacido</a></li>
+          <li ng-class="{ 'active': $state.includes('root.infant') }"><a ui-sref="root.infant">Lactante</a></li>
+          <li ng-class="{ 'active': $state.includes('root.preschool') }"><a ui-sref="root.preschool">Preescolar</a></li>
+          <li ng-class="{ 'active': $state.includes('root.scholar') }"><a ui-sref="root.scholar">Escolar</a></li>
+          <li ng-class="{ 'active': $state.includes('root.teenager') }"><a ui-sref="root.teenager">Adolescente</a></li>
+          <li ng-class="{ 'active': $state.includes('root.adult') }"><a ui-sref="root.adult">Adulto</a></li>
+          <li ng-class="{ 'active': $state.includes('root.elderly') }"><a ui-sref="root.elderly">Adulto mayor</a></li>
+          <li ng-class="{ 'active': $state.includes('root.kidney_failure') }">
             <a href="" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed" ng-class="{ 'open': !isCollapsed }">
               Insuficiencia Renal
             </a>
             <span class="glyphicon glyphicon-chevron-down icon-right"></span>
             <ul class="ns-sidebar-submenu" collapse="isCollapsed">
-              <li>
+              <li ng-class="{ 'active': $state.includes('root.kidney_failure.predialysis') }">
                 <a ui-sref="root.kidney_failure.predialysis">
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   Prediálitico
                 </a>
               </li>
-              <li>
+              <li ng-class="{ 'active': $state.includes('root.kidney_failure.dialysis') }">
                 <a ui-sref="root.kidney_failure.dialysis">
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   Diálisis
                 </a>
               </li>
-              <li>
+              <li ng-class="{ 'active': $state.includes('root.kidney_failure.hemodialysis') }">
                 <a ui-sref="root.kidney_failure.hemodialysis">
                   <span class="glyphicon glyphicon-chevron-right"></span>
                   Hemodiálisis
@@ -75,8 +75,9 @@
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <div class="ns-breadcrumb-container animated fadeInDown" ng-show="currentSection.indexOf('root.') != -1">
+            <div class="ns-breadcrumb-container animated fadeInDown">
               <div ncy-breadcrumb></div>
+            </div>
           </div>
         </div>
         <a id="ns-btn-about" class="animated-slow shake" ng-click='openAboutModal()'>
@@ -85,7 +86,7 @@
       </div>
     </header>
     <div class="view-container ns-scroll-y">
-      <div ng-show="currentSection == 'root'">
+      <div ng-show="$state.current.name == 'root'">
         <div class="ns-card animated fadeInUp">
           <div class="ns-card-body">
             <blockquote class="ns-main-quote">
