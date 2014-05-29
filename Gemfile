@@ -26,6 +26,7 @@ gem 'rails-assets-angular-sanitize'
 gem 'rails-assets-angular-scenario'
 gem 'rails-assets-angular-touch'
 gem 'rails-assets-angular-ui-router'
+gem 'rails-assets-es5-shim'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 

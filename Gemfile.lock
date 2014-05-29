@@ -135,6 +135,7 @@ GEM
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-ui-router (0.2.10)
       rails-assets-angular (>= 1.0.8)
+    rails-assets-es5-shim (3.4.0)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -220,6 +221,7 @@ DEPENDENCIES
   rails-assets-angular-scenario
   rails-assets-angular-touch
   rails-assets-angular-ui-router
+  rails-assets-es5-shim
   rails_12factor
   rspec-rails
   sass-rails (~> 4.0.0)
